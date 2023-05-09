@@ -31,7 +31,7 @@ Some functions can happen to a repository to change what is inside of it, some o
 
     Branch - A branch is a sub-section of a repository, it can be used to implement features or make changes without changing the main branch.
 
-    Push - A push is a way to make changes to a repository if you do not have access to commit to the repository, these changes are reviewed by someone who can merge these changes into a branch.
+    Push - A push is a way to make changes to a repository. If you do not have access to commit to the repository, these changes are reviewed by someone who can merge these changes into a branch.
 
     Pull - Pulling changes from a push request, and accepting them into a branch.
 
