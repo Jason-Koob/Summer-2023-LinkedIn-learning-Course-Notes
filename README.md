@@ -12,4 +12,3 @@ I will complete a series of course on LinkedIn Learning. I will document my note
 
   Next, I become better at writing and understanding C++, it is a common language with limitless opportunity:
   [Getting Started with C++](https://www.linkedin.com/learning/paths/getting-started-with-c-plus-plus?u=2133849)
-
