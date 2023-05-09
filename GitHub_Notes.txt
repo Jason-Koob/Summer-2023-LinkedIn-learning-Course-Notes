@@ -12,29 +12,31 @@
 
     GitHub Desktop - A desktop application for managing all things GitHub in a desktop application.
 
--- Services GitHub offers
+-- Services GitHub Offers
 
     GitHub Copilot - GitHub partnered with OpenAI's Codex to produce an Artificially Intelligent tool to help write code with you, while you write the code. 
     This tool requires a subscription but it works in multiple popular code editor software such as Visual Studio Code.
 
     GitHub Codespaces - GitHub hosts a virtual machine in which a copy of a repository is made. You can access this virtual machine with a subscription.
 
--- Repository
+-- Repositories
 
-    A repository is a group of files that can be stored locally or on the GitHub cloud, the files can be changed and sent to the cloud for others to view.
-
-Some functions can happen to a repository to change what is inside of it, some of these functions are:
-
-    Clone - This function can be done on multiple desktop and CLI interfaces for GitHub/Git. This function asks GitHub to make a copy of a repository on the local machine.
-
-    Commit - Once changes are made to a file in a repository, the changes can be uploaded to the GitHub cloud, to do this, there needs to be a summary and description attached to the changes.
+    Repository - A repository is a group of files that can be stored locally or on the GitHub cloud, the files can be changed and sent to the cloud for others to view.
 
     Branch - A branch is a sub-section of a repository, it can be used to implement features or make changes without changing the main branch.
 
-    Push - A push is a way to make changes to a repository. If you do not have access to commit to the repository, these changes are reviewed by someone who can merge these changes into a branch.
+-- Functions
 
-    Pull - Pulling changes from a push request, and accepting them into a branch.
+    function - Functions can happen to a repository to change what is inside of it.
 
-    Merge - This is the final form of verification between branches and a proposed push request.
+        Clone - This function can be done on multiple desktop and CLI interfaces for GitHub/Git. This function asks GitHub to make a copy of a repository on the local machine.
 
--- Project - A project is a management view of issues and pull requests
+        Commit - Once changes are made to a file in a repository, the changes can be uploaded to the GitHub cloud, to do this, there needs to be a summary and description attached to the changes.
+
+        Push - A push is a way to make changes to a repository. If you do not have access to commit to the repository, these changes are reviewed by someone who can merge these changes into a branch.
+
+        Pull - Pulling changes from a push request, and accepting them into a branch.
+
+        Merge - This is the final form of verification between branches and a proposed push request.
+
+-- Project - A project is a management view of issues and pull requests.
