@@ -14,9 +14,9 @@
     -- If you fail, the exam, try again soon, and if you fail the second attempt, you must wait 14 days.
 
     -- Certification is valid for three years.
-        To renew the certification, you will need at least 50 hours of continuing professional education
-            Earn other CompTIA certifications
-            Earn a non-CompTIA certification
+        To renew the certification, you will need at least 50 hours of continuing professional education.
+            Earn other CompTIA certifications.
+            Earn a non-CompTIA certification.
 
     -- Five domains of questions
 
@@ -72,9 +72,9 @@
                 Active and passive reconnaissance
                 Pivoting
                 Escalation privilege
-                White box - Attackers have full access to information before they begin the test.
-                Grey box - Attackers have limited information before they begin the test.
-                Black box - Attackers have no information before they begin the test.
+                White box - Attackers have full access to information before they begin the test
+                Grey box - Attackers have limited information before they begin the test
+                Black box - Attackers have no information before they begin the test
 
         -- Architecture and Design (21%)
 
@@ -194,7 +194,7 @@
             Assess organizational security
                 Network reconnaissance and discovery tools
                     traceroute
-                    nmap
+                    Nmap
                     arp
 
                 File manipulation tools
@@ -261,7 +261,7 @@
                     Mean-time-to-repaid (MTTR)
             
             Risk management processes and concepts
-                Risk assessment and risk management serve as the foundation of all information security professionals
+                Risk assessment and risk management services as the foundation of all information security professionals
                 Mitigate risks based on computing environments and information
                 Privacy and sensitive data security concepts
                     Data classification techniques
@@ -271,7 +271,7 @@
                         Data masking
                         Tokenization
                         Anonymization
-                    Roles of different individuals have concerning data
+                    Roles of different individuals concerning data
 
     -- Two formats of questions
 
@@ -301,7 +301,7 @@
             eLearning Bundle: $949.00
         
         Once the voucher bundle and purchase are accepted, you will be emailed a voucher ID. This ID will allow you to take the exam. 
-        These exam vouchers expire 12 months after purchase and must be completed before the 12 months
+        These exam vouchers expire 12 months after purchase and must be completed before the 12 months.
 
     -- Resources
 
@@ -312,8 +312,8 @@
 
         In-person
 
-            Located in a certified pearson vue testing center
-            exam staff check identification, take a photo of you, and electronically capture a signatures
+            Located in a certified Pearson Vue testing center.
+            exam staff check identification, take a photo of you, and electronically capture a signature.
 
             You will need two forms of identification
                 Government issues card that contains both a photo and a signature (Drivers license or passport)
@@ -321,16 +321,16 @@
                     Not be expired
                     Must contain your name, and either a photo or signature
 
-            Lockers will be provided to store any personal items that aren't allowed in the exam room
+            Lockers will be provided to store any personal items that aren't allowed in the exam room.
         
         Online
 
-             online proctor will check you in, and monitor you during the exam, like an in-person proctor
+             online proctor will check you in, and monitor you during the exam, like an in-person proctor.
 
-             In a quiet room, with nobody else, and with no access to papers or other materials
+             In a quiet room, with nobody else, and with no access to papers or other materials.
 
-             The proctor will ask you to move your webcam around to show a 360-degree view of the room and must approve it before you begin the exam
-                A practice test is encouraged to verify that the software works as intended before you pay the registration fee
+             The proctor will ask you to move your webcam around to show a 360-degree view of the room and must approve it before you begin the exam.
+                A practice test is encouraged to verify that the software works as intended before you pay the registration fee.
 
 -- Stacking CompTIA Certifications
 
@@ -373,5 +373,3 @@
             CompTIA Security Infrastructure Expert (CSIE role)
                 CSAE role
                 PenTest+ exam
-
--- Attacks, Threats, and Vulnerabilities (24%)

@@ -1,0 +1,115 @@
+Attacks, Threats, and Vulnerabilities (24%)
+
+-- Malware
+
+    Short for malicious software.
+
+    Each malware has a propagation mechanism and a payload.
+        
+        Propagation mechanism - The way that malware objects spread
+
+        Payload - The malicious action that the malware performs 
+            * Any malware can carry any payload.
+
+            Adware - Malware that displays advertisements.
+                Generates revenue for the malware author instead of the advertisement creator
+                    Can redirect search queries to a search engine controlled by the malware author or one with which the malware author has a partnership agreement.
+                    Display pop-up advertisements that the user might blame the website for
+                    Replace legitimate ads with ads from the malware author
+
+            Spyware - Malware that gathers information without the user's knowledge.
+                The information is sent back to the malware author who can use the information for any purpose such as identity theft or to access financial accounts.
+                    keystroke loggers - capture every key the user presses, or they can monitor users visiting certain websites and recording usernames and passwords.
+                    Monitoring web browsing - monitors web queries to later target advertisements to the user.
+                    Search hard drives or cloud storage - searches through storage media to find records such as social security numbers or anything that can be useful to the actor.
+                Potentially Unwanted programs (PUPs) - programs that are slipped onto a system by the software installers.
+
+            Ransomware - Blocking access to parts of a computer in exchange for services or finances.
+                Normally encrypting files behind an encrypted key and selling the key (WannaCry)
+                * WannaCry spread during 2017, exploiting EternalBlue Windows vulnerability
+                * Encrypted files and demanded Bitcoin as a ransom
+
+            Crypto-malware - a form of malware that takes over the capacity of a user's system to mine cryptocurrency.
+                * (EXAM TIP) It is easy to confuse ransomware and crypto-malware
+
+            Tips to avoid Adware, Spyware, ransomware, and crypto-malware
+                Installing and updating antimalware and antivirus software on systems
+                Applying security patches promptly
+                User education
+            
+            Backdoors - A programmer provides a means to grant themselves or others future access to a system.
+                Usually done with good intent such as ParSec or TeamViewer but can have unintended side-effects.
+                    hardcoded accounts - Accounts made on a system with the purpose of a later use
+                    Default passwords - A password that works with an account that might be changed or known
+                    Unknown access channels - A way to gain access to a system without going through the normal authentication
+    
+            Logic Bombs - Malware that is set to execute a payload when certain conditions are met.
+                Date/Time reached (Zero Day)
+                File contents are changed
+                API calls
+            
+            Tips to avoid backdoors and logic bombs
+                Routinely change default passwords
+                Disable unused accounts
+                Monitor security bulletins for news
+
+            Virus - Malware spread by human action
+                * The best way to prevent a virus is user education.
+
+            Worm - Malware that spread by themselves
+                * Spreads from a host to other computers.
+                * The best way to prevent a worm is to update operating systems with official updates and patches.
+
+                    * FIRST WORM -- RTM WORM
+                    The first major worm outbreak was in 1988 and was called the RTM worm. 
+                    Named after its designer, Robert T. Morris. 
+                    It infected 10% of the internet at the time.
+                    Eye-opening event for security
+
+                    * STUXNET
+                    Stuxnet was created in 2010 to infiltrate an Iranian nuclear enrichment facility.
+                    It was the first worm to cross the virtual/physical barrier in a major way.
+                    Damaged uranium enrichment equipment by causing centrifuges to spin out of control
+
+            Trojan Horse - Malware that is disguised to be a beneficial software
+                * Software does perform as expected but also delivers malicious payload behind the scenes
+                * The best way to prevent a trojan horse attack is to use application control to limit what applications can do on a system.
+
+            Remote Access Trojan (RAT) - Malware that provides a backdoor to hacked systems
+
+    Advanced malware
+
+        Rootkits - Malware that is used to escalate a users privilege on a system
+            Root accounts - A special superuser account that provides unrestricted access to system resources.
+            Can be used to install backdoors, botnet agents, adware/spyware, and anti-theft mechanisms on systems
+
+            User mode rootkits
+                Run with normal user privileges
+                Fairly easy to write and difficult to detect
+
+            Kernal mod rootkits
+                Run with system privileges
+                Are difficult to write and easy to detect
+                
+        Fileless virus - a virus that remains in memory without a file present
+            Examples are Microsoft Office macros, JavaScript code, and Windows registry persistence
+
+        Botnet - A collection of 'zombie' computers that follow orders from a command and control (CNC) system
+            Steal computing power, network bandwidth, and storage capacity of malicious means
+            Spread through other forms of malware
+            Used to deliver spam, engage in DDoS attacks, mine cryptocurrency or perform brute force attacks
+            Communications must be indirect and redundant 
+                Such as Internet relay chat (IRC)
+                Twitter accounts
+                Peer-to-Peer (P2P) communications within the botnet itself
+
+            1. Infect machines with malware
+            2. Convert to bots in the botnet
+            3. Spread the infection to other machines
+            4. Check in with the CNC
+            5. Wait for instructions
+            6. Deliver payloads
+
+-- Scripts
+
+    
