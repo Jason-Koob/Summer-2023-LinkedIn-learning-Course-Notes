@@ -1,0 +1,199 @@
+-- Overview
+
+    This course has 10 sections.
+
+-- Information about the Exam
+
+    -- 90 minutes to take the exam.
+
+    -- Variable amount of questions up to 90 questions.
+
+    -- Five domains of questions
+
+        Attacks, Threats, and Vulnerabilities (24%)
+
+            Compare and contrast social engineering techniques
+                Spam and unsolicited email
+                Vishing - voice phishing
+                Spear Phishing - Targeted Attacks
+                Whaling - Targeted attacks on executives
+
+            Determine the type of attacks
+                Viruses - Spread through human interaction
+                Worms - Spread by themselves
+                Trojan Horses - Pose as beneficial software
+                Password attacks
+                Physical attacks
+                others
+
+            Analyze application attacks
+                Cross-Site Scripting (XSS)
+                Directory Traversal
+                Buffer overflow - Use input larger than the Buffer
+                Request Forgery
+
+            Analyze network attacks
+                man-in-the-middle
+                man-in-the-browser
+                Domain Name Service (DNS)
+                Distributed Denial of Service (DDoS)
+                layer 2
+
+            Explain threat actors, vectors, and intelligence sources
+                Script Kiddies
+                Hacktivists
+                Organized crime
+                Nation States
+                Insiders
+                Competitors
+
+            Types of Vulnerabilities
+                Weak configurations
+                Third-party risks
+                Improper patch management
+                Legacy platforms
+
+            Security assessment techniques
+                Threat hunting
+                Security information and event management systems
+                Vulnerability scanning
+            
+            Penetration testing
+                Active and passive reconnaissance
+                Pivoting
+                Escalation privilege
+                White box - Attackers have full access to information before they begin the test.
+                Grey box - Attackers have limited information before they begin the test.
+                Black box - Attackers have no information before they begin the test.
+
+        Architecture and Design (21%)
+
+            Enterprise security concepts
+                Configuration management
+                Data sovereignty
+                Data protection
+                Site resiliency
+                Deception and disruption techniques such as honeypots, honeynets, and DNS sinkholes.
+            
+            Virtualization and cloud computing
+                Hypervisor types
+                VM sprawl and VM escape avoidance
+                Cloud computing techniques
+                Deployment models
+
+            Secure application development and Deployment
+                Development life-cycle models
+                Secure DevOps environments
+                Version control
+                Change management - request, change, and release control
+                Secure provisioning and de-provisioning
+                Secure coding techniques
+                Code quality assurance
+
+            Authentication and Authorization Design
+                Authentication techniques
+                The use of biometrics
+                Multi-factor authentication
+            
+            Cybersecurity resilience strategies
+                Elasticity
+                Scalability
+                Redundancy
+                Fault tolerance
+                High availability
+                Backups
+            
+            Embedded and specialized systems
+                Industrial security controls
+                Smart devices, cameras, and medical devices
+                Network segmentation
+                Security layers
+                Application firewalls
+                Control redundancy and diversity
+
+            Physical security
+                Everything from environmental controls to fire extinguishers
+                Deterrent, preventive, and detective controls
+            
+            The basics of cryptography
+                Encryption
+                Decryption
+                Digital signatures
+                Symmetric encryption
+                Asymmetric encryption
+                Digital certificates
+
+        implementation (25%)
+
+
+        
+        Operations and Incident Response
+        Governance, Risk, and Compliance
+
+    -- Two formats of questions
+
+        The vast majority of the questions will be multiple-choice with ABCD options with one correct answer.
+        Performance-based questions require you to move objects on the screen.
+
+    -- Scoring
+
+        Scores will be ranged from 100 to 950, anything above 750 will pass.
+
+    -- Purchasing a Voucher
+
+        A voucher can be purchased on the CompTIA website with the following options
+
+            Voucher: $370.00
+            Basic Bundle: $549.00
+            Exam Prep Bundle: $699.00
+            eLearning Bundle: $949.00
+        
+        Once the voucher bundle and purchase are accepted, you will be emailed a voucher ID. This ID will allow you to take the exam. 
+        These exam vouchers expire 12 months after purchase and must be completed before the 12 months
+
+    -- Resources
+
+        CompTIA Security+ SY0-601 book
+        https://certmike.com
+
+-- Stacking CompTIA Certifications
+
+    -- Specialist
+
+        CompTIA Secure Infrastructure Specialist(CSIS)
+            A+ (technical support)
+            Net+(network support)
+            Security+ (security support)
+
+    -- Professional
+
+            Professional
+                Security+ exam
+                One or more additional certifications
+            
+            CompTIA Security Analytics Professional (CSAP role)
+                CySA+ exam
+            
+            CompTIA Secure Cloud Professional (CSSP role)
+                Security+ exam
+                Cloud+ exam
+            
+            CompTIA Network Vulnerability Assessment Professional (CNVP role)
+                Security+ exam
+                PenTest+ exam
+            
+            CompTIA Network Security Professional (CNSP role)
+                Security+ exam
+                PenTest+ exam
+                CySA+ exam
+                
+    -- Expert
+
+            CompTIA Security Analytics Expert (CSAE role)
+                Security+ exam
+                CySA+ exam
+                CompTIA Advanced Practitioner (CASP+ exam)
+
+            CompTIA Security Infrastructure Expert (CSIE role)
+                CSAE role
+                PenTest+ exam
