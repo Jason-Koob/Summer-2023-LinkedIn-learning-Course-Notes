@@ -7,10 +7,20 @@
     -- 90 minutes to take the exam.
 
     -- Variable amount of questions up to 90 questions.
+        You are allowed to return to previous questions.
+
+    -- Questions are weighted differently depending on the difficulty.
+
+    -- If you fail, the exam, try again soon, and if you fail the second attempt, you must wait 14 days.
+
+    -- Certification is valid for three years.
+        To renew the certification, you will need at least 50 hours of continuing professional education
+            Earn other CompTIA certifications
+            Earn a non-CompTIA certification
 
     -- Five domains of questions
 
-        Attacks, Threats, and Vulnerabilities (24%)
+        -- Attacks, Threats, and Vulnerabilities (24%)
 
             Compare and contrast social engineering techniques
                 Spam and unsolicited email
@@ -66,7 +76,7 @@
                 Grey box - Attackers have limited information before they begin the test.
                 Black box - Attackers have no information before they begin the test.
 
-        Architecture and Design (21%)
+        -- Architecture and Design (21%)
 
             Enterprise security concepts
                 Configuration management
@@ -123,17 +133,159 @@
                 Asymmetric encryption
                 Digital certificates
 
-        implementation (25%)
+        -- implementation (25%)
 
+            Implement secure protocols and services
+                IPSec
+                DNS
+                HTTPS
+                TLS
+                SFTP
+                SNMP
+                Firewall rules
 
-        
-        Operations and Incident Response
-        Governance, Risk, and Compliance
+            Endpoint detection and response (EDR)
+                Endpoint protection techniques
+                    Database security
+                    Application security techniques
+                    System hardening
+
+                Hardware security tools
+                    Self-encrypting drives
+                    Trust platform modules
+                    Hardware root of trust
+
+                Secure network designs
+                    Firewalls, routers, switches, proxies, VPN concentrators
+
+                Intrusion prevention systems
+                    Web application firewalls and protocol analyzers
+
+                Secure mobile solutions
+                    Secure mobile connections
+                    mobile device management packages
+                    Mobile deployment models for a company
+                    Enforcing security requirements on mobile devices
+
+                Cybersecurity solutions on the cloud
+                    tools to secure computing, storage, and networking services
+                    Cloud access security brokers (CASBs)
+                    Secure web gateways
+                    Firewalls
+
+                Identify and account management controls
+                    Identification
+                    Account types
+                    Account security policies
+                    Authentication
+                    Authorization
+                        RADIUS
+                        Kerberos
+                        TACACS
+                        OAuth
+
+                Public key Infrastructure
+                    Certificate authorities
+                    Types of digital certificates
+                    Advanced certificate management topics
+
+        -- Operations and Incident Response (16%)
+
+            Assess organizational security
+                Network reconnaissance and discovery tools
+                    traceroute
+                    nmap
+                    arp
+
+                File manipulation tools
+                    -head
+                    -tail
+                    -cat
+                    -grep
+                    Shell and script environments
+                    Packet capture tools
+                    Forensic tools
+                    Exploitation frameworks
+
+                Follow incident response procedures
+                    Preparation
+                    Identification
+                    Containment
+                    Eradication
+                    Recovery
+                    Lessons learned
+                        First responders
+
+                Utilize appropriate data sources
+                    Log files
+                    Vulnerability scans
+                    SEAM dashboards
+                    Other tools
+                
+                Mitigation techniques or controls to secure an environment
+                    Re-configuring endpoint security solutions
+                    Modifying the configuration of firewall rules
+                    Content filters
+                    Mobile device management products
+                    Roles of...
+                        Security orchestration, automation, and response systems in enterprise security
+                
+                Basic forensic procedures
+                    Techniques used to investigate crimes and other cybersecurity incidents
+                        Chain of custody
+                        Solid forensic practices
+                            Collect, store, and evaluate evidence for use in court or internal purposes
+
+        -- Governance, Risk, and Compliance (14%)
+
+            Compare and contrast various types of security controls
+                Managerial, Operational, and technical controls
+                Types of preventative, detective, corrective, deterrent, compensating, and physical controls
+            
+            Explain the importance of applicable regulations, standards, or frameworks that impact the organizational security posture
+                Regulations such as the European Union's general data protection regulation
+                Payment card industry data security standard
+
+            Policies related to organizational security
+                Standard operation procedures
+                    Business agreements
+                    Personnel management strategies
+                    Implementation of general security policies
+                        Social media
+                        Personal email issues
+
+                Business impact analysis concepts
+                    Recovery time objectives
+                    Recovery point objectives
+                    Mean-time-between-failures (MTBF)
+                    Mean-time-to-repaid (MTTR)
+            
+            Risk management processes and concepts
+                Risk assessment and risk management serve as the foundation of all information security professionals
+                Mitigate risks based on computing environments and information
+                Privacy and sensitive data security concepts
+                    Data classification techniques
+                    Special categories of sensitive information
+                    Privacy-enhancing technologies
+                        Data minimization
+                        Data masking
+                        Tokenization
+                        Anonymization
+                    Roles of different individuals have concerning data
 
     -- Two formats of questions
 
         The vast majority of the questions will be multiple-choice with ABCD options with one correct answer.
         Performance-based questions require you to move objects on the screen.
+
+        -- Read the questions very carefully
+        -- Read all possible options before choosing one
+        -- Answer every question
+        -- Go between questions
+        -- Make at least three passes through the exams
+            1st pass - Answer the easier questions, skipping challenging or performance-based questions
+            2nd pass - Try to answer every question
+            3rd pass - clean up any errors that you've made
 
     -- Scoring
 
@@ -155,6 +307,30 @@
 
         CompTIA Security+ SY0-601 book
         https://certmike.com
+
+    -- Taking the exam
+
+        In-person
+
+            Located in a certified pearson vue testing center
+            exam staff check identification, take a photo of you, and electronically capture a signatures
+
+            You will need two forms of identification
+                Government issues card that contains both a photo and a signature (Drivers license or passport)
+                Other forms of identification must
+                    Not be expired
+                    Must contain your name, and either a photo or signature
+
+            Lockers will be provided to store any personal items that aren't allowed in the exam room
+        
+        Online
+
+             online proctor will check you in, and monitor you during the exam, like an in-person proctor
+
+             In a quiet room, with nobody else, and with no access to papers or other materials
+
+             The proctor will ask you to move your webcam around to show a 360-degree view of the room and must approve it before you begin the exam
+                A practice test is encouraged to verify that the software works as intended before you pay the registration fee
 
 -- Stacking CompTIA Certifications
 
@@ -197,3 +373,5 @@
             CompTIA Security Infrastructure Expert (CSIE role)
                 CSAE role
                 PenTest+ exam
+
+-- Attacks, Threats, and Vulnerabilities (24%)
