@@ -110,6 +110,24 @@ Attacks, Threats, and Vulnerabilities (24%)
             5. Wait for instructions
             6. Deliver payloads
 
--- Scripts
+    Scripts
 
-    
+        Script - A sequence of instructions written in a programming language to automate work.
+
+            Shell scripts - Run at the command line and are integrated with the operating system.
+
+            Application scripts - Run within the software and integrate with that application.
+
+            Programming languages - Allow for the creation of general-purpose code.
+
+                Bash - A shell scripting language used on Linux and Mac systems.
+
+                PowerShell - Similar to bash, it allows for scripting capabilities on Windows systems.
+
+                Macros - Scripts that run within an application to automate tasks within that application (Visual Basic for Automation (VBA)).
+
+                Python - A general-purpose language used to create a diverse set of scripts.
+
+    Attackers
+
+        
