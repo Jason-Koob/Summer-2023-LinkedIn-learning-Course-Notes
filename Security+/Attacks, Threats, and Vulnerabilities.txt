@@ -1,15 +1,45 @@
 Attacks, Threats, and Vulnerabilities (24%)
 
--- Malware
+    Malware
 
-    Short for malicious software.
+        Short for malicious software.
 
-    Each malware has a propagation mechanism and a payload.
+        Comparing Viruses, worms, and trojans
+
+            Virus - Malware spread by human action
+                    * The best way to prevent a virus is user education.
+
+                Worm - Malware that spread by themselves
+                    * Spreads from a host to other computers.
+                    * The best way to prevent a worm is to update operating systems with official updates and patches.
+
+                        * FIRST WORM -- RTM WORM
+                        The first major worm outbreak was in 1988 and was called the RTM worm. 
+                        Named after its designer, Robert T. Morris. 
+                        It infected 10% of the internet at the time.
+                        Eye-opening event for security
+
+                        * STUXNET
+                        Stuxnet was created in 2010 to infiltrate an Iranian nuclear enrichment facility.
+                        It was the first worm to cross the virtual/physical barrier in a major way.
+                        Damaged uranium enrichment equipment by causing centrifuges to spin out of control
+
+                Trojan Horse - Malware that is disguised to be a beneficial software
+                    * Software does perform as expected but also delivers malicious payload behind the scenes
+                    * The best way to prevent a trojan horse attack is to use application control to limit what applications can do on a system.
+
+                Remote Access Trojan (RAT) - Malware that provides a backdoor to hacked systems
+
+                Each malware has a propagation mechanism and a payload.
         
-        Propagation mechanism - The way that malware objects spread
+        Malware Payloads
 
-        Payload - The malicious action that the malware performs 
-            * Any malware can carry any payload.
+            Each malware has a propagation mechanism and a payload.
+                
+                Propagation mechanism - The way that malware objects spread
+
+                Payload - The malicious action that the malware performs 
+                    * Any malware can carry any payload.
 
             Adware - Malware that displays advertisements.
                 Generates revenue for the malware author instead of the advertisement creator
@@ -27,107 +57,381 @@ Attacks, Threats, and Vulnerabilities (24%)
             Ransomware - Blocking access to parts of a computer in exchange for services or finances.
                 Normally encrypting files behind an encrypted key and selling the key (WannaCry)
                 * WannaCry spread during 2017, exploiting EternalBlue Windows vulnerability
-                * Encrypted files and demanded Bitcoin as a ransom
+                    * Encrypted files and demanded Bitcoin as a ransom
 
             Crypto-malware - a form of malware that takes over the capacity of a user's system to mine cryptocurrency.
                 * (EXAM TIP) It is easy to confuse ransomware and crypto-malware
+                    Malware is named after what the threat actor wants at the beginning of the name
 
             Tips to avoid Adware, Spyware, ransomware, and crypto-malware
                 Installing and updating antimalware and antivirus software on systems
                 Applying security patches promptly
                 User education
-            
+        
+        Understanding backdoors and logic Bombs
+
             Backdoors - A programmer provides a means to grant themselves or others future access to a system.
                 Usually done with good intent such as ParSec or TeamViewer but can have unintended side-effects.
                     hardcoded accounts - Accounts made on a system with the purpose of a later use
                     Default passwords - A password that works with an account that might be changed or known
                     Unknown access channels - A way to gain access to a system without going through the normal authentication
-    
+        
             Logic Bombs - Malware that is set to execute a payload when certain conditions are met.
                 Date/Time reached (Zero Day)
                 File contents are changed
                 API calls
-            
+                
             Tips to avoid backdoors and logic bombs
                 Routinely change default passwords
                 Disable unused accounts
                 Monitor security bulletins for news
 
-            Virus - Malware spread by human action
-                * The best way to prevent a virus is user education.
-
-            Worm - Malware that spread by themselves
-                * Spreads from a host to other computers.
-                * The best way to prevent a worm is to update operating systems with official updates and patches.
-
-                    * FIRST WORM -- RTM WORM
-                    The first major worm outbreak was in 1988 and was called the RTM worm. 
-                    Named after its designer, Robert T. Morris. 
-                    It infected 10% of the internet at the time.
-                    Eye-opening event for security
-
-                    * STUXNET
-                    Stuxnet was created in 2010 to infiltrate an Iranian nuclear enrichment facility.
-                    It was the first worm to cross the virtual/physical barrier in a major way.
-                    Damaged uranium enrichment equipment by causing centrifuges to spin out of control
-
-            Trojan Horse - Malware that is disguised to be a beneficial software
-                * Software does perform as expected but also delivers malicious payload behind the scenes
-                * The best way to prevent a trojan horse attack is to use application control to limit what applications can do on a system.
-
-            Remote Access Trojan (RAT) - Malware that provides a backdoor to hacked systems
-
-    Advanced malware
-
-        Rootkits - Malware that is used to escalate a users privilege on a system
-            Root accounts - A special superuser account that provides unrestricted access to system resources.
-            Can be used to install backdoors, botnet agents, adware/spyware, and anti-theft mechanisms on systems
-
-            User mode rootkits
-                Run with normal user privileges
-                Fairly easy to write and difficult to detect
-
-            Kernal mod rootkits
-                Run with system privileges
-                Are difficult to write and easy to detect
                 
-        Fileless virus - a virus that remains in memory without a file present
-            Examples are Microsoft Office macros, JavaScript code, and Windows registry persistence
+            
+            Propagation mechanism - The way that malware objects spread
 
-        Botnet - A collection of 'zombie' computers that follow orders from a command and control (CNC) system
-            Steal computing power, network bandwidth, and storage capacity of malicious means
-            Spread through other forms of malware
-            Used to deliver spam, engage in DDoS attacks, mine cryptocurrency or perform brute force attacks
-            Communications must be indirect and redundant 
-                Such as Internet relay chat (IRC)
-                Twitter accounts
-                Peer-to-Peer (P2P) communications within the botnet itself
+            Payload - The malicious action that the malware performs 
+                * Any malware can carry any payload.
 
-            1. Infect machines with malware
-            2. Convert to bots in the botnet
-            3. Spread the infection to other machines
-            4. Check in with the CNC
-            5. Wait for instructions
-            6. Deliver payloads
+        Advanced malware
 
-    Scripts
+            Rootkits - Malware that is used to escalate a users privilege on a system
+                Root accounts - A special superuser account that provides unrestricted access to system resources.
+                Can be used to install backdoors, botnet agents, adware/spyware, and anti-theft mechanisms on systems
 
-        Script - A sequence of instructions written in a programming language to automate work.
+                User mode rootkits
+                    Run with normal user privileges
+                    Fairly easy to write and difficult to detect
 
-            Shell scripts - Run at the command line and are integrated with the operating system.
-
-            Application scripts - Run within the software and integrate with that application.
-
-            Programming languages - Allow for the creation of general-purpose code.
-
-                Bash - A shell scripting language used on Linux and Mac systems.
-
-                PowerShell - Similar to bash, it allows for scripting capabilities on Windows systems.
-
-                Macros - Scripts that run within an application to automate tasks within that application (Visual Basic for Automation (VBA)).
-
-                Python - A general-purpose language used to create a diverse set of scripts.
-
-    Attackers
-
+                Kernal mod rootkits
+                    Run with system privileges
+                    Are difficult to write and easy to detect
+                    
+            Fileless virus - a virus that remains in memory without a file present
+                Examples are Microsoft Office macros, JavaScript code, and Windows registry persistence
         
+        Understanding Botnets
+
+            Botnet - A collection of 'zombie' computers that follow orders from a command and control (CNC) system
+                Steal computing power, network bandwidth, and storage capacity of malicious means
+                Spread through other forms of malware
+                Used to deliver spam, engage in DDoS attacks, mine cryptocurrency or perform brute force attacks
+                Communications must be indirect and redundant 
+                    Such as Internet relay chat (IRC)
+                    Twitter accounts
+                    Peer-to-Peer (P2P) communications within the botnet itself
+
+                1. Infect machines with malware
+                2. Convert to bots in the botnet
+                3. Spread the infection to other machines
+                4. Check in with the CNC
+                5. Wait for instructions
+                6. Deliver payloads
+
+        Malicious Script Execution
+
+            Script - A sequence of instructions written in a programming language to automate work.
+
+                Shell scripts - Run at the command line and are integrated with the operating system.
+
+                Application scripts - Run within the software and integrate with that application.
+
+                Programming languages - Allow for the creation of general-purpose code.
+
+                    Bash - A shell scripting language used on Linux and Mac systems.
+
+                    PowerShell - Similar to bash, it allows for scripting capabilities on Windows systems.
+
+                    Macros - Scripts that run within an application to automate tasks within that application (Visual Basic for Automation (VBA)).
+
+                    Python - A general-purpose language used to create a diverse set of scripts.
+
+    Understanding Attackers
+
+            These attackers vary depending on any of the following:
+                
+                Internal or External
+                Level of sophistication
+                Access to resources
+                Motivation
+                Intent
+
+            Examples of these attackers are:
+
+                Script Kiddies - Unskilled attackers who simply reuse hacking tools developed by others.
+                    Script kiddies are easily taken care of with basic security controls such as regular patching, endpoint security software, firewalls and Intrusion Prevention Systems (IPS)
+
+                Hacktivists - Seek to use hacking tools to advance political and social agendas
+                    Usually working for a specific motivation
+
+                Organized Crime - Criminal syndicates use hacking tools such as ransomware, for financial gain
+                    May possess advanced technical skills and use them for a financial gain
+
+                Corporate Espionage - Competitors may use hacking tools and techniques for corporate espionage purposes
+                    Not limited to corporate levels, often used to obtain data that is confidential
+
+                Nation-state - Sponsored and highly sophisticated advanced persistent threats (APT) groups
+                    Often military units and very difficult to detect, and can attack civilians and other nations 
+
+            Classifying Hackers by Hats
+
+                White Hat Hackers - Operate with permission and good intent and are knowingly hacking a target with full permission to find security flaws in a system.
+                Grey Hat hackers - Operate without permission but with good intent. This type of hacking is still illegal.
+                Black Hat Hackers - Operate illegally with malicious intent.
+
+            Preventing Insider Threats
+
+                Insider threats - Risk of internal compromise from former and current employees, contractors, and other insiders who can exploit their privileged access to a system.
+
+                FUN-FACT: 51% of organizations experiencing a security breach suffered an insider attack
+                FUN-FACT: 67% of insider breaches were more costly than external attacks
+
+                These insider attacks often occur within trusted users such as executives, IT professionals, and other trusted users.
+
+                Privilege Escalation Attacks
+
+                    Privilege Escalation Attacks - Take a normal account and escalate the privilege the account has allowing them to access more of a system
+
+                To avoid insider attacks
+
+                    Perform background checks to uncover past legal issues
+                    Give users only the permissions that they need (principle of least privilege)
+                    Require multiple users to carry out sensitive operations
+                    Implement mandatory vacation for critical staff to potentially uncover fraud as the staff will be out of the office and unable to cover up their activity
+
+                Shadow IT
+
+                    Shadow IT - technology is brought into an organization by individual employees without the approval of IT professionals (USBs found in parking lots)
+
+            Attack Vectors
+
+                Attack vectors provide an attacker an initial way into the organization
+            
+                Examples of common attack vectors are:
+
+                    Email - Used to send phishing messages with malicious content or ransomware
+                    Social Media - Spread malware and can be used as part of an influence campaign
+                    USB - Removable media such as USB drives may contain media that triggers when inserted into a new device that contains malicious content
+                    Card Skimmers - Read magnetic stripes which may then be used to clone financial cards
+                    Cloud Services - These services can be improperly secured for content and systems
+                    Direct Access - Attackers can take advantage of direct access to a system through ethernet cables or open USB ports on systems and can easily compromise them.
+                    Tampering with devices in the supply chain - attackers can insert a backdoor during the supply chain to grant access in the future
+                    Wireless Networks - An easy way for attackers to gain access to an organization's network remotely
+
+            Zero Days and APTs
+
+                Zero Day attack - A vulnerability in a product that has not yet been patched by the vendor/author
+
+                    The window of Vulnerability - The time between when the zero-day vulnerability is discovered and the time when the patch is released
+                    
+                    These attacks can be mitigated by installing recent patches provided by software authors as soon as they are available
+                        Sometimes there are vulnerabilities in code even after a patch is released
+
+                    When a vulnerability is found (ethically)
+
+                        1. Notify the vendor of said vulnerabilities
+                        2. Provide a reasonable amount of time for the vendor to fix the vulnerability
+                        3. Disclose the vulnerability publicly
+
+                    When a vulnerability is found (un-ethically)
+
+                        Keep the vulnerability a secret from the author/vendor and use it to make a zero-day attack using the vulnerability
+
+                Advanced Persistent Threats (APT)
+
+                    APT - Typically well-funded and highly skilled
+                        - Typically government-sponsored such as military units
+                        - Have access to zero-day attacks and other highly sophisticated weapons
+                        - Work methodically to gain access to a target
+
+                    To prevent an APT from attacking
+
+                        - Implement strong security measures for a strong foundation (encryption and rigorous monitoring)
+
+    Threat Intelligence
+            
+            Threat Intelligence
+                    - Allows teams to stay up to date on current risks
+                    - Set of activities that an organization undertakes to educate itself about changes in the cybersecurity threat landscape, and adapt security controls based upon that information
+
+                    Open-source intelligence
+                        - Security websites
+                        - Vulnerability databases
+                        - News media
+                        - Social media
+                        - Dark web
+                        - Information-sharing centers
+                        - File and code repositories
+                        - Security researchers
+
+                        Reading through all of this open-source information can take a lot of time. Therefore, many companies use proprietary and closed-source threat intelligence solutions using predictive analytics.
+                            Products range from information briefs to real-time IP reputation information
+                            Organizations may send these feeds directly to firewalls, Intrusion Prevention Systems and other security tools to block access from suspect IP addresses
+                            A cool example of a real-time IP reputation system is on the homepage of https://threatmap.checkpoint.com/
+                        
+                        Evaluation of a Security source
+                            Timeliness - How quickly will the source publish information about the threat?
+                            Accuracy - How accurate is the data delivered by the source?
+                            Reliability - How often is the source correct in what they say or post?
+                
+            Managing Threat Indicators
+
+                Threat Indicator - Properties that describe a threat (Ex. IP addresses, malicious file signatures, communication patterns)
+
+            Sharing threat Indicators
+
+                    Cyber Observable eXpression (CybOX) - Standardized scheme for categorizing security observations with like-minded individuals
+                        Used to share properties we can share to describe intrusion attempts, malicious software, and other observable security events
+
+                    Structured Threat Information eXpression (STIX) - Used to share information between systems inside an organization
+                        A standardized language used to communicate security information between systems and organizations
+
+                    Trusted Automated eXchange of Indicator Information (TAXII) - A set of services that share security information between systems in an organization
+                        STIX but automated
+
+
+                    CybOX - Provides the Shema that we can use to classify different threats and is used to define the information elements for different languages 
+                        *EXAM TIP - cybOX is not covered on the exam, but STIX and TAXII are
+
+                    OpenIOC - Mandiant (produced by FireEye) threat framework
+                        Provides data such as file size and instructions in .dll files
+
+                    Security tools and services should support a standardized information scheme to produce and consume data efficiently.
+            
+            Intelligence Sharing
+
+                TAXII, STIX, and CybOX all facilitate information sharing.
+
+                Information sharing is beneficial for:
+                    - Incident Response Teams
+                    - Vulnerability Management Teams
+                    - Risk Management Teams
+                    - Security Engineering Teams
+                    - Detection and Monitoring Teams (SOC)
+
+                Information Sharing Analysis Centers (ISACs)
+                    - Goal is to gather and organize data from threat intelligence without jeopardizing anonymity
+            
+            Threat Research
+                - Threat research uses threat intelligence to get inside the minds of our adversaries
+                
+                Techniques Used in threat research
+                    - Reputational threat research - Identify potentially malicious actors based on their use of IP addresses, email addresses, domains, etc. that were used previously in attacks
+                    - Behavioral threat research - Identify potentially malicious actors based on the similarities of past attackers
+
+                Research sources
+                    - Vendor websites
+                    - Vulnerability feeds
+                    - Cybersecurity conferences
+                    - Academic journals
+                    - Request for comment (RFC) documents that publish technical specifications
+                    - Local industry groups
+                    - Social media
+                    - threat feeds
+                    - sources containing detail on adversary tools, techniques, and procedures (TTP)
+
+            Identifying Threats
+
+                Use a structured approach to threat management
+
+                    Asset Focus - Use the asset inventory as the basis for the analysis (system by system)
+                    Threat Focus - Identify how specific threats may affect each information system (classifying actors and how they can affect systems)
+                    Service Focus - Identify the impact of various threats on a specific service (each threat that can affect an interface)
+
+            Automating Threat Intelligence
+
+                Automating the blacklisting of IP addresses from threat feeds (firewalls, IPSs, and routers)
+                    Potentially causing service disruptions
+                    Alert-only-mode to allow access but to alert IT professionals of the threat actor's interest
+                    Use a variety of threat feeds to have a larger list of blacklisted IP addresses and for more filtering
+                
+                Incident Response
+                    Manual process that requires prior knowledge and personal experience
+                    Data Enrichment - Automatically supplements incident data for faster incident response time
+
+                    Example: An IP address is known to have visited or communicated with a system within an organization
+                        1. Perform source address reconnaissance including IP address ownership and geo-location
+                        2. Search for related logs such as similar IP addresses or similar attack strategies
+                        3. Trigger a vulnerability scan on the targeted system
+
+                Security Orchestration, Automation, and Response (SOAR) platforms enhance SIEM capabilities
+
+            Threat Hunting
+
+                Not every possible type of system is impenetrable. We must make the "assumption of compromise".
+
+                Threat Hunting - An organized, systematic approach to seeking out indicators of compromise on our networks using expertise and analytic techniques.
+                    Think like the attackers
+                    
+                    1. Establish a hypothesis based on the profile and activities, threat feeds, or vulnerability advisories/bulletins
+                    2. Find the indicators of compromise
+                        Unusual binary files
+                        Expected process or resource consumption
+                        Deviation in network traffic
+                        Unexplained log entries
+                        Unapproved configuration file changes
+                        
+                        Searching for these indicators is the core work of threat hunting
+
+                    3. Move into Incident Response Process
+                        Look for signs as to how the attacker might have moved throughout the system
+                        Start the processes of containment, eradication, and recovery
+
+    Social Engineering Attacks
+
+        Social Engineering
+
+            
+
+        Impersonating Attacks
+
+        Identifying Fraud and pretexting
+
+        Watering hole attacks
+
+        Physical social engineering
+
+    Common Attacks
+
+        Password Attacks
+
+        Password Spraying and credential stuffing
+
+        Adversarial Artificial Intelligence
+
+    Understanding Vulnerability Types
+
+        Vulnerability impact
+
+        Supply Chain vulnerabilities
+
+        Configuration vulnerabilities
+
+        Architectural vulnerabilities
+
+    Vulnerability Scanning
+
+        What is Vulnerability management
+
+        Identify scan targets
+
+        Scan configuration
+
+        Scan Perspectively
+
+        SCAP (Security Content Automation Protocol)
+
+        CVSS (Common Vulnerability Scoring System)
+
+        Analyzing scan repositories
+
+        Correlating scan reports
+
+    Penetration Testing and Exercises
+
+        Penetration Testing
+
+        Bug Bounty
+
+        Cybersecurity Exercises
+
