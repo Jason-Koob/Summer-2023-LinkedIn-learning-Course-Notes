@@ -526,7 +526,7 @@ Attacks, Threats, and Vulnerabilities (24%)
                 Integrity - There cannot be unauthorized changes to data from unauthorized sources
                     An attack seeking to break confidentiality is called an alteration attack
 
-                Availability - Data  and sources are accessible to authorized individuals when needed
+                Availability - Data and sources are accessible to authorized individuals when needed
                     An attack seeking to break confidentiality is called a denial of service attack (DoS attack)
 
             Risks
