@@ -2,7 +2,7 @@ Attacks, Threats, and Vulnerabilities (24%)
 
     Malware
 
-        Short for malicious software.
+        Malware - Short for malicious software.
 
         Comparing Viruses, worms, and trojans
 
@@ -115,7 +115,7 @@ Attacks, Threats, and Vulnerabilities (24%)
             Botnet - A collection of 'zombie' computers that follow orders from a command and control (CNC) system
                 Steal computing power, network bandwidth, and storage capacity of malicious means
                 Spread through other forms of malware
-                Used to deliver spam, engage in DDoS attacks, mine cryptocurrency or perform brute force attacks
+                Used to deliver spam, engage in DDoS attacks, mine cryptocurrency, or perform brute force attacks
                 Communications must be indirect and redundant 
                     Such as Internet relay chat (IRC)
                     Twitter accounts
@@ -159,7 +159,7 @@ Attacks, Threats, and Vulnerabilities (24%)
             Examples of these attackers are:
 
                 Script Kiddies - Unskilled attackers who simply reuse hacking tools developed by others.
-                    Script kiddies are easily taken care of with basic security controls such as regular patching, endpoint security software, firewalls and Intrusion Prevention Systems (IPS)
+                    Script kiddies are easily taken care of with basic security controls such as regular patching, endpoint security software, firewalls, and Intrusion Prevention Systems (IPS)
 
                 Hacktivists - Seek to use hacking tools to advance political and social agendas
                     Usually working for a specific motivation
@@ -266,7 +266,7 @@ Attacks, Threats, and Vulnerabilities (24%)
 
                         Reading through all of this open-source information can take a lot of time. Therefore, many companies use proprietary and closed-source threat intelligence solutions using predictive analytics.
                             Products range from information briefs to real-time IP reputation information
-                            Organizations may send these feeds directly to firewalls, Intrusion Prevention Systems and other security tools to block access from suspect IP addresses
+                            Organizations may send these feeds directly to firewalls, Intrusion Prevention Systems, and other security tools to block access from suspect IP addresses
                             A cool example of a real-time IP reputation system is on the homepage of https://threatmap.checkpoint.com/
                         
                         Evaluation of a Security source
@@ -381,41 +381,232 @@ Attacks, Threats, and Vulnerabilities (24%)
 
         Social Engineering
 
-            
+            Human Threats to Cybersecurity
+            - Manipulate people into divulging information or performing an action that undermines security
+
+                Authority - People are more likely to listen to someone with authority, creating trust
+                Intimidation - scaring and threatening them to comply
+                Consensus - The herd mentality/peer pressure
+                Scarcity - A perceived limited amount of something
+                Urgency - Time is running out
+                Familiarity - Being liked causes people to say 'yes' more often
+
+            Preventing Social Engineering
+                Education about these attacks
+                Awareness of common attacks and attack types
 
         Impersonating Attacks
 
-        Identifying Fraud and pretexting
+            Spam - Unsolicited commercial email
+                Used for a variety of marketing and identify fraud purposes
+                Most spam is illegal under the CAN-SPAM ACT
+
+            Phishing - A sub-category of spam, with the explicit purpose of obtaining information
+                Often used in the reconnaissance phase of an attack
+
+                Pre-heading - adding tags such as [URGENT] or [SAFE] to create a sense of urgency/trust
+            
+            Spear-Phishing - Sending a phishing attack to a targeted individual such as employees at a small company
+                Using company jargon or mentioning business leaders improves the likelihood of a successful attack
+                Commonly use invoice-related attacks, in hopes of someone approving the invoice without confirming the invoice
+
+            Whaling - Sending a phishing attack to a targeted individual such as a senior executive of a company
+                Sending fake court documents such as a subpoena or a recognition of being sued
+
+            Pharming - Using a fake website that is visited by phishing attacks routing to the site (Steam lookalikes)
+                Can also use DNS poisoning to get users to the site
+                Copy the look and feel of a real site and harvest credentials from users who believe the sites are the same
+
+            Vishing - Voice phishing attacks to sound like a relative or important business
+                "Hello this is your bank calling, we have been notified that someone has accessed your account, please confirm your SSN"
+                The goal is for sensitive information
+
+            Smishing/SPIM - SMS and instant messaging spam attacks
+                Attacks began via AOL and often use spoofing
+
+            Spoofing - Masking or faking an identity to pose as someone trusted or important
+
+        Identity Fraud and pretexting
+
+            Identity fraud - Targeting single individuals such as with spear-phishing or whaling
+            
+            Pre-texting - Attempting to pose as a consumer and gain access to the user's account
 
         Watering hole attacks
 
+            Watering hole attack - Commonly use malicious code in a browser or browser extension to execute code on particular sites, often causing pop-up warnings
+                When a user visits a site, they have some trust in the site
+                Web browsers and add-ons often have vulnerabilities
+
+                Attackers create malware on a site and can wait for users to come to the site
+
+                1. Attacker chooses a highly visited, and compromised site to infect
+                2. Attacker chooses a client exploit and can bundle in the joining to of a botnet
+                3. Attacker places the malware on the compromised website
+                4. Attacker waits for clients to join the botnet or do whatever the malicious code instructs such as obey a command and control system
+
         Physical social engineering
+
+            Shoulder-surfing - The attacker simply watches someone's screen, learning confidential information
+                To prevent shoulder-surfing - be aware of your surrounding and use a privacy filter
+
+            Dumpster diving - Digging through trash to find anything useful such as sensitive information
+                To prevent dumpster diving - use a paper shredder or a degausser to wipe information before being thrown away
+
+            Tailgating - slipping in somewhere behind someone such as in a man trap, or by holding a door open for somebody
+                To prevent tailgating - Education enforcing authentication at doors and entrances
 
     Common Attacks
 
         Password Attacks
+            On Linx systems, passwords are stored in a password file often stored in the /etc/password. The password is hashed using a one-way function
+                To prevent the sharing of passwords, remove the password hashes from the /etc/password file. The hashes still exist in the /etc/shadow file
+
+                    The Linux command ./unshadow combines the hashes of a user's password and username into a single file
+
+                Hash Function - A mathematical function that converts a variable-length input into a fixed-length output in a matter that is collision-resistant.
+                    - Each output must be completely different from the input
+                    - It must computationally be difficult to retrieve the input from the output
+                    - It must be computationally difficult to find two inputs that result in the same output
+                
+                Collision is when two or more inputs/outputs share a reciprocal (output/input)
+                    Birthday problem - Collisions become very common when large samples sizes are used
+                        - 367 people in a room 100% chance for 2 of them to share a birthday
+                        - 70 people in a room 99.9% chance for 2 of them to share a birthday
+                        - 23 people in a room 50% chance for 2 of them to share a birthday
+                
+            Brute Force Attack - The attacker tries all possibilities until one is correct
+
+            Dictionary Attack - Assuming people use words for passwords, try all English words as passwords
+
+            Hybrid Attacks - Assuming people use words for passwords, words, special characters, and numbers are mixed with words as passwords, + L33t and other character replacement options
+
+            Rainbow table Attacks - Comparing hashes against a list of pre-computed hashes to find the matching hash
 
         Password Spraying and credential stuffing
 
+            Password spraying - trying common passwords (rockyou.txt.gz) to attack many different accounts at the same time
+
+            Credential stuffing - After obtaining a user's password, using the same, reused, password on different sites or systems
+
+            To avoid these attacks
+                Password spraying - Implement a password requirement using length, and special characters or check against a list of common passwords
+                Credential stuffing - Promote the use of a password generator and password manager to maintain unique passwords
+                Multi-Factor-Authentication (MFA) - requires users to have a secondary form of authentication not including a password
+
         Adversarial Artificial Intelligence
+
+            Machine learning - A computer system discovers knowledge in data
+
+            Artificial Intelligence - A computer system simulates human thought
+
+                Descriptive Analytics - Describe our data through computational questions (What portion of customers are female?)
+
+                Predictive Analytics - Trying to predict the future by looking at previously collected data
+
+                Prescriptive Analytics - Seek to simulate possible options and optimize outcomes
+
+            Adversarial AI - Exploits AI techniques as listed above
+                - Could work to breach the confidentiality of machine learning algorithms
+                - Could inject tainted training data for inaccurate data sets
+                - Could try to fool working algorithms
+
+                    Tesla Model X read a 35 MPH road sign as 85 because of a piece of tape in the 3
 
     Understanding Vulnerability Types
 
-        Vulnerability impact
+        Vulnerability Impact
+            Vulnerabilities expose us to the risk of a security breach
 
-        Supply Chain vulnerabilities
+            Goals of Information Security (CIA Triad)
+                Confidentiality - The data is only accessible by authorized individuals
+                    The act of a lack of confidentiality is called data exfiltration
+                    An attack seeking to break confidentiality is called a disclosure attack
 
-        Configuration vulnerabilities
+                Integrity - There cannot be unauthorized changes to data from unauthorized sources
+                    An attack seeking to break confidentiality is called an alteration attack
 
-        Architectural vulnerabilities
+                Availability - Data  and sources are accessible to authorized individuals when needed
+                    An attack seeking to break confidentiality is called a denial of service attack (DoS attack)
 
+            Risks
+
+                Financial - The risk of monetary damage or loss to an organization or person
+                    Ransomware demanding money in exchange for system access to be returned
+
+                Reputational - When negative publicity is spread among customers, employees, suppliers, and stakeholders
+                    News spreads that a large company has had a data breach, people are less likely to want to do business with them
+
+                Strategic - A risk that an organization will become less effective at meeting its major goals or objectives
+                    An employee loses their laptop, This can delay development
+                    A Competitor can obtain the said laptop, and develop a product before the employee's company can
+
+                Operational - The risk of the ability to carry out day-to-day tasks
+                
+                Compliance - Risk involving a potential violation of laws or regulations
+                    Health Insurance Portability and Accountability Act of 1996 (HIPAA)
+            
+        Supply Chain Vulnerabilities
+
+            An important vendor-related issue is an announcement of and End of Life (EOL) of certain systems and software used in the supply chain
+                Related to patches for systems and security updates
+
+            Common phrases similar to End-of-Life
+
+                End-of-Sale - Products will no longer be offered for purchase, but the vendor will still support existing customers
+
+                End-of-Support - The vendor will reduce or eliminate support for existing users of the product. This very very close to EOL
+
+                End-of-Life - the vendor no longer provides support or updates for the product
+
+            Vendors can still fail to provide adequate support for existing products
+
+            Vendors can also use embedded systems that are not disclosed to you as a user, this embedded system must also be maintained, but it relies to be supported by the vendor
+
+            Using cloud storage for data, the vendor is supposed to manage many risks on your behalf, the vendor must provide access to the data in the future along with the rest of the CIA triad in the future
+
+        Configuration Vulnerabilities
+
+            A common mistake is using a system directly from a vendor or manufacturer in a production setting or on their network without modifying the default configurations
+                This includes :
+                    - misconfigured firewalls
+                    - Open permissions
+                    - Guest accounts
+                    - Default accounts (root/admin)
+                    - Default password (toor/admin)
+                    - Unsecured root accounts
+
+                    - Weak cipher suites
+                    - Weak cryptographic protocol implementation
+                        This can lead to all data going to and from systems related to the vulnerability to eavesdropping and tampering
+                    - Poor key management
+                    - Poor certificate management
+
+                    To avoid these vulnerabilities, follow documented security standards and baselines when configuring systems and applications
+            
+            Patch management
+                Systems receive all recent security updates/fixes for operating systems, applications, and firmware
+            
+            Account management
+                Carefully configure accounts and permissions assigned to the individual accounts to prevent accidental or intentional misuse
+                    To avoid improper account management, use the principle of least privilege, only giving accounts access to what they need and nothing more
+
+        Architectural Vulnerabilities
+
+            IT Architecture - A set of well-defined practices and processes used to design systems
+                A good practice is to implement security in the planning phase of a design and not as an after-thought
+                Untrained users and weak business processes can be just as dangerous as a technical flaw
+
+            System Sprawl - New devices are connected to a network but, old devices are still not promptly disconnected leading to security vulnerabilities
+                This is an even bigger risk when the old systems or assets are undocumented
+                
     Vulnerability Scanning
 
-        What is Vulnerability management
+        What is Vulnerability Management
 
-        Identify scan targets
+        Identify Scan Targets
 
-        Scan configuration
+        Scan Configuration
 
         Scan Perspectively
 
@@ -423,9 +614,9 @@ Attacks, Threats, and Vulnerabilities (24%)
 
         CVSS (Common Vulnerability Scoring System)
 
-        Analyzing scan repositories
+        Analyzing Scan Reports
 
-        Correlating scan reports
+        Correlating Scan Reports
 
     Penetration Testing and Exercises
 
@@ -434,4 +625,6 @@ Attacks, Threats, and Vulnerabilities (24%)
         Bug Bounty
 
         Cybersecurity Exercises
+
+
 
