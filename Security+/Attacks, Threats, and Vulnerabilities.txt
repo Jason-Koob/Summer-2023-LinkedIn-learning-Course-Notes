@@ -603,28 +603,274 @@ Attacks, Threats, and Vulnerabilities (24%)
     Vulnerability Scanning
 
         What is Vulnerability Management
+            FUN-FACT: The Linux Kernal contains over 24 million lines of code
+
+            Vulnerability Management - Detects, remediates, and reports vulnerabilities
+                A mature process includes scanning systems for vulnerabilities, tracking patches, tracking remediation, and reporting results
+
+            Steps to patching a vulnerability:
+                1. Company learns of the vulnerability
+                2. Developers analyze the issue and develop a patch
+                3. The company releases the patch to customers
+                4. Customers apply the patch
+            
+            Why Manage Vulnerabilities?
+                Maintaining system security, complying with corporate policy, and complying with regulatory requirements (PCI DSS)
+            
+            Payment Card Industry Data Security Standard (PCI DSS) - Detailed requirements for anything dealing with credit card information
+                - Quarterly Vulnerability scanning internally and externally
+                - Requires new scans when major changes are made
+                - Mandating the use of approved scanning vendors (ASV)
+                - Remediating and rescanning until a clean report is achieved
+            
+                A passing score from the PCI DSS CVSS scoring system is 4.0. Anything lower is a failure, and anything higher is passing
+            
+            Federal Information Security Management Act (FISMA) - Requires security controls in NIST Special Publication 800-53 are followed
+                - Conduct vulnerability scans regularly
+                - Analyze the results of the scans
+                - Remediate the legitimate vulnerabilities
+                - Share information with other agencies
+            
+            Scans to use
+                Network vulnerability scans
+                    - Probe any devices attached to your network
+                Application scans
+                    - Scans and tests code inside applications
+                Web Application scans
+                    - Scans for common web application flaws such as SQL injections and XSS
+                
+            Also, use configuration files and log reviews to better understand the vulnerabilities
 
         Identify Scan Targets
 
+            The first step in vulnerability management is to develop requirements
+            Asset inventories can provide a starting point for vulnerability scans
+
+            Network discovery scanners can create a list of devices on a network, including hostname, IP address, open ports, and if the device is live
+                Scanners include Nessus and Qualys
+            
+            Each asset has 3 aspects on their scans
+                Impact - What is the highest classification handled by the system
+                likelihood - How much is the device exposed?
+                    Is it behind a firewall, if so, what rules are in place, and how can it be contacted externally?
+                    What services are exposed?
+                Criticality - What impact does the system play on business operations
+
         Scan Configuration
 
-        Scan Perspectively
+            Nessus - My Scans > New Scan > Advanced Scan
+                Settings > Basic > General - Name, Description, Folder, Targets, Upload Targets(Add File)
+                Settings > Basic > Schedule - Enabled, Frequency, Starts, Timezone, Repeat Every, Repeat on(SMTWTFS), Summary
+                Settings > Basic > Notifications - Email Recipient(s), Result Filters(Add Filter)
+
+                Settings > Discovery > Host Scanning - Ping the remote Host (Enabled), Test the local Nessus Host, Use Fast network discovery
+                Settings > Discovery > Host Scanning > Ping Methods - ARP (Enabled), TCP (Enabled), Destination Ports (Built-in), ICMP
+                Settings > Discovery > Port Scanning - Consider unscanned ports as closed (Enabled) Local Port Enumerators (SSH, WMI, SNMP), Network Port Scanners (TCP and UDP)
+
+                Settings > Assessment > General - Accuracy, Avoid potential false alarms
+                    The assessment section also has tabs for Brute Force, Web Applications, Windows, and Malware
+                
+                Settings > Advanced > General - Enable Safe Checks (Avoids scans that might disrupt network functions), slow down the scan if network congestion is detected, Timeouts
+
+                Plugins - Enabling plugins to check for certain systems or vulnerabilities
+
+        Scan Perspective
+
+            Scan results differ depending on the scan perspective.
+
+            The scanner location (relative to the systems being scanned) on the network plays a crucial role in its perspective
+                Scanners can only send scans to devices if other systems such as a DMZ or firewall allow the scans to pass through them, otherwise, the scans will return as closed or incomplete
+                    Scanners can on the same network without limitations to test internal vulnerabilities
+                    Scanners can also be on the same network behind a security system such as a firewall to test the security of systems on the network such as firewalls
+                    Scanners can be external allowing for the testing of external communications to systems located on the network to test external communications
+
+                    Internal - Router | Firewall | Scanner | System
+                    Internal Limited - Router | Scanner | Firewall | System
+                    External - Scanner | Router | Firewall | System
+
+            Scanner results are limited by firewall settings, IDS/IPS rules, and network segmentation
+
+            Agent-Based Scans - Installing software on each targeted device for system internal scans instead of network scans
+
+            Credentialed Scanning - Uses passwords to login to systems and pull configuration information
+                Credentialed scanning in Nessus
+                    Credentials > Catagories(SSH/Windows) 
+                    SSH - Authentication method, Username, Private Key, Private key phrase
+                    Windows - Authentication method, Username, Password, Domain
+
+            The best practice is to not provide an administrator account but a guest account(read-only access to system configs) to better test privileged access, and not change any configs just yet
 
         SCAP (Security Content Automation Protocol)
 
+            The effort led by the National Institute for Standards Technology (NIST)
+                Create a standard consistent language and format for discussing security issues
+                Used to describe environments, vulnerabilities, and remediation steps using a consistent language
+
+            Common Vulnerability Scoring System (CVSS) - Scoring vulnerability severity
+
+            Common Configuration Enumeration (CCE) - Language for sharing system configurations
+
+            Common Platform Enumerations (CPE) - Standardized product names and versions
+
+            Common Vulnerabilities and Exposures (CVE) - Describing vulnerabilities
+
+            Extensible Configuration Checklist Description Format (XCCDF) - Language for creating and sharing checklists and the results of processing security checklists
+
+            Open Vulnerability and Assessment Language (OVAL) - Describes testing features in a programmatic fashion
+
         CVSS (Common Vulnerability Scoring System)
+
+            10 point scale
+            8 metrics
+
+                Exploitability
+
+                    Attack Vector (AV)
+                        Physical (P) - Physical touch/manipulation is required
+                        Local (L) - Physiclaor logical console access is required
+                        Adjacent Network (A) - Local network access is required
+                        Network (N) - Remotely exploitable vulnerability
+                    
+                    Attack Complexity (AC)
+                        High (H) - Requires specialized conditions
+                        Low (L) - Does not require specialized conditions
+
+                    Privilege Required (PR)
+                        High (H) - Requires administrative control
+                        Low (L) - Requires basic user privilege
+                        None (N) - Requires no prior privileges
+                    
+                    User Interaction (UI)
+                        Required (R) - Requires that a user take some action
+                        None (N) - Does not require user Interaction
+                
+                Impact
+
+                    Confidentiality (C)
+                        None (N) - No confidential impact
+                        Low (L) - Access to some information is possible
+                        High (H) - All information is compromised
+
+                    Integrity (I)
+                        None (N) - No integrity impact
+                        Low (L) - Modification to some information is possible
+                        High (H) - All information is compromised
+
+                    Availability (A)
+                        None (N) - No availability impact
+                        Low (L) - Performance is degraded
+                        High (H) - The system is shut down
+
+
+                Scope (S)
+                    Changed (C) - Exploiting the vulnerability can affect other components
+                    Unchanged (U) - Exploiting the vulnerability only affects resources managed by the same security authority
 
         Analyzing Scan Reports
 
+            Analysts need to present different data to different audiences
+            
+            5 Factors to Prioritize
+                Vulnerability severity
+                System criticality
+                Information sensitivity
+                Remediation difficulty
+                System exposure
+
+            Vulnerability Validation - Confirms the accuracy of the vulnerability by using security experience to go beyond the scanner's information. This includes using log files, and other sources of data
+                Is the report a false positive
+                    Scanners give a scan report giving data about each vulnerability found giving inputs for testing and the outputs from said tests
+                    "Is the system using the affected OS or application?"
+                    "Is the vulnerability a documented exception?"
+
+                Classifying vulnerability findings
+                                    |   Vulnerability Reported  |   Vulnerability Not Reported  |
+                    ----------------|---------------------------|-------------------------------|
+                    Exists          |       True Positive       |           False Negative      |
+                    Doesn't Exist   |       False Positive      |           True Negative       |
+
         Correlating Scan Reports
+
+            Correlate scan results with other sources of information
+                1. Industry standards, best practices, and compliance requirements (PCI DSS CVSS scoring requirements)
+                2. Technical information that already exists internally within the organization
+                    Configuration management systems
+                    Log file repositories
+                    Other data sources such as a knowledge base or data library
+                3. Trend analysis to see if an occurrence happens regularly and has been seen before (MalwareBytes and Tenable Security Center display trend information)
+                    This can lead to other vulnerabilities that are causing the occurrences
 
     Penetration Testing and Exercises
 
         Penetration Testing
 
+            The goal of a penetration test is to successfully bypass/defeat security controls
+            Before beginning a penetration test, it is important to document and understand the rules (techniques/targets)
+                Rules of Engagement (ROE) - A written document explaining what can be used during a penetration test
+            
+            Classifying Rules of Engagement
+
+                White Box - Attackers have full access to information before they begin the test (Insider attack simulation)
+                Grey Box - Attackers have limited information before they begin the test (External techniques from the black box + knowledge from the white box)
+                Black Box - Attackers have no information about the target before they begin the test (External attack simulation)
+
+            NIST suggests that penetration tests loop back and forth between the discovery and attack phases
+                Discovery Phase - Attackers conduct active and passive reconnaissance and think of possible avenues to exploit (open-source intelligence, footprinting, and war-driving to discover wireless networks)
+                    Some penetration testers conduct war-flying using wireless drones to scan for wireless networks
+                Attack Phase - Seeks to gain access to the targeted system
+                Escalate privilege to advanced privilege
+                System/network browsing to find new systems to exploit. This browsing is also known as lateral movement
+                    Install additional penetration testing tools to gain deeper access to the network
+
+                Example: If a web server is compromised, tools can be installed to gain access to the database server
+
+            Pivoting - After exploiting a vulnerability in a system, attackers use that system as a base of operations from which to target other systems on the same local network
+
+            Persistence - After exploiting a vulnerability in a system, attacks install tools on that system to allow future access (RAT or rootkits) -even if the initial vulnerability is corrected/patches
+
+            After the penetration testing is over, attackers should work with the organization to patch and clean up the systems/network to prevent a legitimate exploit in the future
+
+            Penetration testing is often labor intensive but provides valuable insight
+
         Bug Bounty
+
+            A formal process that allows security researchers to inspect an organization's systems in a controlled environment that encourages attackers to report vulnerabilities in a responsible fashion
+
+            Allowing a bug bounty system typically needs a vendor (Ex. HackerOne) who specializes in the design, implementation, and operation of the programs
+
+            Attackers will continually attack public systems scoping for reconnaissance, a majority of them are automated
+                A bug bounty program will draw the attention of skilled attackers to your systems but does so to align your interests with theirs
+                Attackers monetize their skills in a legal and legitimate manner
+                Vendors learn from the attackers and use the information from the attackers to harden their systems to prevent future, serious attacks
+
+                Vendors offer both self-managed and fully-managed bounty programs
+                
+                    Fully Managed - The vendor will validate the reports to their customers
+                    Self-Managed - The organization will handle be responsible at an earlier point
+
+                Bug bounty systems provide security analysts with a perspective of their current security controls
+
+                FUN-FACT: In 2020, the US Department of Defense paid over $100,000 to 52 participants who found 146 flaws in their systems
 
         Cybersecurity Exercises
 
+            Team exercises are beneficial because they...
+                Help find vulnerabilities in applications, systems, networks, and, organizations
+                Provide participants with hands-on experiences in attacking and securing systems
 
+                Red vs. Blue
+                    Red Team - Attackers who continually undermine the security of the Blue team
+                    Blue Team - Defenders who will continually defend from the attacks of the Red team
+                        The blue team usually gets a head start with some time to build a defense against the attacking Red team
 
+                    White Team - Observers who judge and manage the exercise
+                    Purple Team - Combine knowledge from both the Red and the Blue teams during a lesson-learned session after the exercise
+                
+                Capture The Flag (CTF) Red Teams and Blue teams work against each other attacking (Red) or defending (Blue) to keep prevent their opponents from completing objectives such as...
+                    Disrupting a website
+                    Stealing a file from a secure system
+                    Causing other security failures
+                    
+                    The exercise is scored based on how many objects are met and how many were prevented
+
+                Sandboxes - Provides a virtual environment for testing and exercises which limits the risks to production systems
