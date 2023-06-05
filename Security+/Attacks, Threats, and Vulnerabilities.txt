@@ -1,4 +1,4 @@
-Attacks, Threats, and Vulnerabilities (24%)
+Attacks, Threats, and Vulnerabilities
 
     Malware
 
