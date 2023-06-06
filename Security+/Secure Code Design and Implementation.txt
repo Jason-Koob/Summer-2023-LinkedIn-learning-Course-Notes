@@ -1,1 +1,79 @@
 Secure Code Design and Implementation
+
+    Software Development and Lifecycle
+
+        Software platforms
+
+        Development methodologies
+
+        Maturity models
+
+        Change management
+
+        Automation and DevOps
+
+    Software Quality Assurance
+
+        Code review
+
+        Software testing
+
+        Code security tests
+
+        Fuzz testing
+
+        Code repositories
+
+        Application management
+
+        Thrid-party code
+
+    Application Attacks
+
+        OWASP Top 10
+
+        Application Security
+
+        Prevent SQL injections
+
+        Cross-site scripting
+
+        Request forgery
+
+        Defend against directory reversal
+
+        Overflow attacks
+
+        Cookies and attachments
+
+        Session hijacking
+
+        Code execution attacks
+
+        Privilege escalation
+
+        Driver manipulation
+
+        Memory vulnerabilities
+
+        Race Condition vulnerabilities
+    
+    Secure Code Practices
+
+        Input validation
+
+        Parameterized queries
+
+        Authentication and session management issues
+
+        Output encoding
+
+        Error and exception handling
+
+        Code signing
+
+        Database security
+
+        Data deidentification
+
+        Data obfuscation
