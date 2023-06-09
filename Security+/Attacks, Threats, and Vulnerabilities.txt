@@ -761,7 +761,6 @@ Attacks, Threats, and Vulnerabilities
                         Low (L) - Performance is degraded
                         High (H) - The system is shut down
 
-
                 Scope (S)
                     Changed (C) - Exploiting the vulnerability can affect other components
                     Unchanged (U) - Exploiting the vulnerability only affects resources managed by the same security authority

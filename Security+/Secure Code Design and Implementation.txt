@@ -4,13 +4,157 @@ Secure Code Design and Implementation
 
         Software platforms
 
+            Endpoint Applications
+                Self-contained on a device without interacting with another system (calculator)
+
+            Client/Server Applications
+                Interact with a server on a separate system (DataBase servers)
+
+            Web Application
+                Client/Server connections across the web
+
+            Mobile Endpoints
+                Commonly run both endpoint applications and client/server applications
+
         Development methodologies
+
+            Security concerns must be integrated into every phase of development
+
+            Business requirements
+                A list of requirements from a business perspective that are crucial for meeting certain needs
+
+            Technical design
+                Software developers translate the business requirements into technical requirements to meet the business requirements
+
+            Methodologies
+
+                Waterfall model
+                    The linear process continually follows a sequence of steps, in reverse order to fix issues that may arise
+                        System requirements
+                        Software requirements
+                        Preliminary design
+                        Detailed design
+                        Code and debug
+                        Testing
+                        Operations and maintenance
+                
+                Spiral model
+                    A continuous loop between four phases in a linear line without regressing
+                        Determine objectives, alternatives, and restraints
+                        Evaluate alternatives and risks
+                        Development and testing of product
+                        Plan for future development
+
+                Agile model
+                    four value statements:
+                        Individuals and interactions
+                        Working software
+                        Customer collaboration
+                        Responding to change
+
+                    Continually showing the customer updates on how the product is, and what changes are going to be made. Updates in requirements are welcome from the customer even late in production.
+                    Works with regular intervals of updates
 
         Maturity models
 
+            Capability Maturity Model Integration (CMMI)
+                Used to assess an organization's maturity
+                Five different levels
+                    1. Initial
+                         - Just getting started with expected delays and budget overruns
+                    2. Managed
+                        - starts reusing code between projects
+                        - using configuration management 
+                        - measurement analysis and analysis 
+                        - project monitoring and control
+                        - project planning
+                        - process and product quality assurance
+                        - requirements management
+                        - supplier agreement management
+                    3. Defined
+                        - decision analysis and resolution
+                        - integrated project management
+                        - organizational process definition
+                        - organizational training
+                        - organizational process focus
+                        - product integration
+                        - requirements development
+                        - risk management
+                        - technical solution 
+                        - validation
+                        - verification
+                    4. Quantitatively Managed
+                        - organizational process Performance
+                        - quantitative project management
+                    5. Optimizing
+                        - causal analysis and resolution
+                        - organizational performance management
+            
+            IDEAL model
+                Five phases
+                    1. Initiating
+                    2. Diagnosing
+                    3. Establishing
+                    4. Action
+                    5. Learning
+
         Change management
 
+            Software development is never finished, needing support and ongoing updates/security patches
+
+            Three key elements
+                1. Request control
+                    - Allows customers to request modifications to software which are currently deployed
+                    - Developers often don't follow all requests due to limited resources
+                2. Change control
+                    - Requests that are approved by the change advisory board, allowing for change to occur
+                3. Release control
+                    - Quality assurance team tests the code in a development environment
+                    - After the changes meet the requirements from the change, the changes are released to production
+
+            Code environments
+                Development environment
+                    - Where developers create and modify code
+                Testing environment
+                    - Code is tested for faults and bugs
+                Staging environment
+                    - Code is prepared for production use
+                Production environment
+                    - Code is now used for general use
+
         Automation and DevOps
+
+            Software developers - Creating code, building applications and integrrations that meet the needs of customers and the business, and are motivated to rapidly release code
+            IT Operations Staff - Maintaining the infrastructure and keeping the enterprise stable, often being wary of change because change can bring instability
+
+            DevOps
+                Seeks to bring these two disciplines together
+                    Building collaboration between developers and operators
+                    Embraces to automation
+                    Facilitate rapid release of code
+                    Provide a stable operating environments
+                Often linked with Agile as they both seek continuous integration
+
+            Infrastructure as Code (IAC)
+                Scripts the creation of resources
+                Ex. Modifying a baseline for applications to start with booting
+                Separates server configuration from specific physical or virtual servers
+                    Advantages:
+                        - enables scaling of environments
+                        - reduces user error
+                        - facilitates testing of new code
+
+            DevOps with IT
+                facilitates security automation
+                EXAM TIP* DevOps about cybersecurity is often called DevSecOps
+                    Introduces security as code to cybersecurity
+            
+            DevOps tools
+                - Continuous validation
+                - Continuous integration
+                - Continuous delivery
+                - Continuous deployment
+                - Continuous monitoring
 
     Software Quality Assurance
 
@@ -26,7 +170,7 @@ Secure Code Design and Implementation
 
         Application management
 
-        Thrid-party code
+        Third-party code
 
     Application Attacks
 
