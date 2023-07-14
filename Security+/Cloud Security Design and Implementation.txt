@@ -1,0 +1,316 @@
+Cloud Security Design and Implementation
+
+    Introduction
+
+        Cloud Security
+            Focuses on the CIA Triad
+
+        What You Need To Know
+
+    Cloud Computing
+
+        What Is The Cloud?
+            - Delivering resources to a remote customer over a network
+            - A model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction
+
+        Cloud Computing Roles
+            Cloud service provider - offers cloud computing services for sale to third parties
+            Cloud customer - purchase cloud computing services from one or more cloud service providers
+
+            Cloud service partner - Provider add-no services
+
+            Cloud Access Security Broker (CASB) - Provide identity and access management (IAM) services
+
+        Drivers For Cloud Computing
+
+            On-demand self-service - Available when you need it
+            Scalability - Increasing capacity with demand
+                Horizontal Scaling - Adds more servers to the pool to meet increased demand
+                Vertical Scaling - adding more resources to existing servers to meet increased demands
+            Elasticity - Expanding and contracting quickly
+            Broad Network Access - Anytime, anywhere access
+            Measured Service - Paying for what you consume
+
+        Multitenent Computing
+            - Multiple customers using the same resource independently of each other
+                - Isolation - customers should not be able to tell any information about each other
+                - Oversubscription - Sold capacity exceeds actual capacity (airlines over-booking flights)
+                    - Resource Pooling - CPU and memory are shared among users
+
+        Cost-Benefit Analysis
+
+            - Is the cloud worth it?
+
+            Tangible Factors 
+                - Electricity costs
+                - Data center facility rental, acquisition, maintenance
+                - Training costs
+                - Consulting services
+                - Staff time
+
+            Intangible Factors
+                - Increased productivity and agility
+                - Improved scalability and elasticity
+                - Faster access to emerging technologies
+                - Transition from capital to operational expenditures
+                - Fun
+
+        Security Service Problems
+
+            Managed Service Providers (MSP)
+                - Offer services to customers
+            
+            Managed Security Service Providers (MSSP)
+                - Provide security services to other organizations as a service
+
+                Potential Tasks:
+                    - Manage an entire security infrastructure
+                    - Monitor system logs
+                    - Manage firewalls or networks
+                    - Perform identity and access management
+
+                *EXAM TIP* - MSSPs may also be referred to as Security as a service (SECaaS)
+            
+            Cloud Access Security Brokers add a third-party security layer to the interaction that users have with other cloud services
+                Network-based CASB - Broker intercepts traffic between the user and  the cloud service, monitoring for security issues
+                    - Broker can block requests
+                API-based CASB - The broker queries the cloud service via API
+                    - Broker may not be able to block requests, depending on the API capabilities
+
+    Virtualization
+
+        Virtualization
+            The host machine has un-used physical hardware
+            Host machine provides services to several virtualized guest machines
+            - The host machine runs software known as a hypervisor which tricks each guest into thinking it is running on dedicated hardware
+
+            Type 1 Hypervisor
+                - The hypervisor is right above the hardware with the guests on top of the hypervisor
+
+            Type 2 Hypervisor
+                - The physical machine runs an operating system of its own and the hypervisor hosting the guest operating systems
+
+            Virtualization Security
+                - Each virtual machine is isolated (critical)
+                - Each server must have access to only its memory and storage
+                    If a virtual machine can use other resources not dedicated to it, this is called a VM escape attack
+
+            VM Sprawl - A large number of unused and unmaintained servers/virtual machines
+        
+        Desktop and Application Virtualization
+
+            Virtual Desktop Infrastructure (VDI)
+                - Provides network-based access to a desktop computing environment
+                    - Example - Amazon Workspaces
+
+            Application Virtualization
+                - Streams applications to the user's desktop
+
+    Cloud Building Blocks
+
+        Cloud Compute Resources
+
+            Resources can be allocated within seconds to a virtual machine
+                CPU
+                RAM
+                Storage
+                Network connection
+                Operating system
+
+        Cloud Storage
+
+            Block Storage
+                - Allocating a large chunk of storage for access as a disk volume managed by the operating system
+                    - Magnetic drives (slower)
+                    - Solid State (faster)
+
+            Object Storage
+                - Stores files as individual objects managed by the cloud service provider
+                    - High Availability (always online)
+                    - Archival (online when needed)
+
+            - Most enterprise computing environments need both block and object storage
+
+        Cloud Networking
+
+            Virtual Private Cloud (VPC)
+                - Similar to VLANs
+            
+            Cloud networks are managed with Software-defined Networking (SDN)
+
+            Software-defined Visibility (SDV)
+                - Allows management to have external visibility of systems and resources
+
+        Cloud Databases
+
+            Options include:
+                Building a virtualized server
+                    - Spinning up a server and installing Databases
+                
+                Managed database service
+                    - The service provider acts as the database administrator but costs more for the customer
+
+                Cloud-native database platform
+                    - Using a database system designed to work in the cloud
+
+        Cloud Orchestration
+
+            Automated cloud management
+
+                Infrastructure as Code (IaC)
+                    - Management should never manage systems from the command line or GUI
+                    - Instead, they should write code that manages these systems for them
+
+        Containers
+
+            Container
+                - Lightweight application virtualization
+
+                Containers work above the containerization platform instead of needing a secondary operating system for each application
+
+    Cloud Reference Architecture
+
+        Cloud Activities and The Cloud Reference Architecture
+
+            The ISO cloud reference architecture defines cloud computing activities
+
+            Customers:
+                - Use cloud services
+                - Perform service trials
+                - Monitor services
+                - Administer security
+                - Provide billing reports
+                - Handle problems
+                - Administer tenancies
+                - Perform business administration
+                - Select services
+                - Request audit reports
+
+            Providers:
+                - Prepare systems and services
+                - Monitor services
+                - Manage assets
+                - Provide audit data
+                - Manage customer relationships
+                - Perform peering
+                - Ensure compliance
+                - Provide connectivity
+                - Many other activities
+
+            Partners:
+                - Design, create, and maintain services
+                - Test services
+                - Perform audits
+                - Set up legal agreements
+                - Acquire and assess customers
+                - Assess the marketplace
+
+        Cloud Deployment Models
+
+            Private Cloud:
+                - Organization uses a dedicated cloud infrastructure
+            
+            Public Cloud:
+                - Organization uses a multitenancy infrastructure
+
+            Hybrid Cloud:
+                - organization uses both private and public clouds
+
+            Community Cloud:
+                - Public cloud for a selected group of individuals
+
+        Cloud Service Catagories
+
+            XaaS - Anything as a Service
+
+            SaaS - Software as a Service
+                - Customer purchases the entire app (Gmail)
+
+            PaaS - Platform as a Service or FaaS - Function as a Service
+                - Customers purchase servers storage (AWS)
+
+            IaaS - Infrastructure as a Service
+                - Customers purchase app platform
+                - Middle ground between SaaS and PaaS
+
+        Edge and Fog Computing
+
+            Internet of Things - IoT
+
+            Edge Computing - Computers on the endpoint
+                - Processors on the IoT devices that send data to be analyzed
+
+            Fog Computing - Computing near the endpoint
+                - Processors on a separate device close to the IoT device which then sends the data to be analyzed
+
+        Security and Privacy Concerns In The Cloud
+
+            CIA TRIAD:
+                - Confidentiality
+                    - Protects information and systems from unauthorized access
+                
+                - Integrity
+                    - Protects data from being altered by unauthorized sources
+
+                - Availability
+                    - Allows data to be accessed when an authorized individual when needed
+                
+                - Privacy
+                    - Protects the confidentiality rights of individuals whose information we store, process and transmit
+
+                - Regular audits verify cloud service providers are fulfilling their security and operational obligations
+
+                Defense-in-Depth - having multiple preventative measures restricting the same object at multiple levels of system configurations
+
+        Data Sovereignty
+
+            Cloud service providers intentionally spread data across many different geographic locations for ease of access and to protect against regional failures
+
+            Data Sovereignty - Local laws apply to data stored there
+
+        Operational Concerns in the Cloud
+
+            Availability
+                - How much uptime is required?
+
+            Resiliency
+                - How many failures are tolerable?
+
+            - All of these concerns should be addressed in a Sevice Level Agreement (SLA) before subscribing to the service provider
+
+            Other important concerns that are more prevalent on the cloud are:
+
+                Reversibility
+                    - Can a change be rolled back to a previous state before a modification
+
+                Portability
+                    - Can a system be moved to a different location or system easily
+
+                Interoperability
+                    - Can cloud providers work together between different products
+
+    Cloud Security Controls
+
+        Cloud Firewall Considerations
+
+            Network security groups
+                - Serve as IaaS firewalls
+
+        Cloud Application Security
+
+            Application Virtualization
+                - Centralizes sensitive data
+
+            Secure web gateway
+                - Filter web traffic entering and leaving a network or device
+
+        Cloud Provider Security Controls
+
+            Resource policy
+                - Limit cloud service usage
+
+            Transit gateway
+                - A link between on-premises and cloud networks 
+            
+            Secrets management
+                - protects keys and other sensitive credentials

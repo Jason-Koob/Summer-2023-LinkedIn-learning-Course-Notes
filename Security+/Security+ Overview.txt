@@ -368,7 +368,7 @@
             CompTIA Security Analytics Expert (CSAE role)
                 Security+ exam
                 CySA+ exam
-                CompTIA Advanced Practitioner (CASP+ exam)
+                CompTIA Advanced Practitioner (CASP exam)
 
             CompTIA Security Infrastructure Expert (CSIE role)
                 CSAE role

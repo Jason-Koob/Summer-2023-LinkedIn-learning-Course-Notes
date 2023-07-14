@@ -1,0 +1,149 @@
+Network Security Design and Implementation
+
+    Introduction
+
+        Network Security
+
+        What You Need to Know
+
+    TCP/IP Networking
+
+        Introducing TCP/IP
+
+        IP Addresses and DHCP
+
+        Domain Name System (DNS)
+
+        Network Ports
+
+        ICMP
+
+    Secure Network Design
+
+        Security Zones
+
+        VLANs and Network Segmentation
+
+        Software-defined networking (SDN)
+
+    Network Security Devices
+
+        Routers, Switches, and Bridges
+
+        Firewalls
+
+        Proxy Servers
+
+        Load Balancers
+
+        VPNs and VPN Concentrators
+
+        Network Intrusion Detection and Prevention
+
+        Protocol Analyzers
+
+        Unified Threat Management
+    
+    Network Security Techniques
+
+        Restricting Network Access
+
+        Network Access Control
+
+        Firewall Rule Management
+
+        Router Configuration Security
+
+        Switch Configuration Management
+
+        Network Monitoring
+
+        SNMP
+
+        Isolating Sensitive Systems
+
+        Deception technologies
+
+    Transport Encryption
+
+        TLS and SSL
+
+        IPSec
+
+        Securing Common Protocols
+
+    Wireless Networking
+    
+        Understanding Wireless Networking
+        
+        Wireless Encryption
+
+        Wireless Authentication
+
+        Wireless Signal Propagation
+
+        Wireless Networking Equipment
+
+    Network Attacks
+
+        Denial of Service Attacks (DoS)
+
+        Eavesdropping Attacks
+
+        DNS Attacks
+
+        Layer 2 Attacks
+
+        Network Address Attacks
+
+        Wireless Attacks
+
+        Propagation Attacks
+
+        Preventing Rogues and Evil Twins
+
+        Disassociation Attacks
+
+        Understanding Bluetooth and NFC
+
+        RFID Security
+
+    Mobile Device Security
+
+        Mobile Connection Methods
+
+        Mobile Device Security
+
+        Mobile Device Tracking
+
+        Mobile Application Security
+
+        Mobile Security Enforcement
+
+        Bring Your Own Device (BYOD)
+
+        Mobile Deployment Models
+
+    Networking Tools
+
+        Ping and Traceroute
+
+        DNS Tools
+
+        ipconfig, ifconfig, and route
+
+        Netstat
+
+        Netcat
+
+        ARP
+
+        Curl
+
+        The harvester
+
+        Cuckoo
+
+        Port Scanners
+
+        Vulnerability Scanners

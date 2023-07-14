@@ -1,0 +1,301 @@
+Endpoint Security Design and Implementation
+
+    Introduction
+
+        Endpoint Security
+
+            Endpoints are attractive targets because they can allow attackers a way into a larger network
+
+    Host Security
+
+        Operating System Security
+
+            Limit administrative access to systems
+
+            Patch Management
+                - Corrects security issues
+
+            System Hardening
+                - Remove unnecessary software and operating system components
+                - Lock down the host firewall configuration
+                - Disable default accounts and passwords
+                - Confirm Windows Registry and Linux configuration settings match best practices
+
+        Malware Prevention
+
+            Virus - Malicious code objects that spread from system to system via human interaction
+            Worm - Malicious code objects that spread from system to system without the need for human interaction
+            Trojan Horse - A piece of malicious code that is attached to a legitimate software package
+            Spyware - Malicious code that gathers information often without the user knowing
+
+            Malware prevention technology
+                - Signature Detection - Watches for known patterns of malware activity
+                - Behavior Detection - Watches for deviations from normal patterns of activity
+
+            Endpoint Detection and Response (EDR) - Deep analysis of RAM usage, network connections, and other behaviors
+            
+            Sandboxing - Sending malicious code to a separate system to watch for what it does
+
+            Spam Filtering - Blocks unwanted emails
+
+        Application Management
+
+            - restricts software that may run
+
+                Whitelist - A list of all allowed applications on a system
+                Blacklist - A list of all applications that are prohibited
+
+                Send all application control logs to SIEM for further analysis
+
+                Host Software Baselining - A standard pattern for applications and system resources
+
+        Host-based Network Security Controls
+
+            Firewall - Restrict network traffic
+
+                Default Deny Rule - Any connecting which is not explicitly allowed, is denied
+
+                Network Firewall - A hardware device that stands between two networks to regulate connections
+
+                Host Firewall - A software firewall that regulates connections to and from a particular system
+
+                *EXAM TIP* - Granting network access requires configuring both network and host firewalls
+
+                Next-Generation Firewall (NGFW) - Incorporates advanced security features, such as contextual information about the user and application
+
+                Intrusion Detection System (IDS) - A system that alerts administrators to suspicious network activity
+
+                Intrusion Prevention System (IPS) - A system that actively prevents intrusions into host systems
+
+        File Integrity Monitoring
+
+            - Watches for unexpected file modifications
+                - This is done using hash functions
+            - An important part of the Defense-in-Depth approach
+
+            *EXAM TIP* - Analyzing the outputs of a file integrity monitoring system would make a good exam question
+
+            A software that allows for file integrity monitoring is called Tripwire.
+
+        Data Loss Prevention
+
+            Data Loss Prevention (DLP)
+                - technology solutions that search systems and monitor networks for sensitive and unsecured information and provide the ability to remove the information, block the transmission, or encrypt the stored data
+
+                Host-Based DLP
+                    - Uses software agents installed on a single system
+
+                Network-Based DLP
+                    - Uses software installed on firewall and network devices to monitor network traffic
+
+                Cloud-Based DLP
+                    - Operate as managed security services provided by a cloud provider
+
+                Pattern Matching
+                    - Searching for known patterns of sensitive information such as XXXX-XX-XXXX
+
+                Watermarking
+                    - Imprinting sensitive information with tags
+
+            A Host-Based Data Loss Prevention system is called Spirion.
+
+    Hardware Security
+
+        Data Encryption
+
+            AES Crypt
+                - Open-source file encryption used by the US Government
+
+            Full-Disk Encryption (FDE)
+                - Protects an entire disk
+
+            Hardware Security Module (HSM)
+                - Use dedicated hardware to encrypt, decrypt, and safely manage encryption keys
+            
+                Trusted Platform Module (TPM)
+                    - Brings hardware encryption to typical computers
+
+                Self-Encrypting Drive (SED) 
+                    - Performs encryption automatically
+
+        Hardware and Firmware Security
+
+            Operating systems are stored on and from disks
+
+            Basic Input/Output System (BIOS)
+                - Used to manage a device before an operating system is loaded
+                - Stored in firmware
+
+            Unified Extensible Firmware Interface (UEFI)
+                - Replaced BIOS with a flexible alternative
+
+                Secure Boot
+                    - Used to verify an operating system is authentic and is signed by a legitimate vendor
+
+                    1. Read the boot loader from the disk
+                    2. Compute the hash value of the boot loader
+                    3. Decrypt the boot loader's digital signature
+                    4. Verify the signature is accurate to the provided public key
+
+                    Remote Attestation - The sending of aforementioned  hash values to an external server for future use
+
+                Measured Boot
+                    - Each device verifies the hash of the next in the boot chain
+
+                Hardware Root of Trust
+                    - Verifies the firmware, used to load UEFI or BIOS has not been tampered with
+
+                Electromagnetic Interference (EMI)
+                    - Electromagnetic waves, normally generated unintentionally, that disrupt nearby electronic equipment
+
+        Peripheral Security
+
+            Peripheral Device - Any external device such as a keyboard or mouse
+                - These devices may also have security flaws
+
+                Securing a Printer
+                    - Apply patches for the operating system
+                    - Secure the printer's webs server
+                    - Encrypt print traffic with TLS
+                    - Securely wipe or destroy printer hard drives
+
+    Configuration Management
+
+        Change Management
+
+            - Ensures that an organization follows a standard process for requesting, reviewing, approving, and implementing changes to information systems
+
+            Request For Change (RFC)
+                - Standard tool to request a change is made
+                
+                Descriptions found in RFCs include:
+                    - Description of the change
+                    - Expected impact
+                    - Risk Assessment
+                    - Rollback plan
+                    - Identity of those involved
+                    - Proposed schedule
+                    - Affected configuration items
+
+                These changes are looked at by a Change Advisory Board (CAB) before the changes are made
+
+        Configuration Management
+
+            - A system that logs changes to configurations
+
+            Baselines
+                - A standard pattern of system applications and resources
+
+            Versioning
+                - A standard to assign numbers to each change to a specific number
+
+        Physical Asset Management
+
+            Asset management should follow a lifecycle approach
+
+                1. user creates a request for a piece of hardware
+                2. Inventory is updated to show the piece of hardware
+                3. The device is configured and managed by an IT staff member and delivered to a person who requested it
+                4. Upon receiving a new device, the old device is de-provisioned and properly disposed of
+
+    Embedded System Security
+
+        Industrial Control Systems
+
+            Industrial Control Systems (ISC) - Monitor and control industrial processes
+
+                Great targets for attacks
+                    - Attacks have dramatic implications
+                    - Systems are often not well secured
+                    - Systems are less likely to be updated because they don't have time to update
+
+                Supervisory Control and Data Acquisition (SCADA)
+                    - Remotely monitor systems
+                    - remote telemetry
+                    - report back to control systems
+                    - Multiple points of attacks
+
+                Distributed Control Systems (DCSs)
+                    - Focuses on controlling processes
+                    - uses sensors and feedback systems
+                    - Also has multiple points of attack
+
+                Programmable Logic Controllers (PLCs)
+                    - Handles specialized input and output
+                    - Ensures uninterrupted processing
+                    - Connect to a Human Machine Interface (HMI)
+
+                        Modbus Protocol - Allows for simple communication between devices for PLCs using a serial connection
+
+        Internet of Things
+
+            These smart devices often difficult to update software and their underlying operating systems
+
+            Connect to the same wireless networks as our homes or offices
+
+            Often connect back to cloud services for command and control instructions
+
+        Securing Smart Devices
+
+            Check for any weak or default passwords
+
+            Firmware Version Control - Updates are applied in an orderly fashion when they are available
+
+            Security Wrappers - scans requests for embedded systems
+
+        Secure Networking for Smart Devices
+
+            Network segmentation - Placing untrusted devices in a network of their own
+
+            *EXAM TIP* - Mainframes are to be treated like an embedded device
+
+        Embedding Systems
+
+            Embedded System
+                - technology components of an Internet of Things (IoT) device that places a full computer inside another, larger system
+
+                    System on a Chip (SoC)
+                        - Combines processing, memory, networking, and other embedded system components on a single chip
+
+                    Field-Programmable Gate Arrays(FPGAs)
+                        - Chips that allow for dynamic reprogramming
+
+                Embedded devices communicate with each other using a Controller Area Network (CAN Bus)
+
+        Communications for Embedding Devices
+
+            Some devices can use 4G and 5G cellular connections
+
+                These devices require a Subscribed Identity Module (SIM) card
+
+    Scripting and Working at the Command Line
+
+        Shell and Script Environments
+
+            Script - A detailed list of automated instructions for a computer to follow
+
+            Secure Shell (SSH) - A remote connection port commonly on Port 22
+
+            PowerShell - Windows automation language
+
+            Python - General purpose programming language
+
+        File Manipulation
+
+            Cat command - Shows the contents of a file
+
+            Head command - Shows the first few lines of a file
+
+            Tail command - Shows the last few lines in a file
+
+            Grep Command - Search a file for specific words in a file
+
+            Logger command - Adds a line to the system log
+
+        Linux File Permissions
+
+            Chown - Changes file or directory user owner
+
+            Chgrp - Changes file or directory group owner
+
+            Chmod - Changes permissions of a file or directory

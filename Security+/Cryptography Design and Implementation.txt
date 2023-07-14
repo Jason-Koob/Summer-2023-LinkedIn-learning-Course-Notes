@@ -1,0 +1,752 @@
+Cryptography Design and Implementation
+
+    Introduction
+
+        Cryptography Design and Implementation
+
+            Used to protect data from spying eyes
+                When the data is at rest and during transit over a network
+
+        What You Need to Know
+
+    Encryption
+
+        Understanding Encryption
+
+            Protects sensitive data from unauthorized
+
+            Cryptography - The use of mathematical algorithms to transform information into an encrypted form that is not readable by unauthorized individuals
+
+            Cryptography depends on encryption and decryption
+                Encryption - Converts information from plaintext into ciphertext formats
+                Decryption - Converts ciphertexts messages back into their plaintext formats
+                    Algorithm - A set of mathematical instructions used to convert information between formats
+
+                Encryption uses two inputs, a plaintext message (P), and an encryption key (K)
+                    Encryptions output a single encrypted ciphertext (C)
+
+                Decryption also uses two inputs, a ciphertext (C), and a decryption key (K)
+                    Performs a process to convert the ciphertext back into plaintext (P)
+
+        Symmetric and Asymmetric Cryptography
+
+            Symmetric and Asymmetric encryption algorithms (Public Key Cryptography)
+                Symmetric (Shared Secret) - Encryption and decryption use the same secret key
+                    For each link between nodes, a new key is required for the nodes to communicate securely
+                    This formula can be found by using (n(n-1))/2
+
+                Asymmetric - Use different keys for encryption and decryption from the same pair
+                    Each node gets a public key and a private key
+                    Anything encrypted with one key from a pair can be decrypted with the other key from the same pair
+                    Slower than Symmetric Cryptography
+
+        Goals of Cryptography
+
+            1. Confidentiality - Unauthorized individuals are unable to read contents of messages not meant for them
+                Data at rest - Data stored in an HDD or other storage device
+                Data in transit - Data that is being transmitted over a network connection
+                Data in use - Data stored in memory, where it is being actively used
+            2. Integrity - Protects data from unauthorized modification
+            3. Authentication - Proof of identity claims
+            4. Obfuscation - Hiding sensitive data
+            5. Non-Repudiation - Verification of origin (digital signatures)
+                Only possible with asymmetric cryptography
+            
+            Stronger encryption = Longer time to process = more computing power needed // more resources needed
+
+        Codes and Ciphers
+
+            Code = A system that substitutes one word or phrase with another
+                Trucker code - 10-4 == I acknowledge your message
+
+            Cipher - Systems that use mathematical algorithms to encrypt and decrypt messages
+                Stream Cipher - Operates on one character, or a bit of a message at a time
+
+                Block Cipher - Operates on a large segment of the message at the same time
+
+                Substitution Cipher (rotation cipher) - Change characters in a message
+                    Often referred to as a ROT cipher followed by the number of characters rotated
+
+                Transposition Cipher - Don't change characters in a message, but rearrange them
+
+        Cryptographic Math
+
+            Exclusive Or (XOR)
+                A logical operation when one, and only one, value is true
+            
+            Cryptography relies on pseudo-random number generation because we lack truly random numbers
+
+            Confusion - Every bit of the ciphertext must depend upon more than one bit of the encryption key
+            Diffusion - Changing a single bit of the plaintext should change about 50% of the ciphertext bits
+            Obfuscation - Uses cryptography to hide the source code from users
+
+        Choosing Encryption Algorithms
+
+            Security through Obscurity - The security of an algorithm depends upon the secrecy of its approach
+
+            Encryption algorithms are useful if they are proven to be secure.
+
+            Some algorithms allow for a specified key length
+                Longer key == harder to crack == harder to encrypt/decrypt
+
+        The Perfect Encryption Algorithm
+
+            One-Time Pad (1882)
+                - Unbreakable encryption algorithm
+                - Sender and receiver each have identical pads of random letters
+                - Key is as long as the text
+                - Plaintext a(1) is added to key b(2) to create ciphertext c(3)
+                    - repeat until the raw plaintext is encrypted
+                - To decrypt, ciphertext characters - key = decrypted plaintext
+
+        The Cryptographic Lifecycle
+
+            1. Initiation - gathering requirements for the new cryptographic system
+                This should include the specific cryptographic goals needed
+            2. Development and Acquisition - The organization finds an appropriate combination of hardware, software, and algorithms that meet goals
+            3. Implementation and Assessment - Configure and test the cryptographic system
+            4. Operations and Maintenance - Ensure the continued and secure operation of the cryptographic system
+            5. Sunset - Phases out and destroys/archives keying material
+
+    Symmetric Cryptography
+
+        Data Encryption Standard (DES)
+            Designed and implemented in the 1970s by IBM
+            Intended to serve as the federal encryption standard
+            Replaced untested algorithms used by agencies
+            Enhanced interoperability of communications
+
+            Uses 4 bits of input
+            Runs through an operation called the Feistel function 16 times for encryption
+
+            Each Feistel function uses both substitution and transposition
+                Each function takes half a block of input and combines it with a 48-bit piece of the encryption key
+                    That output is broken up into 8 segments and they are labeled S0-S7
+                        Each box is changed using substitution and combined again into a P box which undergoes transposition
+
+            - Symmetric Encryption algorithm
+            - block cipher operating on 64-bit blocks
+            - Key length of 56-bits
+            Now considered Insecure
+        
+        3DES
+
+            Applies DES 3 times
+                Uses 3 different keys (K0-K2)
+                    Key strength = 112 bits
+                K0=K2, resulting in fewer keys
+                    Key strength = 80 bits
+                K0=K1=K2
+                    Emulates DES and is just as insecure
+            
+            Using DES three times helps to defend from Meet-In-The-Middle attack
+
+            3DES has now been phased out.
+
+            - Symmetric Encryption Algorithm
+            - 64-bit segment blocks
+            - When using 3 keys, it has an effective key strength of 112 bits
+
+        AES, Blowfish, and Twofish
+
+            Advanced Encryption Standard (AES)
+                - Rijndael algorithm won a competition
+                - Also uses both substitution and transposition
+                - Still used today
+
+                Using aescrypt on Linux to encrypt:
+                    aescrypt -e -p passw0rd -o outputFile.aes plainText.txt
+
+                Using aescrypt on Linux to decrypt:
+                    aescrypt -d -p passw0rd outputFile.aes
+
+                - Symmetric Encrypt Algorithm
+                - Block cipher operating on 128-bit blocks
+                - allows key lengths of 128, 192, or 256 bits
+            
+            Blowfish (1993)
+                - Is a public-domain algorithm
+                - Designed as a replacement for DES
+                - Uses Fiestel network
+                - Combines substitution and transposition
+
+                - Symmetric Encryption Algorithm
+                - Block cipher operating on 64-bit blocks
+                - Any key length you'd like between 32 and 448 bits
+                -  Not secure anymore
+
+            Twofish
+                - Also designed to replace DES
+                - Placed in the public domain
+                - Fiestel network
+
+                - Considered secure today
+
+        RC4
+
+            Intended to encrypt network traffic in 1987 but went public in 1994 due to a leak
+
+            Network Layer
+                - Wired Equipment privacy (WEP)
+                - Wi-Fi-Protected Access (WPA)
+
+            Application layer
+                - Secure Sockets Layer (SSL)
+                - Transport Layer Security (TLS)
+            
+            RC4 uses a pseudorandom keystream of bits as an encryption key
+            - No longer secure           
+            - Symmetric Encryption algorithm
+            - Stream cipher
+            - Key length of between 40-2048 bits
+
+        Cipher Modes
+
+          Cipher Mode
+            -  Describes how an algorithm encrypts and decrypts data
+
+            Electronic Codebook (ECB) Mode
+                - Breaks plain text into multiple segments of length equal to the key-length
+                - Encrypting the same block with the same key in ECB will produce the same ciphertext blocks
+
+            Cipher Block Chaining (CBC) Mode
+                - The plaintext is segmented into 64-bit blocks
+                - The first block is combined with an initialization vector using the exclusive OR (XOR) operation
+                - CBC then combines this XOR output with the encryption key
+                    - Moving to the next segment, the next plaintext segment is XOR'd with the previous which then produces a new ciphertext block
+                    - This new ciphertext is combined with the same encryption key
+
+            Counter Mode (CTR)
+                - A random value known as a nonce and a counter value starting at 0 are both used.
+                - The value created by the nonce and the counter is encrypted with the encryption key and then XOR'd with the plaintext to produce the ciphertext block
+                    - The next segment is the same as the previous except the counter value is increased by 1
+
+            Galois/Counter Mode (GCM)
+                - Adds authentication capability
+                - Variant of CTR mode
+
+            Some cipher modes have authentication, and others require authentication from other sources like an application or operating system
+
+            *EXAM TIP* Counter Mode allows block ciphers to act more like stream ciphers
+
+        Steganography
+
+        - Hides data in large files
+        - Commonly used to hide data in high-resolution images
+            - Making slight modifications to pixels in images to hide information
+
+        OpenStego
+            - A program to encrypt an image with a text file, combining the two into another image file using a password
+
+    Asymmetric Cryptography
+
+        Rivest, Shamir, Adelman (RSA)
+            Created by Ron Rivest: Creator of RC4 cipher, Adi Shamir, and Leonard Adleman in 1977
+
+            *EXAM TIP* Users create an RSA key using two large prime numbers creating a public key and a private key
+
+            The sender encrypts the message using the recipient's public key
+            The recipient decrypts the message using their private key
+
+            RSA encryptions and decryptions are fairly slow
+                Instead, RSA is used to make a secure channel to share symmetric keys between nodes
+
+            RSA patent is expired
+
+            - Asymmetric Encryption Algorithm
+            - Variable length keys between 1024 and 4096 bits long
+            - Considered secure
+
+        RGP, and GnuPG
+
+            PGP is still used today through the OpenPGP standard
+                - Used public and private key pairs
+                - Combines both symmetric and asymmetric cryptography
+
+                1. The sender has the plaintext and then generates a random symmetric encryption key
+                2. The sender encrypts the plaintext data with the symmetric key
+                3. Encrypts the random key using the recipient's public key
+                4. The send then transmits the encrypted message which holds both the encrypted data and the random key
+
+                5. The recipient first decrypts the random key using their private key
+                6. Then, they use the random key to decrypt the encrypted file holding the plaintext
+
+                PGP products are now used in commercial products
+                GnuPG is free to use
+
+            Gnu Privacy Gaurd (GnuPG)
+                - Free
+
+            Creating a GnuPG key pair on Linux
+                1. gpg --gen-key
+                    The user will then be prompted to select two key formats to use
+                        (1) RSA and RSA (default)
+                        (2) DSA and Elgamal
+                        (3) DSA (Sign only)
+                        (4) RSA (sign only)
+
+                2. Using RSA, the user will be prompted to select a key size (default is 2048)
+                3. Then the user is prompted to determine an expiration time for the key
+                    3a. 0 means the key will never expire, if chosen, the user will be prompted to confirm
+                4. The user then needs to construct a user ID to identify the key using a real name, email, and comment
+                5. Next the user can assign a passphrase (password), then re-enter the passphrase to confirm
+
+                    Each person involved must create a public and private key pair
+
+                    To view a key, use the following command:
+                        gpg --armor --export name@email.org
+                    
+                    To save the key to a file use the following command:
+                        gpg --armor --export name@email.org > outputFile.pub
+                    
+                The send and receiver must have access to each other's public key
+
+                    Importing the recipient's key using the command:
+                        gpg --import name.pub
+                    
+            To encrypt files with GnuPG:
+                1. Run "gpg --encrypt --armor > inputFile.txt"
+                2. Declare the email address of the recipient when prompted
+                    2.a Confirm the user(sender) knows the recipient's encryption key
+                    2.b Prompt if the message is going to anyone else
+            
+            To decrypt files with GnuPG:
+                1. Save the encrypted file
+                2. Run "gpg --decrypt outputFile.txt"
+                3. Input the passphrase used to encrypt the file
+
+            PGP relies on other encryption algorithms to work properly
+
+        Elliptic-curve and Quantum Cryptography
+
+            Elliptic Curve Cryptography (ECC) - Uses the EC discrete log problem
+
+            Quantum Computing - Uses quantum mechanics principles
+                - Able to attack Elliptic curve cryptography
+
+        Tor and perfect forward secrecy
+
+            The Onion Router (TOR) - Uses encryption and relay nodes to facilitate anonymous internet access
+
+                Tor browsers access tor nodes, randomly choosing around 3 to route traffic
+                    Each node only knows the identity of the node before and after it
+                
+            Perfect Forward Secrecy - Hiding details of nodes from each other along a path
+                Each hop is encrypted so that only the designated node can decrypt the message and route it accordingly
+
+    Key Management
+
+        Key Exchange
+
+            Out-of-Band key Exchange - two nodes agreeing on a form of key exchange that they both trust, using a different communication channel
+
+            In-Band Key Exchange - Secure key exchange over a network, even if they don't have another means of communication
+
+        Diffe-Helman
+
+            - Provides symmetric key exchange capability
+            - Based upon work by Ralph Merkle
+            - Implemented by Whitfield Difie and Martin Hellman
+
+            How It works:
+                1. Two parties communicate to agree upon a shared key. This is known as the common key
+                2. Each party creates their secret key
+                3. Each party combines the common key with their secret key
+                4. They exchange their combined keys with each other
+                5. Knowing each other's combined key, they each combine the other's combined key with their secret key
+                    5.a This should result in the same key, known as the shared secret key
+
+        key Escrow
+
+            Encryption Key Escrow - Allows government access to keys if certain conditions are met
+                governments want access to keys to get information
+                users want to keep their privacy
+
+            Recovery Agents - Master key allowing access
+
+        Key Stretching
+
+            Key Stretching - taking a relatively insecure value, such as a password, and using mathematical techniques to strengthen it, making it harder to crack
+                Salt - adding a value to the encryption key to make it more complex
+                Hashing - Adding time to the verification process by requiring more mathematical functions
+
+                - Makes repeated incorrect passwords take longer to compute
+            
+            Password-Based Key Derivation Function v2 (PBKDF2) - using salting and hashing to stretch a key
+                - Recommended to repeat this process over 4000 times
+
+            Bcrypt - Key stretching with blowfish using salts
+
+        Hardware Security Modules
+
+            Hardware Security Modules (HSM) - Specially purposed computing devices designed to manage encryption keys and manage cryptographic operations
+                - Reduce the likelihood of being cracked as they never interact with humans
+                - Government-mandated by FIPS, 140-2 telling how they can be used
+
+                HMS Levels:
+                    1 - Standard operating systems, no physical security
+                    2 - EAL2 software and firmware, tamper-evident controls
+                    3 - EAL3 software and firmware, tamper-resistant controls
+                    4 - EAL4 software and firmware, strict physical security
+
+    Public Key Infrastructure
+
+        Trust Modules
+
+            Requirements for Key Exchange:
+                Two parties must be confident that they are communicating with each other and that neither one is an imposter
+                The two parties must be confident that nobody is eavesdropping on the key exchange
+            
+            Asymmetric Cryptography
+                Users don't need to share their private keys
+                Users can (and should) share their public keys freely
+                Eavesdropping protection isn't needed during key exchange
+                Still need to prevent imposters
+
+            Trusts Models
+                Personal Knowledge
+
+                Web of Trust (WOT)
+                    - Relies on indirect relationships
+                    - Builds trust of others by having known connections vouch for their public key
+
+                    Downsides:
+                        - Decentralized approach
+                        - High barrier to entry
+                        - requires technical knowledge
+
+                Public Key Infrastructure (PKI)
+                    - Centralized authorities
+
+        PKI and digital certificates
+            - Uses Certificate Authorities (CA)
+                - Trusted third-party organizations that verify the identity of individuals or organizations 
+                - Then issue digital certificates containing both identity information and a copy of the subject's public key
+                - Fairly similar to the system used in government identification (DMV)
+                    - Requires multiple forms of identification
+            
+            Certificate Authorities
+                - Require multiple forms of identification such as 
+                    - An official photo ID
+                    - A credit card
+                    - Personal information (full name, home address, SSN)
+                    - Payment Info
+
+        Hash functions
+
+            Hash function - One-way function that transforms a variable length input into a unique, fixed-length output
+
+            Failing as a hash function
+                - Reversible
+                - Not collision resistant (two inputs sharing an output)
+            
+            Message Digest 5 (MD5)
+                - Created in 1991 by Ron Rivest
+                - Message Digest is another term for hash
+                - MD5 produces 128-bit hashes
+                - no longer secure
+
+            Secure Hash Algorithm (SHA)
+                - Government standard created by NIST
+
+                SHA-1
+                    - Produces 160-bit hash
+                    - Contains flaws
+                
+                SHA-2
+                    - Contains 6 different hash functions
+                    - Produces outputs of 224, 256, 384, and 512 bits
+                    - Mathematically similar to SHA-1 and MD5
+                
+                SHA-3
+                    - Designed to replace SHA-2
+                    - Completely different mathematical function than SHA-2
+                    - Produces hash of any length
+
+                Some people don't trust SHA algorithms because they were created by NIST with the purpose of government involvement
+
+                RIPEMD
+                    - Created an alternative to government-sponsored hash functions
+                    - Produces 128, 160, 256, and 320-bit hashes
+                    - Contains flaws in the 128-bit version, but 160 and above are still secure
+                        - Used in Bitcoin transactions
+
+                Hash-based Message Authentication Code (HMAC)
+                    - Combines symmetric cryptography and hashing
+                    - Provides authentication and integrity
+                    - Create and verify message authentication code by using a secret key in conjunction with a hash function
+
+                Hash functions are used with asymmetric cryptography for digital signatures and digital certificates
+
+        Digital Signatures
+
+            - Used to achieve the goals of integrity, authentication, and non-repudiation for asymmetric cryptography
+
+            Once a digital signature is authenticated, the recipient knows:
+                1. The owner is the person who signed the message (authentication)
+                2. The message was not altered after being signed (integrity)
+                3. the recipient can prove these facts to a third-party (non-repudiation)
+            
+            Hash functions depend on:
+                - Hash functions are collision-resistant
+                - Asymmetric cryptography
+            
+            Digital signatures are signed with a private key, so anybody with the corresponding public key can verify the message
+
+        Digital Signature Standard
+
+            - Published by NIST
+            - FIPS 186-4
+
+            Approved DSS Algorithms
+                - Digital Signature Algorithm (DSA)
+                - Rivest-Shamir-Adelman (RSA)
+                - Elliptic Curve Digital Signature Algorithm (ECDSA)
+
+        Create a Digital Signature
+
+            Follows the X-509 Standard
+                - Created by the International Telecommunication Union (ITU)
+
+                Creating a Digital Signature
+                    1. Alice creates a public/private key pair of their choice
+                    2. Alice then creates a Certificate Signing Request (CSR) which contains identifying information
+                    3. Sends CSR to CA
+                        3.a If the CA is a third party, they are known as a Registration Authority or RA
+                    4. The CA or RA validates Alice is Alice
+                    5. The CA or RA removes the Public key identification from the CSR and formats it to X.509
+                    6. The CA or RA then signs the X.509 with their digital signature to prove the authenticity
+
+                    Subject Alternative Name (SAN)
+                        - Alternative names for a specific name given by an authority
+
+                Creating a Certificate Signing Request on a Linux system:
+                    1. opensll req -new -newkey rsa:2048
+                    2. Provide a password/passphrase twice
+                    3. Provide information such as: 
+                        Country name
+                        State
+                        City
+                        Organization name
+                        Organization unit name
+                        Common name(server/DNS name)
+                        Email address
+                        And a challenge password
+
+        Revoke a Digital Signature
+
+            Revoking a certificate always involves the CA
+                - Certificate revocation List (CRL)
+                    - A list of revoked certificate's serial numbers
+                
+                - Online Certificate Status Protocol (OCSP)
+                    - Sending a request to the certificate's CA to verify the certificate is still active
+                    - Most commonly used in browsers except for google chrome, which uses its proprietary approach
+
+        Certificate Stapling
+
+            OCSP places a large burden on the CAs servers for checking the activity of certificates
+
+            Certificate Stapling - Used to reduce CA OSCP server stress
+
+            Normally:
+                - User requests site 
+                - User accesses site and gets sites certificate
+                - User's browser checks certificate CA for certificate status
+                - Certificate's CA responds with the certificate's status
+            
+            Certificate Stapling: 
+                - The web server contacts its CA for proof of the status of the certificate
+                - The response from the CA is attached (stapled) to the certificate
+
+                - User requests site
+                - The user loads the site, the certificate, and the CA response showing the status from the CA
+
+                - Another user requests the site
+                - The site reuses the CA response
+
+            Stapled certificates often expire after 24 hours of the request
+
+        Certificate Authorities
+
+            Certificate Authorities charge fees for their service when creating a new certificate
+
+            Self-Signed Certificates
+                - An organization sets up its certificate authority
+                - These certificates are only trusted for internal use and are not trusted by the outside world
+
+            Certificate Chaining
+                - Internal CA request validation from a third-party CA
+                - This allows the internally create certificates to be trusted by external users
+                    - The organization that assigns their certificates is then known as the intermediate certificate authorities
+                
+            Offline CAs
+                - Protect sensitive root keys
+                - Intermediate CAs (online CAs) communicate with the root CAs to
+
+        Certificate Subjects
+
+            Certificate Subject - Entity that owns the public key for a certification
+
+            Object Identifiers (OID) - String of numbers listed inside certificates
+                - Used to identify the origin of a digital certificate
+                - Used to securely identify a public key with an entity
+
+            Object Identifiers can be used in:
+                - Servers - web, SSH, file, email, etc.
+                - Devices - SANs, routers, switches, VPNs, WAPs, etc.
+                - Individuals - names, emails addresses
+                - Developers - for code signing
+
+            Certificate Pinning Attacks
+                - technology that tells users they should not expect certificates to change
+                - This can tell users to remember/pin the certificate for an extended period
+
+        Certificate Types
+
+            Root Certificates
+                - Protects CA private keys
+                - Used to authenticate intermediate CAs
+
+            Wildcard Certificate
+                - Used to declare an entire domain is secure (example - example.google.com is a sub-domain covered by a wildcard certificate)
+                - Wildcard certificates only go one level deep, allowing for single-level sub-domain certificates
+                
+                - Wildcard certificates are commonly used for load balancers
+                    - Works without requiring administrators to obtain and install individual certificates for each sub-domain
+
+            Domain Validation (DV) certificates
+                - Used to verify domain ownership
+                    - Has the lowest level of trust
+            
+            Organizational Validation (OV) certificates
+                - Used to verify the ownership of the domain (DV) but also verifies the business name
+
+            Extended Validation (EV) certificates
+                - Requires extended investigation of the legitimacy and physical business holding the certificate
+                - The highest level of trust
+
+        Certificate Formats
+
+            Distinguished Encoding Rules (DER)
+                - Binary certificate format
+                - Stored in .DER .CRT .CER file extensions
+
+            PEM certificates
+                - Stands for Privacy Enhanced Mail
+                - ASCII text versions of DER certificates
+                - Able to be converted between .DER and .PEM with OpenSSL
+                - Usually stored in .PEM or .CRT extensions
+
+            *EXAM TIP* .CRT file extensions are unable to be distinguished without looking inside the file to prove if it is binary or ASCII
+
+            Personal Information Exchange (PFX)
+                - Binary form
+                - Commonly used in Windows systems
+                -.PFX or .P12 file extensions
+                    - Can also be stored in a text format with .P7B file extensions
+                        - .P7B files are the ASCII text equivalent to PFX certificates
+
+    Cryptanalytic Attacks
+
+        Brute Force Attacks
+
+            The attacker simply guesses keys repeatedly
+                - Also known as ciphertext attacks
+
+            Simple Rotation cipher attack
+                - Can also be brute-forced very easily
+                - The key space is 25, as there are 26 letters in the alphabet
+            
+            - The amount of total possible keys is called a key space (2^b=t)
+
+            - Short keys such as ones that use 56 bits of encryption in DES can still be secure to brute force
+                - 56 bits of binary is equal to 72 quadrillion key spaces
+            - Flawed algorithms may be vulnerable to brute-force attacks
+
+        Knowledge-based Attacks
+
+            Frequency Analysis
+                - Detecting patterns in ciphertext
+            
+            Known Plaintext Attack
+                - The attacker has access to the unencrypted message and the encrypted message to compare
+
+            Chosen Plaintext Attack
+                - Attacker can create an encrypted message of their choice
+            
+            Birthday Attack
+                - Attackers search for possible collisions in a hashing algorithm
+
+        Limitations of Encryption Algorithms
+
+            - Some algorithms are faster than others
+                - Generally, longer keys are longer to make and harder to break
+                    - This means longer keys require more computing power
+            
+            - Some key choices may have flaws or vulnerabilities in them
+            
+            - Reusing the same key for an extended time can prove to be dangerous
+
+            - Entropy reducing the predictability of cryptographic methods
+
+            - Downgrade Attacks
+                - An attacker tricks two communicating systems into not encrypting messages or using a weak form of encryption
+
+    Cryptographic Applications
+
+        TLS and SSL
+
+            Transport Layer Security
+                *EXAM TIP* TLS uses pairings of encryption and hash functions known as cipher suites
+                *EXAM TIP* Session keys are also known as ephemeral keys
+                
+                1. Browser requests to use TLS on a website
+                2. Browser sends the website a list of cipher suites it supports
+                3. The website responds with a cipher suite for them to use, and the server's digital certificate
+                4. The browser checks the status of the certificate (name, activity)
+                5. The browser creates a random encryption key called the session key and sends it to the website, which is encrypted with the website's public key
+                6. The website decrypts the session key with its private key and the browser and website communicate using the session key
+
+            Secure Socket Layer
+                - Precursor to TLS
+                - Contains known security flaws
+
+        Information Rights Management
+
+            Systems put in place to protect business' intellectual proprietary
+            
+            Goals of Information Rights Management (IRM)
+                - Enforcing data rights
+                - Provisioning access
+                - Implementing access control models
+
+            Digital Rights Management (DRM)
+                - Provides content owners of intellectual property with the technical means to prevent the unauthorized use of their content through the use of encryption technology
+                    - Commonly used with musical content (FairPlay)
+
+                - Businesses can also use DRM for:
+                    - Protection of trade secrets
+                    - Limit redistribution of information
+                    - Revoke access after expiration dates
+
+        Specialized Use Cases
+
+            - Some cryptographic applications require operation at extremely low-power levels
+                - Satellites
+                - Smart cards
+            
+            - Networked cryptography requires very low latency
+                - VPN hardware
+            
+            - High resiliency requires the protection of encrypted data against loss
+
+            - Homomorphic encryption
+                - Encryption algorithms used to create ciphertext outputs which allow computations that generate an encrypted result which, when decrypted, matches the result of computation on the plaintext
+                    - An encrypted file that does not change from computations
+
+        Blockchain
+
+            - Distributed, immutable, public ledger
+                - Transparent, public repository
+                    - Can be used for public purchases, or supply chains for food sourcing, birth certificates, and death certificates

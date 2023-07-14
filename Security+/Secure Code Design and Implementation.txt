@@ -124,7 +124,7 @@ Secure Code Design and Implementation
 
         Automation and DevOps
 
-            Software developers - Creating code, building applications and integrrations that meet the needs of customers and the business, and are motivated to rapidly release code
+            Software developers - Creating code, building applications and integrations that meet the needs of customers and the business, and are motivated to rapidly release code
             IT Operations Staff - Maintaining the infrastructure and keeping the enterprise stable, often being wary of change because change can bring instability
 
             DevOps
@@ -159,65 +159,380 @@ Secure Code Design and Implementation
     Software Quality Assurance
 
         Code review
+            - Uses peer analysis to access code and check for vulnerabilities or other issues.
+
+            Formal Inspection
+                - Fagan Inspection - follows a formalized, six-step process to review code.
+                    Planning - Preparing materials, identifying participants, and scheduling the review
+                    Overview - Assigning roles to participants, and providing an overview of the software
+                    Preparation - Participants independently examine the code for potential defects
+                    Meeting - Reviewers discuss and formally identify any code defects or issues
+                    Rework - Defects are corrected which are identified during the meeting, if the defects are significant, return to the planning phase
+                    Follow-Up - Verifying the defects were resolved and completing project documentation
 
         Software testing
 
+            Model Validation
+                Ensures software produced is meeting business standards and requirements
+
+            Model Verification
+                Ensures software produced is working properly
+
+            Stress Testing
+                Using automated scripts to test the capacity of a system
+                These stress testing services can either be internal or external
+                These tests are used to ensure the system can handle the maximum load expected in the business requirements
+            
+            User Acceptance Testing (UAT)
+                Ensures software will work for users
+                Can be called Beta Testing
+            
+            Regression Testing
+                Checks for unexpected side-effects
+                using the same input to the original system and the modified system to get the same result
+
         Code security tests
+            Checks software for security flaws
+
+            Code Security Tests
+                Use technology to inspect the software
+
+            Static Testing - Using automated techniques to analyze code for errors and security flaws without actually executing it
+        
+            Dynamic Testing - Execute code to verify it is functioning correctly and doesn't have any security flaws
+
+            Synthetic Transactions - Scripted sets of inputs and expect known expected outputs
 
         Fuzz testing
 
+            Fuzz Testing - A software testing technique that feeds software many different input values in an attempt to cause an unpredictable state or unauthorized access
+
+            Fuzz Packages can be created by a developer, script supplied, generation fuzzing, or mutation fuzzing
+                Generation fuzzing - scripting a list of inputs in an attempt to cause fuzzing
+                Mutation fuzzing - using common inputs and changing them
+
+            Zed Application Proxy (ZAP) - Application used to Fuzz websites for potential URLs
+
         Code repositories
+
+            Code repositories are used to provide secure storage and version control
+                provides auditing and logging of changes
+                GitHub.
+
+                Integrity Measurement - Verifies release code is unchanged from what was approved
 
         Application management
 
+            Application control - restricts software that may run
+                Whitelist - Allows specific applications to run
+                Blacklist - a list of applications prohibited to run
+
+            Windows provides AppLocker
+
+            Applications also require security patches
+
+            Integrating application control logs to SIEM systems
+
+            Host software baselining - Identifies expected system software
+
         Third-party code
+
+            Developers often rely on internally written code and third-party code
+
+            Libraries - contain shared code for use in others' code
+
+            Software development kit(SDK) - provide programming resources
+
+            Application Programming Interface (API) - Allow interaction between remote services such as client and servers
 
     Application Attacks
 
         OWASP Top 10
 
+            Open Web Application Security Project(OWASP) - maintains a list of common web security issues
+                Broken access controls
+                    Allows unauthorized access
+                    Insecure direct object references
+                
+                Cryptographic failures
+                    Allows access to sensitive data
+                
+                Injection vulnerabilities
+                    Insert unwanted code for execution
+                
+                Insecure design
+                    Fails to meet security requirements
+                
+                Security misconfiguration
+                    This occurs in many possible locations such as firewalls or routers
+                
+                Vulnerable and outdated components
+                    Can jeopardize application security
+                
+                Identification and authentication failures
+                    Exploits sessions management
+                
+                Software and data integrity failures
+                    Allows insertion of insecure code
+                
+                Security logging and monitoring failures
+                    can deprive analysis of needed data
+                
+                Server-side request forgery
+                    Tricks servers into requesting URLs
+
+            Other alternatives to OWASP
+                sans.org top 25
+                Center for internet security(cisecurity.org)
+
         Application Security
+
+            Purchased Software - bought a license to download and use the software
+            Developed Software - Custom written to meet a specific standard
+
+            Application hardening
+                Use proper authentication
+                Encrypt sensitive data
+                Validate user input
+                Avoid known vulnerabilities
+                deploy obfuscation and camouflage
+
+            Patching is critical
+                Attackers quickly exploit new vulnerabilities
+
+            Application configurations
+                Type and scope of encryption
+                Users with access to the application
+                Access granted to authorized users
+                Security of underlying infrastructure
 
         Prevent SQL injections
 
+            Websites rely on back-end databases
+            Websites communicate with the database to check passwords related to a username
+                If the user input to the website and the response from the database match, the user is authenticated and allowed access
+                    Passwords can be changed if the password field is set as a SQL command to change (UPDATE) the password to a known password
+                        Single quotes ' are critical for SQL injection attacks
+
+            Defending from SQL attacks
+                Input Validation: protects against unsafe user input by checking it on the server before the command executes (sanitizing)
+                Parameterized SQL: precompiled SQL code on the database server to prevent user input from altering query structure
+
         Cross-site scripting
+
+            Injecting malicious scripts into third-party sites that later run by innocent visitors on THAT SAME PAGE
+                HTML scripts are withing <script> tags </script>
+                    The script tags are modified to send copies of malicious scripts
+                    This often happens when users are allowed to share HTML with other users, such as auction listings
+
+            Defending against XSS attacks
+                Don't allow <script> tags in user-supplied inputs
 
         Request forgery
 
+            Cross-Site Request Forgery - CSRF, XSRF, and sea surf all refer to request forgery attacks
+            Injecting malicious scripts into third-party sites that later run by innocent visitors on OTHER PAGES
+                Image tags can be used to execute this attack
+                    <IMG SRC='photo.png'>
+                    <IMG SRC='MALICIOUS CODE'>
+                Both image tags are loaded but only one is shown
+                This is a client-side attack against the user
+
+            Defending against XSRF attacks
+                Rearchitect web applications using cryptographically strong exchanges
+                Preventing HTTP GET requests
+                Idle logout periods
+            
+            Server-Side Request Forgery (SSRF) - requesting data from what the server believes to be a trusted source
+            
         Defend against directory reversal
+
+            Directory Traversal - Allows attacks to manipulate the web servers file structure
+            . references current directory
+            .. references directory above the current
+
+            WebGoat can make these attacks with ZAP to catch HTTP requests
+                1. WebGoat requests data from a directory
+                2. ZAP catches Requests
+                    3. attacker can change requests and send them to the server
+                4. WebGoat shows attackers' directory of choice
+
+            Defending from Directory Traversal
+                Input validation not allowing periods in requests
+                Strict file access restrictions
 
         Overflow attacks
 
+            User input larger than the buffer allowed for inputs
+                Integer buffer could be 4096, giving a number with 4097 characters would break the buffer
+                breaking the buffer returns data from other sources
+
+            Defending from buffer overflow attacks
+                prevent numbers larger than needed (4096 chars)
+
         Cookies and attachments
+
+            Cookies are stored in user's browsers and are used to track a single user between sites
+            Cookies are used in applications too
 
         Session hijacking
 
+            Cookies are not always random and are even guessable LANG=ENGL sets the language to English
+                Cookie values can be generated from a hash and a username/password
+                If the hashing algorithm and the username/password are all known, then the cookie value can be predicted
+
+            Cookie guessing: possible if cookie values are not randomly generated
+            Session replay: possible of cookie values are not encrypted in transit
+
+            Defending against Session replay attacks
+                Encrypt session cookies in transit using secure attribute
+
         Code execution attacks
+
+            Occurs when an attacker can exploit a system to execute a vulnerability to allow the attacker access to run commands on a system
+                Arbitrary code execution - Code execution attacks where the attacker runs a command of their choice
+                Remote code execution - code execution attacks that take place over a network connection
+
+            Objectives an attacker might choose
+                installing malicious software/code
+                joining systems to a botnet
+                steal sensitive information
+                create accounts for later use
+
+            Defend against code execution attacks
+                limit administrative access
+                patch systems
 
         Privilege escalation
 
+            The attacker gains administrative rights
+            Can be caused by buffer overflow attacks
+
+            Defending against privilege escalation attacks
+                input validation
+                patch systems
+                enforce the principle of least privilege
+                use data execution prevention (DEP) and address space layout randomization (ASLR)
+
         Driver manipulation
+
+            Drivers require low-level access to the operating system
+
+            Driver refactoring - modifying a driver to carry out malicious activities
+                requires access to the driver source code
+            
+            Driver shimming - wraps legitimate driver with malicious code
+                does not require driver source code
+
+            Defending against driver manipulation
+                drivers are signed by manufacturers, drivers not signed can warn users
 
         Memory vulnerabilities
 
+            Resource exhaustion - resources are being used heavily not allowing the proper function of all systems
+                Memory leak - a system fails to release memory for reuse after it is done being used
+
+                Memory pointers - Storing a location in memory where information is stored
+                    Accessing the memory pointed to is called memory de-referencing
+                Null pointer - a memory pointer pointing to a null location in memory
+
+            DLL injection - tricks an application to load malicious code (WIN 7 calculator)
+
         Race Condition vulnerabilities
+
+            Occurs when a proper function of a security control relies on the timing of the computer or user
+                Time of Check/Time of Use (TOCTOU vulnerability) - time elapsing between authorization and action
+
+            Defending against TOCTOU attacks
+                Implement a lock to prevent simultaneous transactions from causing race conditions
     
     Secure Code Practices
 
         Input validation
 
+            Filters user-supplied inputs
+                Whitelisting - specifies allowable input (DOB == date)
+                Blacklisting - specifies disallowed input (SQL keywords)
+
+            Validation should take place in the server, not the browser
+
         Parameterized queries
+
+            SQL arguments are sent to a server, which is checked and run before requesting data
+                Stored SQL procedures are precompiled, requiring very little to return results, stopping new SQL commands
 
         Authentication and session management issues
 
+            Storing passwords in plain-text forms
+                Hashing - Uses a cryptographic function to transform a unique password to a unique value that can't be reversed
+                Salting - Adds a random value to a hash to further prevent hashes from being reversed, to protect against rainbow table attacks
+
+            Passwords are encrypted in transit
+                Require Transport Layer Security (TLS) to encrypt web traffic
+
         Output encoding
+
+            Replacing potentially dangerous characters with equivalent strings that produce the same results
+                HTML encoding - uses '&' to replace dangerous values that appear in HTML-based documents
+                URL encoding - uses '%' to replace dangerous values that appear in the URL
 
         Error and exception handling
 
+            Manipulating errors can cause buffer overflows and other issues
+            Error handling provides the computer with explicit instructions on handling unpredictable states
+
         Code signing
+
+            Signing codes provides users authenticity by showing signatures or SHA-256 hashes to check the authenticity
 
         Database security
 
-        Data deidentification
+            Database normalization forms - a set of design principles for designing columns and tables
+                This is a good practice because:
+                    Prevents data inconsistency
+                    Prevents update anomalies
+                    Reduce the need to restructure in the future
+                    Make the data schema more informative
+
+                1NF
+                    Create separate tables for different sets of related data
+                    Provide a primary key for each table
+                    Records may not have multi-valued fields
+                    Records in a table must have the same number of fields
+                2NF
+                    Tables must follow 1NF
+                    Every non-key field must be a fact about the entire key
+                3NF
+                    Tables must follow 1NF and 2NF
+                    no non-key field may be a fact about another non-key field
+            
+            Encryption can be used to protect sensitive data stored in databases
+            Obfuscation and camouflage can hide the locations of sensitive information
+
+            Database activity monitoring (DAM) - log and analyze database requests
+
+            Stored procedures - Protects against SQL injections
+
+        Data de-identification
+
+            Deidentification - the process of removing obvious data identifiers such as names or SSNs
+                more fields are ZIP codes, date of birth, and gender
+                Using multiple fields together can lead to high accuracy in finding information about people without knowing the obvious
+
+            HIPAA standard of deidentification of data
+                Determination
+                    Applies statistical or scientific principles
+                        Very small risk of the anticipated recipient being identified
+                
+                Safe Harbor
+                    Removal of 18 types of identifiers
+                        No actual knowledge of residential information can correctly identify an individual
 
         Data obfuscation
+
+            Data obfuscation - Transforming personally identifiable information into a form where it is no longer possible to tie it to a person
+                Hashing - Replacing sensitive data with a hash value representing the data
+                    rainbow table attack - Comparing hash values with precomputed values with a known input
+                Salting - Adding a random value to a hash to increase security against rainbow table attacks
+                Tokenization - Replacing sensitive data fields with a random identifier moving the token-value relation elsewhere
+                Masking - Redacting sensitive information from a file without the need to re-identify data

@@ -1,0 +1,450 @@
+Identity and Access Management Design and Implementation
+
+    Introduction
+
+        Identity and Access Management Design and Implementation
+            - Perform Identification, Authentication, and Authorization
+
+    Identification
+
+        Identification, Authentication, Authorization, and Accounting
+            
+            Access Control
+                - Identification
+                - Authentication
+                - Authorization
+
+                Identification
+                    - An individual claims their identity without any proof of this claim
+                    - Username
+
+                Authentication
+                    - The individual proves their claim with satisfactory evidence to support their claim
+                    - Password
+
+                Authorization
+                    - The individual is allowed access to the requested system
+                    - Access Control Lists (ACL)
+
+                *EXAM TIP* Identification, Authentication, and Authorization are separate and distinct steps
+
+                Accounting
+                    - Allows management to track user activity
+                    - log files
+                
+                - Identity and access management systems should work across cloud and on-premises environments
+
+        Usernames and Access Cards
+
+            Usernames
+                - Usually easy to identify individual
+                - Often consist of a first initial and last name
+                - Should not be considered secret
+
+            Access Cards
+                - Often serve as proof of employment
+                - May perform both identification and authentication
+
+                Magnetic Stripe Cards
+                    - Can easily be duplicated
+                
+                Smart Cards
+                    - Contain a small chip to prove authenticity
+                
+                Card Readers
+                    - Cards must be inserted into the reader for information to be read
+                
+                Proximity Cards
+                    - Cards must be in a close range to the reader for information to be read
+                    - Uses passive cards
+                        - The reader energizes the chip, providing power to read the data on the card
+
+        Biometrics
+
+            Provide a means to identify someone based on one or more physical characteristics
+
+            Effective systems provide:
+                - Easy enrollment
+                - Low false acceptance rates
+                - Low false rejection rates
+                - Low intrusiveness
+
+            Options include:
+                - Fingerprint scanners
+                - Eye scans
+                - Voiceprint matching (replay attacks)
+                - Facial recognition
+
+    Authentication
+
+        Authentication Factors
+        
+            Three main authentication methods
+                - Something you know (password)
+                    - Complex string of letters, numbers, and special characteristics
+                    - Passphrases work well (ThisIsAStr0ngPassw0rd~!)
+                    - Password keys are an alternative (Private keys)
+                - Something you are (Biometrics)
+                - Something you have (Keypass or keyfob)
+
+            Others include:
+                - Somewhere you are (office building address)
+                - Something you can do (Typing patterns)
+                - Something you exhibit (personality trait)
+                - Someone you know (colleague)
+
+                *EXAM TIP* These other authentication methods are not widely accepted
+
+            Failures:
+                - False acceptance
+                    - System misidentifies an individual as an authorized user
+                    - The frequency of these failures is measured by their False Acceptance Rate (FAR)
+
+                - False rejection
+                    - System misidentifies an authorized user
+                    - The frequency of these failures is measured by their False Rejection Rate (FRR)
+
+                Both of these failure measurements should ideally be equal equating to a Crossover Error Rate (CER)
+
+        Multifactor Authentication
+
+            Multifactor Authentication
+                - Using multiple authentication methods (Something you know + something you have)
+                    - Fingerprint + PIN
+                
+                - Both factors should use different methods
+                    - Do not use a security question and a password for authentication
+
+        Something You Have
+
+            Physical token // Authentication App - Something you have
+
+            Username // Password - Something you know
+
+            Retina Scanner - Something you are
+
+            Protocols for generating One-Time-Passwords (OTP)
+
+                HMAC-based One-Time-Password (HOTP) - Uses a shared secret and an incrementing counter to generate the code displayed on the token
+
+                Time-based One-Time-Password (TOTP) - Uses the time of the day in conjunction with the shared secret
+                    - The token and the authentication service must have synchronized clocks for TOTP to function
+
+                Push - Pushing a notification through a mobile device for authentication through something you have
+
+        Password Authentication Protocols
+
+            Password Authentication Protocol (PAP)
+                1. Client sends a username and password to a secure server
+                2. Server checks and responds to client
+
+                - PAP does not use any encryption to protect data in transit and instead requires encryption through other means
+
+            Challenge Authentication Protocol (CHAP)
+                0. Client and server share a secret key, which was previously shared and is not to be transmitted
+                1. Server sends a challenge to the client
+                2. The client combines the known password with the challenge and sends that back to the server
+                3. Server decrypts the combined hash received from the client and checks the password to the known password
+
+                - Secure alternative to PAP
+
+                Microsoft created their versions of CHAP called MS-CHAP and MS-CHAPv2 but these are insecure
+
+        Single Sign-On and Federation
+
+            Single-Sign-On (SSO)
+                - Seek to reduce the burden of identity and access management
+
+            Federated Identity Management
+                - Individuals may have many accounts across multiple systems
+                - Federated identity management allows for these accounts to share identity information
+                - Shibboleth.net is a federated identity management system that allows for one account to access multiple systems
+
+            Trust Characteristics
+                - Direction (one way or two way)
+                    - One way - Domain #1 trust domain #2 but domain #2 does not trust domain #1
+                    - Two way - Domains #1 and #2 trust each other
+
+                - Transitivity (transitive or nontransitive)
+                    - Transitive - Trust is shared between external domains if another trusted domain trusts it
+                    - Nontransitive - Domains only share information with domains they explicitly trust
+
+        RADIUS and TACACS
+
+            Remote Access Dial-In User Service (RADIUS)
+                - Originally used for modem pools
+                - Used to authenticate modems from around the country to a single point
+
+                - Modern uses allow a variety of systems to rely upon the same authentication source
+
+                    Steps to a Successful RADIUS Attempt
+                        1. End User sends a request to a Wireless Access Point serving as the RADIUS client
+                        2. The request is relayed to a RADIUS server, then Active Directory to check the authentication method
+                        3. If the authentication passes, the Active Directory responds with an Authentication Response which goes to the End User through the other devices
+                        4. If the authentication fails, the Active Directory responds in the same way with a RADIUS Access Rejected response
+
+                *EXAM TIP* - RADIUS Client is usually an application server
+
+                Downsides of RADIUS
+                    - Uses connectionless User Datagram Protocol (UDP)
+                    - Does not encrypt the entire authentication sequence
+
+            Terminal Access Controller Access Control System (TACACS)
+                - Originally used UDP like RADIUS
+                - Cisco later released XTACACS
+                - Current standard is TACACS+
+                    - Functions similarly to RADIUS
+                    - Uses connection-oriented Transmission Control Protocol (TCP)
+                    - Fully encrypts the authentication session
+
+        Kerberos and LDAP
+
+            Kerberos
+                - One of the core protocols for Windows Active Directory
+                - Ticket-based authentication system which allows users to authenticate to a centralized service and then use tickets to gain access to distributed services
+
+                How It Works:
+                    Contacting the Authentication Server (AS)
+                        1. End user wants to access a service that uses Kerberos, often called a Kerberized service
+                        2. The client sends a clear-text request to an authentication server
+                        3. The server looks up the user in its user Database
+                            3a. The server sends a randomly generated session key to use for future communication between the client and the ticket-granting system. This message is encrypted using the client's password
+                            3b. The server also sends a ticket-granting ticket which includes information about the client and the client TGS session key. This message is encrypted by a key known only by the ticket-granting server
+                        4. The client decrypts the randomly generated session key for future communications
+
+                    Contacting the Ticket-Granting Server (TGS)
+                        5. The client accesses the ticket-granting server
+                            5a. The client sends a copy of the ticket-granting ticket to the ticket-granting server
+                            5b. The client also sends an authenticator including the client ID and the current time. This message is encrypted with the client TGS session key
+                        6. The ticket-granting server decrypts the ticket-granting ticket to retrieve the client/TGS session key
+                            6a. The server uses this session key to decrypt the authenticator
+                        7. The TGS then randomly generates a session key for the desired service
+                        8. The TGS then sends a client/server ticket which is encrypted using the service's secret key
+                            8a. The TGS also sends a copy of the client/server session key. This is encrypted with the TGS session key
+                    
+                    Contacting the Service (SS)
+                        9. The client sends two messages to the desired service
+                            9a. The client sends the service the client/service session key from the TGS
+                            9b. The client sends a net authenticator encrypted with the client/server session key
+                        10. The server containing the service then decrypts the authenticator and validates the client
+
+            Lightweight Directory Access Protocol (LDAP)
+                - Provides the means to query a centralized directory service, such as Microsoft Active Directory
+
+                Active Directory uses both LDAP and Kerberos
+                    - Kerberos provides authentication
+                    - LDAP provides the ability to query information stored in the directory service
+                
+                Ports:
+                    - Kerberos - Port 88
+                    - LDAP (Unencrypted) - Port 389
+                    - LDAP (Encrypted) - Port 636
+            
+            NT LAN Manager
+                - Was widely used on Windows systems for many years
+                - Uses a hash-based challenge-response protocol
+
+                - Weak encryption
+                - Vulnerable to a pass-the-hash attack
+                    - Allows the use of credentials from one system to gain access to another system
+
+        SAML
+
+            Security Assertion Markup Language (SAML)
+                - Allows single sign-on (SSO) within a web browser across a variety of systems
+
+                Principal - End User
+                Identity Provider - Authentication Service
+                Service Provider - Service being accessed
+
+                How It Works:
+                    1. Principal sends a request to the service provider
+                    2. The service provider checks for previously logged-in sessions
+                        2a. If there is a previously signed-in service, the principal is granted access
+                    3. The provider redirects the user to the identity provider
+                    4. The principal then authenticates with the identity provider
+                    5. The identity provider provides an XHTML form specified for the service provider
+                    6. The user uses the XHTML to request security assertion from the service provider
+                    7. The service provider then redirects the principal to the resource upon validation
+                    8. The resource is requested
+                    9. The resource responds and access is granted
+
+                SAML Benefits:
+                    - True SSO experience for end-users
+                    - No credential access for service providers
+
+        OAuth and OpenID Connect
+
+            Oauth - Authorization protocol that grants access from one service to another
+
+            OpenID Connect - Authentication Protocol that helps prove identity from one service to another
+
+        Certificate-Based Authentication
+
+            Certificates contain a signed copy of a public key
+                - Some public keys are signed by Certificate Authorities (CA)
+
+            Certificate Authentication Uses:
+                - SSH connections
+                - Smart cards (CAC/PIV)
+                - Network Access (802.1x)
+
+    Authorization
+
+        Understanding Authorization
+
+            Principle of least privilege - An individual should only have the minimum set of privileges necessary to carry out their job function
+                - Minimized insider attack damage
+                - Restricts the ability of external attackers if they were to obtain an internal account
+            
+            Separations of Duties - Performing any critical business function should require the involvement of two or more individuals
+            
+            Privilege Creep - When a user accumulates excess permissions after shifting job responsibilities one or more times
+
+            *EXAM TIP* - Be able to identify the least privilege and separation of duties issues in a scenario
+
+        Mandatory Authorization
+
+            Mandatory Access Control (MAC)
+                - Access control system where the operating system restricts authorization based upon labels and users are not permitted to modify those authorizations
+
+                    *FUN FACT* - Macintosh operating systems do not support mandatory access controls
+
+                    SELinux uses MAC
+
+                    Example - US government access controls
+                        - A Level 2 user cannot access a Level 3 document because 2 < 3
+                        - A level 2 user can access a level 1 document because 2 > 1
+
+        Discretionary Access Controls
+
+            Discretionary Access Control (DAC)
+                - Access control system where permissions may be set by the owner of files, computers, and other resources
+
+                Example - Corporate file sharing
+                    - Alice gives Bob access to read, write, and execute a file
+                    - Bob wants Cheryl to only read a file, so Bob assigns Cheryl read-only access
+
+
+        Access Control Lists
+
+            Access Control List - A table of users and resources which allows users permissions to resources
+
+        Advanced Authorization Concepts
+
+            Implicit Deny - Any action which is not explicitly allowed must be denied (whitelist)
+
+            Role-Based Access Control (RBAC)
+                - Permissions are grouped into functional roles and users are assigned to those roles (Engineer, Accounting, IT)
+
+            Attribute-Based Access Control (ABAC)
+                - Administrators make access control decisions based on characteristics of the user, object, and environment
+
+                Example - A user must be a manager AND
+                        - That user must be the manager of the employee AND
+                        - Date must be after March 15, 2021
+
+            Location-Based Access Control (LBAC)
+                - Limits access based on geographic region (VPN)
+            
+            Time-of-Day Restrictions
+                - Limits access based on time of day
+                - Prevents attacks not during regular offices
+
+        Database Access Controls
+
+            SQL Servers use three types of authentication
+                - SQL Server Authentication - Uses local database user accounts
+                - Windows Authentication - Uses underlying server user accounts (Active Directory)
+                - Mixed Authentication - Uses both SQL and Windows authentication modes
+
+    Account Management
+
+        Understanding Account and Privilege Management
+
+            Account Management Tasks:
+                - Implementing least privilege
+                    - Users should only have the least amount of required access to systems and networks
+
+                - Implementing separation of duties
+                    - Sensitive functions should require verification or other action by two or more users
+
+                - Implementing job rotation
+                    - Regularly move people between job roles to prevent fraud
+
+                    Mandatory Vacation Policy
+                    - Policy enforcing restriction of systems
+
+                - Managing the account life cycle
+                    - Creating, provisioning, modifying accounts over time, and de-provisioning
+                
+                - Account naming schema
+                    - first initial, 7 characters of the last name, the possible number of duplicates
+
+        Account Types
+
+            User Account - Has standard permissions and standard monitoring
+
+            Privileged Account - Has administrative rights and requires strong controls
+
+            Guest Account - Tied to unique individuals and have set expiration database
+
+            Shared Account - Reduced accountability and should not be used
+
+            Service Account - Provides access to internal server processes
+
+            *EXAM TIP* - All of these account types hold a single purpose, and shared accounts should not be used
+
+        Account Policies
+
+            Group Policy Object (GPO)
+                - Applies configuration settings to users and computers
+
+        Password Policy
+
+            Password length requirement - Longer password == longer to crack
+
+            Password character requirement - UPPERCASE, lowercase $PEC!@L CH@R@CTER$, and numbers
+
+                *EXAM TIP* - Best practice is to allow complex passwords but not require them, as long as they use MFA
+
+            Password Expiration Policy - Passwords must be changed within a time-period
+                Password re-use Policy - Prevents passwords from being reused
+                Password Minimum Age Policy - Password cannot be reused within a certain time
+
+                    *EXAM TIP* - Passwords should not be forced to change
+
+            Lockout Policy - Prevent login attempts after X failed attempts
+
+            Deprovisioning Policy - Disable unused accounts
+
+            Password Recovery policy - Automated password recovery system using Something you know/are/have
+
+        Managing Roles
+
+            Role - Group permissions to allow shared security settings
+
+        Account Monitoring
+
+            Inaccurate Permission - Blocks work and/or violates the least privilege policy
+
+            Geofencing - Alerts administrators to devices leaving defined boundaries
+
+        Privileged Access Management
+
+            Password Vaulting - Store encrypted administrative passwords
+                - The user logs into the vault, which logs into the service
+
+            Command Proxying - Eliminates the need for direct server access
+
+            Monitoring - logs administrative user activity
+
+            Credential Management - stores/rotates credentials and access keys
+
+            Emergency access - allow administrative access, while logging modifications, and require password changes before leaving
+
+        Provisioning and Deprovisioning
+
+            Provisioning - After onboarding, administrators create authentication credentials and grant appropriate authorization
+
+            Deprovisioning - Removing permissions from disabled accounts to prevent further access removing authorization
