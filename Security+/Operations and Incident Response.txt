@@ -1,0 +1,79 @@
+Operations and Incident Response
+
+    Introduction
+
+        Operations and Incident Response
+        
+    Incident Response Programs
+
+        Build An Incident Response Program
+
+        Creating An Incident Response Team
+
+        Incident Communications Plan
+
+        Incident Identification
+
+        Escalation and Notification
+
+        Mitigation
+
+        Containment Techniques
+
+        Incident Eradication and Recovery
+
+        Validation
+
+        Post-Incident Activities
+
+        Incident Response Exercises
+
+    Attack Frameworks
+
+        MITRE ATT&CK
+
+        Diamond Model of Intrusion Analysis
+
+        Cyber Kill Chain Analysis
+
+    Incident Investigation
+
+        Logging Security Information
+
+        Security Information and Event Management
+
+        Cloud Audits and Investigation
+
+    Forensic Techniques
+
+        Conducting Investigations
+
+        Evidence Types
+
+        Introduction to Forensics
+
+        System and File Forensics
+
+        File Carving
+
+        Creating Forensic Images
+
+        Digital Forensic Toolkit
+
+        Operating System Analysis
+
+        Password Forensics
+
+        Network Forensics
+
+        Software Forensics
+
+        Mobile Device Forensics
+
+        Embedded Device Forensics
+
+        Chain of Security
+
+        E-discovery and Evidence production
+
+        Exploitation Frameworks

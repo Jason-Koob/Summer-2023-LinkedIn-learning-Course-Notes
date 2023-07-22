@@ -1,149 +1,751 @@
 Network Security Design and Implementation
 
-    Introduction
-
-        Network Security
-
-        What You Need to Know
-
     TCP/IP Networking
 
         Introducing TCP/IP
 
+            Transmission Control Protocol / Internet Protocol (TCP/IP)
+
+                Internet Protocol
+                    - Routers information across networks
+                    - Provides an addressing scheme
+                    - Delivers packets from source to destination
+                    - Serves as a network layer protocol
+                
+                Transmission Control Protocol
+
+                    Transmission Control Protocol
+                        - Connection-oriented
+                        - Reliable through acknowledgment of delivery
+                        - Widely used for critical applications
+
+                    User datagram Protocol (UDP)
+                        - Lightweight connectionless protocol
+                        - No acknowledgment
+                        - Used for voice and video applications
+
+                Open Systems Interconnection Model (OSI)
+
+                Layer 1 - Physical - wires, radios, and optics
+                Layer 2 - Data Link - Data transfers between nodes
+                Layer 3 - Networking - Internet protocol
+                Layer 4 - Transport - TCP and UDP
+                Layer 5 - Session - Exchanges between Systems
+                Layer 6 - Presentation - Data translation and encryption
+                Layer 7 - Application - User programs
+
         IP Addresses and DHCP
+
+            IP Addresses - Uniquely addressing Devices
+                Dotted Quad Notation 192.168.x.x
+                
+                Binary
+                    0-255 range
+                    Each byte has 8 bits
+                    Each bit is either 0 or 1 in binary
+                    These bits can range from 00000001 to 11111111
+
+                    11000000	10101000	000000000	000000000
+                    192	        168	        0	        0
+
+
+                - Not reusable on internet-connected Systems
+                - May be reused if on private networks
+
+                Network Addresses
+                    - Each IP address belongs to a network address
+                    - The network address is the first address used in a subnet
+
+            Subnets
+                - Subnets are ranges of addresses.
+                - notated in CIDR (Example /24 == 255.255.255.0)
+                - The larger the number, the fewer addresses in that range
+
+                11111111	11111111	11111111	000000000
+                255	        255	        255	        0
+            
+            IPv6
+                - Implemented dues to IPv4 address exhaustion
+                - Uses 8 groups of 4 hexadecimal digits
+
+                dea6	2d50	cd16	b134	3dbc	7cd5	5882	a85c
+
+            Static IPs
+                - Static IPs are manually assigned to a system by an administrator
+            
+            DHCP
+                - The Dynamic Host Configuration Protocol (DHCP) automatically assigns unused addresses to devices per request from a pool
 
         Domain Name System (DNS)
 
+            - Translates URLs to IP address
+            - Port UDP 53
+            - Hierarchical system, asking next level if the answer is unknown
+
+            DNSSEC
+                - Adds a digital signature to DNS records
+
         Network Ports
 
+            - 16-bit binary number (2^16) up to 65535
+            
+            Ranges
+                - 0-1023 - Well-known ports
+                - 1024-49151 - registered ports
+                - 49152-65535 - dynamic
+
+            Important Port Numbers:
+                21 - File Transfer Protocol (FTP)
+                22 - Secure Shell (SSH)
+                3389 - Remote Desktop Protocol (RDP)
+                (Windows Systems) 137,138,139 - NetBIOS
+                53 - Domain Name Service (DNS)
+
+                25 - Simple Mail Transfer Protocol (SMTP)
+                110 - Post Office Protocol (POP)
+                143 - Internet Message Access Protocol (IMAP)
+
+                80 - Hypertext Transfer Protocol (HTTP)
+                443 - Hypertext Transfer Protocol (Secure)(HTTPS)
+
         ICMP
+
+            Ping
+                - Identifies live systems
+
+            Traceroute
+                - Identifies network paths
 
     Secure Network Design
 
         Security Zones
 
+            Network Border Firewall
+                - Internet connection is filtered by the Firewall
+                - Used to segment external, internal, and DMZ segments
+
+            Extranet - Special intranet zone allowed to be used by select business partners
+            
+            Honeynet  Decoy networks are designed to lure attackers
+
+            Ad Hoc Network - Temporary networks that may bypass security controls
+
+            East-West Traffic - Traffic between devices on the same network
+
+            North-South Traffic - Network traffic that passes through a network border
+
         VLANs and Network Segmentation
 
+            VLAN - Separate systems on a network through virtual, logical groups, regardless of physical location
+                - Devices on the same VLAN can contact each other as if they were on the same network switch
+
+        Security Device Placement
+
+            Place filtering devices near the edge of networks
+            Placing network sensors can only log the traffic on the network it is attached to
+        
         Software-defined networking (SDN)
+
+            Functionality and Implementation are two different things
+
+                Control Plane - responsible for making routing and switching decisions
+                Data Plane - Responsible for carrying out the instructions of the control plane
+
+            Benefits of using SDN-configured networks:
+                - Allows for very granular configurations
+                - facilitates faster response to security incidents
+
+            SDNs are also programmable causing them to be complex
 
     Network Security Devices
 
         Routers, Switches, and Bridges
 
+            Switch - Connect devices to networks(L2)
+
+            Wireless Access Point(WAP)
+
+            Router - Connect networks and makes routing decisions(L3)
+
+            Bridges - Connect networks with simple forwarding rules(L2)
+
         Firewalls
+
+            Firewalls - Filter network activity on and between networks
+                - Normally placed near the edges of networks
+                    - Or between larger networks like the internet, DMZ, and internal networks
+                
+            Demilitarized Zone (DMZ) - Isolated network zone containing systems that must accept direct external connections
+
+            Stateless Firewall - Firewall evaluates each connection independently each time a new packet is sent or received
+
+            Stateful Inspection - Firewall tracks open connections
+
+            Firewall Rules:
+                - Source system addresses
+                - Destination system addresses
+                - Destination port and protocol
+                - Action (allow or deny)
+
+            Implicit Deny - Deny all explicitly allowed connections
+
+            NAT Gateway - Firewalls can prove to protect networks using Network Address Translation (NAT)
 
         Proxy Servers
 
+            Proxy Server - Server connects to a website on a user's behalf
+
+            Proxy Server Benefits:
+                - Anonymization
+                - Performance boosting (caching)
+                - Content filtering(URL too)
+
+            Forward Proxy - The client communicates with a known proxy server which then relays to the external server(clients-side)
+
+            Reverse Proxy - The known client contacts a proxy server thinking it is the legitimate server(server-side)
+
+            Transparent Proxy - Both the client and the server communicate with each other through the proxy server (client/server-side)
+
         Load Balancers
+
+            The workload is distributed through multiple servers
+
+                Round-Robin Scheduling
+                    - Each request is given to a different server in a sequence
+
+            Active-Active - Two or more load balancers work together to handle traffic
+
+            Active-Passive - One load balancer works as a primary device, and a secondary stands as a backup
 
         VPNs and VPN Concentrators
 
+            Site-to-Site VPN - Connect remote offices and headquarters
+
+            Remote Access - Provide remote access to corporate networks for mobile users
+
+            IPSec - (L3)
+                - Supports Layer 2 Tunneling Protocol (L2TP)
+
+            Full-Tunnel VPN - All traffic going to or from the internet is routed through the VPN
+
+            Split-Tunnel VPN - Only traffic through select VPNs is managed through the VPN
+
+            *EXAM TIP* - Split-Tunnel VPNs give users a false sense of security
+
         Network Intrusion Detection and Prevention
+
+            Intrusion Detection System (IDS) - Monitor network traffic for signs of malicious activity
+
+            Intrusion Prevention System (IPS) - Inspects network traffic and blocks malicious activity
+
+                Detection Methods:
+                    - Signature Detection System - Database containing rules describing malicious activity
+                    - Anomaly Detection System - Develops baselines of normal activity and alerts each anomaly
+                
+                IPS Deployment Methods:
+                    - In-band (inline) - All network traffic routes through the system
+                    - Out-of-band (passive) - The device monitors traffic without requiring a route through the device (SPAN switch port)
 
         Protocol Analyzers
 
+            WIRESHARK
+
+            TCPDUMP - Command line protocol analyzer
+
+            TCPRELAY - Packet capture, editing, and replaying
+
         Unified Threat Management
+
+            Basic Function:
+                - Protecting network against Attacks
+                - Blocking unsolicited traffic
+                - Routing traffic to and from the internet
     
     Network Security Techniques
 
         Restricting Network Access
 
+            Perimeter Security 
+                - Keep unwanted remote users out of the network entirely through the use of firewalls and other controls
+
+            Limit Access Control
+                - Limit physical network access to authorized individuals and devices
+
+            Rule-based - restrict access based on business logic
+            Role-based - Restrict access based on the identity of the individual
+            Time-based - Restrict access based on the time of day
+            Location-based - Restrict access based on the physical location
+
         Network Access Control
+
+            - Intercepts network traffic coming from unknown devices and verifies that the system and user are authorized before allowing further communication
+            - Uses 802.1x for authentication
+
+                Supplicant(User)
+                Authenticator(Switch)
+                Authentication Server
+
+            Posture Checking - Verifying a device meets the security policy of the organization
 
         Firewall Rule Management
 
+            Firewalls check rules from top to bottom
+
+            Shadow rule - A rule that is overwritten by another rule above it
+
         Router Configuration Security
+
+            Router ACL - similar to firewalls
+
+                Standard - IP filtering
+                    access-list[number] [permit/deny][source][dest]
+                
+                Extended - Block based on src, destination IPs and ports, and protocols
 
         Switch Configuration Management
 
+            Physical security
+
+            VLAN Pruning - Limiting unnecessary exposure of VLANs
+
+            VLAN Hopping - User changing VLAN access
+
+        Maintaining Network Availability
+
+            Flooding Attacks
+                - SYN Flood - Sending SYN requests to devices to ask for a connection, filling their connection tables
+                - MAC Flood - Spoofing MAC addresses then filling MAC tables
+        
         Network Monitoring
+
+            Firewall Logs - Logging system for each connection
+
+            Netflow Records - Logging connections behind firewalls
+                - Src and destination systems
+                - Src and destination ports
+                - Timestamps
+                - Amount of data transferred
+
+            Security Information and Event Management (SIEM)
+                - Network security systems that automate the collection and analysis of logs from many different systems for security purposes
 
         SNMP
 
+            Simple Network Management Protocol
+                Agent - Software that logs information and sends it to a SIEM (GET Request)
+
+                *EXAM TIP* - Current version is SNMPv3
+
         Isolating Sensitive Systems
 
+            Jump Boxes - Systems that allow administrators to move between security zones
+
         Deception technologies
+
+            Darknet - Unused IP addresses used to catch attackers
+
+            Honey Files - False stores of sensitive data (.csv)
+
+                Honey Pots - Entire systems designed to lure in attackers without giving any information
+
+                    Honey Nets - Large-scale deployments of honey pots
+        
+            DNS Sinkhole - Altered DNS records to reroute botnet traffic
+                - Self-inflicted DNS poisoning attack
 
     Transport Encryption
 
         TLS and SSL
 
+            Transport Layer Security (TLS)
+                - Encrypts network data over un-trusted networks
+
+                *EXAM TIP* - TLS uses other algorithms and functions, it does not do any encryption itself
+
+                1. Client asks a server to use TLS (client suite)
+                2. Server responds and sends a digital signature
+                3. Client checks the signature through a trusted CA
+                4. CA responds
+                5. Client makes a session and encrypts it with the server's public key
+
+            Secure Socket Layer (SSL)
+                - Insecure predecessor to TLS
+
+                Uses OpenSSL
+
         IPSec
 
+            Internet Protocol Security (IPSec)
+
+                - Uses Encapsulated Security Payload (ESP)
+                    - Provides confidentiality and integrity
+                - Authentication Header (AH)
+                    - Provides integrity protection for packet headers and payloads
+
+            Used in Site-to-Site VPN (Tunnel)
+                - User appears to be a part of a remote network
+
+            Used in End-User VPNs (Transport)
+                - Provides encrypted remote network access to individual systems
+
         Securing Common Protocols
+
+            HTTPS
+                - Adds TLS to web browsing over HTTP
+
+            FTP is Insecure
+                - FTPS adds TLS to FTP
+                - SFTP transfers files over SSH
+                - Secure Copy (SCP) provides secure command-line file transfer over SSH
+
+            TFTP is Insecure
+                - Port: 69
+
+            Voice over IP (VoIP) over RTP should use Secure RTP (SRTP)
+
+            Network Time Protocol is Insecure
+                - NTPSec
+
+            Protocols: Unencrypted Port: Encrypted Port:
+            POP         110                 995
+            IMAP        143                 993
+            SMTP        25                  465
+
+            Emails can also be encrypted at the application layer using S/MIME
+
+            DNS is Insecure
+                - DNSEC adds a digital signature to DNS
+
+            Lightweight Directory Access Protocol (LDAP) offers LDAPS
 
     Wireless Networking
     
         Understanding Wireless Networking
+
+            WI-FI
+
+            Wireless Access Points (WAP) - Connect wireless devices to a wireless network
+
+            *EXAM TIP* - Wi-Fi signals  travel over open airwaves and are subject to undetectable interception
         
         Wireless Encryption
 
+            Wired Equivalent Privacy (WEP)
+                - Original Wireless encryption standard
+                - Insecure
+
+            Wi-Fi Protected Access (WPA)
+                - Replaced WEP in 2003
+                - Used Temporal Key Integrity Protocol (TKIP) to rapidly rotate encryption keys
+                - Insecure
+
+            Wi-Fi Protected Access 2 (WPA2)
+                - Released in 2004
+                - Encrypts packets using AES encryption
+                - Counter mode Cipher block chaining Message Protocol (CCMP)
+                - Potentially insecure
+
+            Wi-Fi Protected Access 3 (WPA3)
+                - Required on new Wi-Fi devices from 2020 onward
+                - Supports CCMP
+                - Supports Simultaneous Authentication of Equals (SAE) for key exchange
+
         Wireless Authentication
+
+            Pre-Shared Keys (PSK)
+                - The simplest form of wireless authentication
+                - Either use a 64 hexadecimal key with 256-bit encryption (HX String)
+                    - Or 8-13 ASCII characters with a 256-bit encryption key using PBKDF2 (Password)
+
+            Extensible Authentication Protocol (EAP)
+
+                Lightweight EAP (LEAP)
+                    - Insecure
+
+                Extensible Authentication Protocol
+                    - 100s of variations
+                    - Some are secure, others aren't
+
+                    Secure EAP Standards:
+                        - EAP-TLS
+                        - EAP-TTLS
+                        - EAP-FAST (Cisco)
+
+                     Insecure EAP Standards:
+                        - EAP-MD5
+
+                Protected EAP (PEAP)
+                    - Tunnels EAP inside TLS
+                
+            Captive Portals
+                - Redirects users to a separate authentication page to sign-in
 
         Wireless Signal Propagation
 
+            Omni-Directional - Antennas send a signal in all directions
+
+            802.11ac can use beamforming
+                - Detects wireless devices and shifts signal toward devices
+
         Wireless Networking Equipment
+
+            Fat Access Points (FAP)
+                - Contain all required hardware and software needed to operate a wireless network
+
+            Thin Access Points (TAP)
+                - Require Wireless Controllers for configurations to serve directions to the access point
+
+            The aircr@ck-ng tool can test a wide variety of wireless security service
 
     Network Attacks
 
         Denial of Service Attacks (DoS)
 
+            Focus on disrupting the use of a system
+
+                These attacks rely on 2 things:
+                    - Massive amounts of bandwidth
+                    - Easy to block based on IP addresses
+
+                Distributed Denial-of-Service (DDoS)
+                    - A DoS attack that uses a botnet or a large number of devices to overwhelm the target
+
+                Smurf Attack - Sending messages to a third-party server, using the source address of the victim
+                    - This causes the servers to send response messages to the victim, disrupting their system
+            
+                Amplified Smurf or DDoS attack
+                    - Choosing to send a message which returns very large responses
+
         Eavesdropping Attacks
+
+            - Rely on a compromised communications path
+                - Network device tapping
+                - DNS/ARP poisoning attack
+
+            Man-In-The-Middle Attack
+                - The client sends a request to a server, but the initial request is intercepted by the attack
+                    - The attacker forwards the request to the legitimate server
+                    - The attacker forwards communication between the client and the server
+                
+                Replay Attack
+                    - An attacker uses a compromised session to communicate with a server, appearing to be the user
+                    - The attacker cannot see the actual credentials, but they do have the encoded credentials
+                    - MitM or Man-in-the-Browser (MitB) attack
+
+            SSL Striping
+                - An attacker tricks a user's browser to use an insecure communication channel such as SSL or HTTP
 
         DNS Attacks
 
+            DNS Poisoning Attack
+                - Redirecting a DNS lookup request to the attacker's DNS system
+                - This attack allows the attacker to reroute traffic however they want
+
+            Typosquatting
+                - Relies on people misspelling URL addresses
+                - The attacker can pose as the intended site or URL and capture data directly from the user
+                - Example - www.barrackobama.com
+
+            Domain Hijacking Attack
+                - An attacker gains control of an organization's domain registration
+
+            URL Redirection Attack
+                - The attacker places a redirect on a trusted site to content hosted on a malicious site
+
         Layer 2 Attacks
+
+            ARP Poisoning Attack
+                - Changing ARP relational tables to redirect information to a malicious system
+
+            MAC Flooding Attack
+                - Flooding the MAC table in a switch to prevent new devices from communicating on a switch
 
         Network Address Attacks
 
+            MAC Spoofing Attack
+                - Altering a MAC address to receive information meant for a victim's system
+            
+            IP Spoofing Attack
+                - Altering an IP address to receive information meant for a victim's system
+
         Wireless Attacks
+
+            Taking advantage of a WEP connection:
+                1. Intercept Initialization Vector used to create an encrypted channel between the WAP and the client
+                2. Capture enough of these IVs to create them yourself
+                3. Profit?
+
+            Taking advantage of a WPS connection:
+                - Use a mathematical flaw to guess the connection PIN
+                    - Reduces choices from 10,000,000 down to 11,000
+                - WPS PIN cannot be changed
 
         Propagation Attacks
 
+            Jamming and Interference Attacks
+                - DoS attacks, seeking to deny service
+
+            War Driving
+                - Capturing local Wi-Fi signals while mobile and using the information to gain information about the network
+
+                - Wifi Explorer tool shows data about nearby wifi networks
+                - Wigle.net shows information about wifi networks in an area from a map
+
         Preventing Rogues and Evil Twins
+
+            Rogues - A wireless access point owned and managed by someone else
+
+            Evil Twin - A wireless access point with the same name posing as a legitimate wireless access point
+                - Karma is a toolkit that mimics local wifi networks
 
         Disassociation Attacks
 
+            Disassociation - Wireless access points that can force a wireless device to disconnect immediately from the network
+                - Used to get large amounts of authentication frames from legitimate devices in hopes to find a pattern
+                - Can also be used rapidly to create a DoS attack
+
         Understanding Bluetooth and NFC
 
+            Near-Field Communications (NFC)
+                - Very small range (30-50 feet)
+            
+                Bluetooth Attacks
+
+                    Bluejacking Attack
+                        - Repeatedly trying to entice a user to take some action
+
+                    Bluesnarfing Attack
+                        - Forcing a Bluetooth connection between a victim device and the attacker's device
+
         RFID Security
+
+            Radio Frequency Identification (RFID)
 
     Mobile Device Security
 
         Mobile Connection Methods
 
+            Cellular Networks
+                - Available in most urban and suburban areas
+                - Area: 20 Miles depending on the density
+
+            Wifi
+                - Point-to-Multipoint
+                    - Connects a single base station to make clients
+                
+                - Point-to-Point
+                    - Connects a single base station to a single client
+
+            Satellite
+                - Work almost anywhere
+                - Extremely slow and expensive
+
         Mobile Device Security
+
+            Mobile Passwords should use over 4 digits
+                - Recommend a password or biometric
+
+        Mobile Device Management
+
+            Mobile Device Management (MDM)
+                - Managing multiple mobile devices from a single system
+                - Prevents users from changing their security settings on a device
+                - Application blacklist and whitelist solutions
 
         Mobile Device Tracking
 
+            Asset Management - Managing mobile devices
+
+            Geo-fencing - Alerts when a device enters or leaves a select geo-location
+
         Mobile Application Security
 
+            - Applications that access sensitive data should require authentication
+
+            - Information should be encrypted in transit and at rest
+        
         Mobile Security Enforcement
+
+            Third-Party App stores may contain unsafe code
+
+            Features such as the camera, microphone, and mobile payment can all be managed
 
         Bring Your Own Device (BYOD)
 
+            Bring Your Own Device (BYOD) - Users are allowed to bring their own devices to work
+
+                Devices should be managed and maintained
+
         Mobile Deployment Models
+
+            Choose Your Own Device (CYOD)
+                - Employees are allowed to choose a device they want to use for organizational purposes
 
     Networking Tools
 
         Ping and Traceroute
 
+            Ping - Checks if a remote device is accessible
+                - Sends an IMCP Echo REQUEST
+
+            h Ping - Customizable ping command
+
+            Traceroute - Checks the routing path to a remote device
+
         DNS Tools
 
-        ipconfig, ifconfig, and route
+            Dig - Returns data about a domain such as an IP (Mac&Linux)
+            NsLookUp - Returns data about a domain such as an IP (Windows)
+
+            Reverse WhoIs - Searching for IPs or Domains from an email address or name
+                - ViewDNS.info
+
+        ip config, if config, and route
+
+            if config - Command on Linux and Mac for checking the local IP address
+            ip config - Command on Windows for checking the local IP address
+            route - Shows the local routing connections
 
         Netstat
 
+            Netstat - Shows active network connections on the device (Windows)
+                - Linux systems use the 'ss' command for the same information
+
         Netcat
+
+            Netcat - 'nc' command to send raw commands to a device on a network
+                - Only works on Mac and Linux
+                - Windows has no equivalent command
 
         ARP
 
+            Address Resolution Protocol - Translates MAC addresses into IP addresses
+                - command only works on local networks
+
         Curl
 
-        The harvester
+            Curl - Command to retrieve information from the internet
+
+        theHarvester
+
+            theHarvester - Mines the internet for domain information
+                - Can be used to start gathering information about a domain
 
         Cuckoo
 
+            Cuckoo - Sandboxing tool to test suspicious files
+
         Port Scanners
 
+            Port Scanner - Probes for open network ports
+                - Nmap
+                - stainless - A Python script to automate port scans
+
+            Vulnerability Scanners - Probes for known vulnerabilities
+            Application Scanners - Tests for known application security flaws
+
         Vulnerability Scanners
+
+            Nessus - Popular web-based vulnerability scanner
+
+            Sn1per - Automates penetration testing
