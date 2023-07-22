@@ -3,14 +3,48 @@ Operations and Incident Response
     Introduction
 
         Operations and Incident Response
+
+            Contains the damage
+            Determines the root cause
+            Resolves the issue
+            Recovers normal operations as quickly as possible
         
     Incident Response Programs
 
         Build An Incident Response Program
 
+            Incident Response Plan
+                - A structured plan including steps when an incident occurs
+
+            Incident Response Plan Elements:
+                - Statement of Purpose:
+                    - What type of incidents does the plan cover
+                - Strategies and goals for incident response
+                    - What is the plan for protecting
+                - Approach
+                - Communication with other members and groups
+                - Senior leadership approval
+            
+            NIST SP 800-61 can be used to develop a plan
+
         Creating An Incident Response Team
 
+            The team should be available 24/7
+
+            Members should include:
+                - Management
+                - Information Security personnel
+                - Subject matter experts
+                - Legal Counsel
+                - Public Affairs
+                - Human Resources
+                - Physical security
+            
+            Work with team members regularly
+
         Incident Communications Plan
+
+            
 
         Incident Identification
 
