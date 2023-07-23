@@ -264,36 +264,202 @@ Operations and Incident Response
 
         Cloud Audits and Investigation
 
+            Service Organizational Controls (SOC)
+
+                SOC 1
+                    - Provides assurance required for customer financial audits
+                
+                SOC 2
+                    - Provides detailed assurance of confidentiality, integrity, and availability controls
+
+                SOC 3
+                    - Provides high-level, public reporting of confidentiality, integrity, and availability controls
+
+                SOC 1&2 Types:
+                    - Type 1
+                        - Describes the controls that the service provider has in place and an opinion on the sustainability of those controls
+                    - Type 2
+                        - Includes the same information as a Type 1 report along with the results of control testing by the auditor
+
     Forensic Techniques
 
         Conducting Investigations
 
+            Types of investigations:
+                - Operational or administrative
+                    - Looks into technology issues
+
+                    - Seek to resolve technology issues
+                    - Restore normal operations as quickly as possible
+                    - Use low standards of evidence (no legal)
+                    - Involve root cause analysis
+                - Criminal
+                    - Look into possible crimes
+
+                    - Involve the possibility of fines or jail time
+                    - Use the beyond-a-reasonable-doubt standard of evidence
+                - Civil
+                    - Resolve disputes between parties
+
+                    - Do not involve the possibility of fines or jail time
+                    - Use the preponderance of the evidence standard
+                - Regulatory
+                    - Conducted by the government or industry regulators
+
         Evidence Types
+
+            Types of evidence:
+                - Real
+                    - Tangible objects
+                - Documentary
+                    - Logs
+                        - Must be authenticated
+                        - Best evidence rule
+                            - Original documents are always superior to copies
+                        - Parol evidence
+                            - Written contracts are assumed to be the entire agreement
+                - Testimonial
+                    - Witness statement
+                        - Direct evidence
+                            - The witness provides evidence based upon their observations
+                        - Expert opinion
+                            - The expert witness draws a conclusion based upon their evidence
 
         Introduction to Forensics
 
+            The goal of digital forensics:
+                - Collect, preserve, analyze, and interpret digital evidence
+
+            Investigators must never alter evidence, or else the chain is custody is broken
+
+            Volatility
+                - The relative permanence of a piece of evidence; evidence that may not last long is more volatile than more permanent sources of evidence
+
+            Order of volatility:
+                - Network traffic
+                - Memory contents
+                - System configurations and process data
+                - Files (temporary too)
+                - Logs
+                - Archived records
+
         System and File Forensics
+
+            Create copies or images of the evidence and use the copy to gather evidence
+
+            Write blockers (Forensic disk controllers) - Systems used to stop any changes that may take place during a disk imaging
+
+            Hashes protect evidence
+                - They provide a unique file signature that changes if a modification has been made
+
+            File meta-data shows more information about files
 
         File Carving
 
+            File carving
+                - Retrieving data from unallocated space on a disk
+
+                Tools
+                    - bulk_extractor
+                        - Recovery tool to find unallocated files from a disk
+                    - WinHex
+                        - Low-level data editing work
+
         Creating Forensic Images
+
+            Linux - dd utility
+                        dd if=[source] of=[output.img] [status=progress]
+                        md5sum [output.img] - to create a hash string of the image
+
+            Windows - FTK Imager
+                        - Add all attached drives
+                        - Right click on drive > Export Disk Image > Image source > Add Destination > File Format > Raw (dd)
+                            - Add optional information > Case number, evidence number, unique description, examiner, notes
+                            - Image destination folder, file destination, file fragment size
 
         Digital Forensic Toolkit
 
+            Suites - EnCase, FTK, Atopsy, Helix
+
+            Cryptographic tools - md5sum, shasum
+
+            Incident response plan
+            Chain of custody forms
+            Incident forms
+            Call list or escalation list
+
         Operating System Analysis
+
+            Live analysis
+                - Retrieving volatile evidence from a live system
+                -FTK offers memory dumps
+                    - Swap/page files - Contain memory contents
+
+            Windows SysInternal Suite
+                - A suite of programs that can be used to view and analyze Windows OS internals such as autorun files and W/R permissions, active network connections, process applications
 
         Password Forensics
 
+            Linux
+                - Passwords are stored in [/etc/passwd]
+                    - Remove password hashes from this file
+
+                    - Users still log in through the [etc/shadow] file
+
         Network Forensics
+
+            Intercept network traffic
+                - WIRESHARK
 
         Software Forensics
 
+            Intellectual property
+                - Software forensics may be used to resolve intellectual property disputes between two parties
+            
+            Malware origins
+                - Software forensics may be used to identify the author of malicious software found on a system
+
+            Email headers
+                - MxToolbox - A tool to analyze email headers
+
         Mobile Device Forensics
+
+            Mobile devices are often protected by strong encryption
 
         Embedded Device Forensics
 
+            Special purpose computers
+
         Chain of Security
+
+            Chain of custody
+                - Provides a paper trail of evidence collection
+
+            Important events to log:
+                - Initial collection
+                - Transfer of evidence
+                - Storage
+                - Opening and resealing
+
+                - Investigator name
+                - Date and time
+                - Purpose
+                - Nature of the action
 
         E-discovery and Evidence production
 
+            Preservation
+                - Legal force causing collection of data
+                - Stopping of deletion of files or logs
+            Collection
+                - File servers
+                - Endpoint systems
+                - Email messages
+                - Enterprise systems and cloud services
+            Production
+                - Evidence is presented to an attorney
+
         Exploitation Frameworks
+
+            Metasploit
+                - Most common Exploitation framework
