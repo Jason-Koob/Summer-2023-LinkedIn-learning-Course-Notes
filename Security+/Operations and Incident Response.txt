@@ -44,37 +44,223 @@ Operations and Incident Response
 
         Incident Communications Plan
 
-            
+            Limit publicity of the incident
+                Most incidents don't require law enforcement notification
+
+            Use secure communication channels
+                - Prevents inadvertent leaks of information about the incident
 
         Incident Identification
 
+            Monitoring is crucial
+                - IPS/IDS
+                - Firewalls
+                - Authentication systems
+                - Integrity monitors
+                - Vulnerability scanners
+                - System event logs
+                - NetFlow records
+                - Antimalware packages
+
+                - SIEM
+
+            Incidents may be found by external sources
+
+            *EXAM TIP* - First responder's  primary priority is to contain the damage
+
         Escalation and Notification
+
+            Goals:
+                - Evaluate the incident severity
+                - Escalate to the appropriate level
+                - Notify management and other stakeholders
+
+            Assessing severity:
+                - Low
+                    - Minimal or no potential to affect security
+                    - Normally handled by first responders
+                    - Normally don't require an after-hours response
+                - Moderate
+                    - Have a significant effect on security
+                    - Trigger incident response team activation
+                    - Prompt notification of management
+                - High
+                    - May cause critical damage to information or systems
+                    - Justify an immediate, full response
+                    - Require immediate notification to senior management
+                    - Demands full mobilization of the incident response team
 
         Mitigation
 
+            Goal:
+                - Controlling the damage to the organization through containment
+
+            Evaluating containment strategies:
+                - Check the potential for damage
+                - Find a need for evidence preservation
+                - Service availability
+                - Time and resource requirements
+                - Expected effectiveness
+                - Solution time frame
+
+            Balance business needs with security objectives
+
+            Attackers may be alerted when containment starts
+
         Containment Techniques
+
+            Techniques:
+                Segmentation
+                    - split a large area into smaller areas, that are easier to manage
+                Isolation
+                    - Prevent the split area from communicating
+                Removal
+                    - Completely disconnect the isolated systems
 
         Incident Eradication and Recovery
 
+            Eradication
+                - Remove any traces of an incident
+
+            Recovery
+                - Restore normal operations
+                    Apply security patches
+
+            Security practices:
+                - Application whitelisting/blacklisting
+                - Quarantine
+                - Access Controls
+
+                - Modify firewall rules
+                - Mobile Device Management (MDM)
+                - Data Loss Prevention (DLP)
+                - URL filtering
+                - Update/revoke compromised digital certificates
+
+            Sanitizing techniques:
+                - Clearing - overwrite to frustrate casual analysis
+                - Purging - more advanced techniques to frustrate laboratory analysis
+                - Destroying - completely obliterates media
+
         Validation
+
+            Validation process:
+                - Verify the secure configuration of every system
+                - Run vulnerability scans
+                - Perform account and permission reviews
+                - Verify that systems are logging and communicating security information to the SIEM
 
         Post-Incident Activities
 
+            Post-Incident Activities:
+                - Lessons learned
+                    - Reflect on the incident
+                        - How well did staff and management perform?
+                        - Were documented procedures followed?
+                            - Were those procedures adequate?
+                        - What would staff and management do differently?
+                        - How could information sharing be improved?
+                        - What could prevent a similar incident in the future?
+                        - What should the organization watch for?
+                        - What additional tools or resources are needed?
+                - Evidence retention
+                    - Storing of evidence after the incident
+                - Indicator of compromise generation
+                    - Incorporate new indicators of compromise in your security monitoring program
+
         Incident Response Exercises
+
+            Read-through
+                - Ask each member to review their role in the incident response plan
+            
+            Walk-through
+                - Every member of the incident response team gathers and goes through the plan together
+
+            Simulation
+                - Using a specific scenario to test incident response
 
     Attack Frameworks
 
         MITRE ATT&CK
 
+            Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
+
         Diamond Model of Intrusion Analysis
 
+            4 core features:
+                Adversary - Core person or group attempting to compromise systems
+                Capabilities - Actions an adversary can do
+                Infrastructure - The systems that play a part in an attack
+                Victim - organization being targetted
+
+            Meta feature:
+                - Timestamps
+                - Phase
+                - Result
+                - Direction
+                - Methodology
+                - Resources
+
         Cyber Kill Chain Analysis
+
+            Cyber kill chain
+                - Models phases of an attack
+                - Focuses on the activities of advanced persistent threats (APTs)
+
+            Process of a cyber kill chain
+                1. Reconnaissance - gather information
+                2. Weaponization - Coupling exploitative techniques with a backdoor and payload
+                3. Delivery - Delivering the payload to the victim
+                4. Exploitation - Executing the payload
+                5. Installation - Installing malware
+                6. Command & Control - Creates a channel to later command the compromised device or system
+                7. Actions on objectives - The intruder's goal is accomplished
 
     Incident Investigation
 
         Logging Security Information
 
+            - Network or NetFlow
+            - DNS
+            - System logs
+            - Application logs
+            - WebApp logs
+            - Auth logs
+
+            - VoIP
+            - Dump Files
+
+            - SysLogs
+                - Header - timestamp, src address
+                - facility - the source of the message-sending system
+                - Severity - 0-7
+                    - 0 - Emergency
+                    - 1 - Alert
+                    - 2 - Critical
+                    - 3 - Error
+                    - 4 - Warning
+                    - 5 - Notice
+                    - 6 - Informational
+                    - 7 - Debug
+                - Message - Purpose
+
+                Syslog is the original and is supported on Linux
+                Syslog-ng - added security and delivery in 1998
+                Rsyslog - further enhancements in 2004
+
         Security Information and Event Management
+
+            SIEM:
+                - Collection of logs
+                - Analyzing logs
+
+            Security Orchestration Automation and Response System (SOAR):
+                - Analyze logs through:
+                    - Playbooks
+                        - Process-focus responses to security events, including both human and automated actions
+                    - Runbooks
+                        - Completely automated responses to security events that execute immediately to aid human investigations
+
 
         Cloud Audits and Investigation
 
