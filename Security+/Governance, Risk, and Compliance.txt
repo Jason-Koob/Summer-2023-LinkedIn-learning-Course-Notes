@@ -1,0 +1,409 @@
+Governance, Risk, and Compliance
+
+    Risk Analysis
+
+        Risk Assessment
+
+            Risk Assessment
+                - identify and prioritize risks based on how likely they are to happen and how impactful they are
+
+            Threat
+                - Some external force
+            
+                Threat vector
+                    - The methods used to exploit a vulnerability
+
+            Vulnerability
+                - Weakness in security controls
+
+            Risks occur when an environment has both a threat and a vulnerability
+
+            Qualitative risk assessment
+                - Uses subjective ratings to evaluate risk the likelihood and impact
+
+            Quantitative risk assessment
+                - Use objective numeric ratings to evaluate the likelihood and impact
+
+        Quantitative Risk Assessment
+
+            Perform Quantitative risk assessment for a single risk and asset pair at a time
+
+            Value evaluation factors:
+                - Asset value (AV)
+                    - Original value
+                    - Depreciated value
+                    - Replacement value
+                - Exposure factor (EF)
+                    - Expected percentage of damage to an asset
+                Single-Loss expectancy (SLE)
+                    - Expected dollar loss if a risk occurs one time
+                    - AV * EF = SLE
+                        - 20 * 50% = 10
+
+            Likelihood factors:
+                - Annual rate of occurrence (ARO)
+                    - Number of times each year a risk is expected to occur
+                - Annualized loss expectancy (ALE)
+                    - Expected dollar loss from a risk given any year
+                        - SLE * ARO = ALE
+                            - 10 * 0.01 = .1
+            
+            Time factors:
+                - Mean time to failure (MTTF)
+                    - Average time a non-repairable component will last
+                - Mean time between failure (MTBF)
+                    - Average time a repairable component will last
+                - Mean time to repair (MTTR)
+                    - Average time a repair will need while being repaired
+
+        Risk Types
+
+            Internal risks:
+                - Any risk that may arise from inside an organization
+
+            External risks:
+                - Any risk that starts outside an organization
+
+            Multiparty risks:
+                - Risks that are shared across many organizations
+
+            Legacy risks:
+                - Unsupported systems
+
+        Information Classification
+
+            Data classification policies:
+                - Assign information to categories, known as classifications, that determine storage, handling, and access requirements
+
+                    Classifications are based on:
+                        - Sensitivity
+                            - Personally identifiable information (PII)
+                            - Financial information
+                            - Health information (HIPAA)
+                        - Criticality
+
+    Risk Management
+
+        Risk Treatment Options
+
+            Risk management/treatment
+                - This is a process of systematically analyzing potential responses to each risk and implementing strategies to control those risks appropriately
+
+                Options:
+                    - Avoidance
+                        - Changing the organization's business practices to divert the risk
+                            - Example - Moving storage to the midwest to avoid the risk of a flood
+                    - Transference
+                        - Shifts the impact of the risk to another organization
+                            - Example - Cloud storage insurance
+                    - Mitigation
+                        - Taking actions to reduce the likelihood or impact of a risk
+                            - Example - flood control water-ducts
+                    - Acceptance
+                        - Accepting the risk without taking further action
+                            - Example - The cost of another option out-weights the benefits
+
+                    - Risk profile
+                        - The full set of risks facing an organization
+
+                Inherent risk
+                    - The original risk being dealt with
+                Residual risk
+                    - The original risk has been reduced
+                Control risk
+                    - The risk of the applied control failing
+        
+        Categorizing Security Controls
+
+            Purpose of security controls:
+                - Preventive - The goal is to stop security issues in the first place
+                - Detective - Identify unwanted security breaches in the control (IDS)
+                - Corrective - Remediate security issues that have occurred
+                - Deterrent - Prevent an attacker from seeking to violate security policies
+                - Physical - Impacts the physical world
+                - Compensating - Fill a known gap in a security environment
+
+            Mechanism of actions:
+                - Technical - Use technology to achieve security control objectives
+                - Operational - The processes up in place to manage technology in a secure manner
+                    - These mechanisms of action are carried out by individuals, not technology
+                - Managerial - Improve the security of the risks management process itself
+
+        Ongoing Risk Management
+
+            Control assessment 
+                - Occasional testing of controls
+
+        Risk Management Frameworks
+
+            NIST SP 800-37
+                - Risk management framework developed by the National Institute of Technology (NIST)
+
+                0. Gather information
+                1. Categorize information systems
+                2. Select security controls
+                3. Implement security controls
+                4. Assess security controls
+                5. Authorize information systems
+                6. Monitor security controls
+
+        Control Frameworks
+
+            Control objectives for information technology (COBIT)
+                - Business-focused control framework
+
+            ISO 27001 - Covers cybersecurity control objectives
+            ISO 27002 - Covers cybersecurity control implementation
+            ISO 27701 - Covers privacy controls
+            ISO 31000 - Covers risk management programs
+
+            NIST SP 800-53 - Mandatory for federal agencies
+
+        Risk Visibility and Reporting
+
+            Risk register // logs
+                - Centralized document which tracks risk information
+                    - Description
+                    - Category
+                    - Probability // impact
+                    - Risk rating
+                    - Risk management actions
+
+                - Sources:
+                    - Risk assessment results
+                    - Audit findings
+                    - Team member output
+                    - Threat intelligence
+
+        Data Security Roles
+
+            Data controllers
+                - Determine the reasons for processing personal information and direct the methods of processing
+            Data processors
+                - Service providers that process personal information on behalf of a data controller
+
+            Data owner:
+                - Business leaders with the overall responsibility for data. They set policies and guidelines for their data sets
+            Data steward:
+                - Handle the day-to-day governance activities. They have been delegated responsibility by data owners
+            Data custodian:
+                - the individuals that actually store and process information and are often IT staff members
+
+    Supply Chain Risk
+
+        Managing Vendor Relationships
+
+            Vendors should use the same policies as you do when handling your data
+
+            Vendor process:
+                Selection:
+                    - May use a formal request for proposal (RFP)
+                    - May also use an informal process
+                    - Security should be included in the requirements
+                    - Should include an assessment of the provider's risk management program
+                Onboarding:
+                    - Verify contract details
+                    - Arrange secure data transfer
+                    - Establish incident procedures
+                Monitoring:
+                    - Conduct site visits
+                    - reviewing independent audits
+                    - Handling of security incidents
+                Offboarding:
+                    - Destroying all confidential data
+                    - The relationship is unwound in an orderly fashion
+                    - May restart the cycle
+
+        Vendor Agreements
+
+            The non-disclosure agreement (NDA)
+                - each party in the agreement will not divulge confidential information
+            
+            Service-level requirements (SLR)
+                - Document specific requirements that a customer has about any aspect of a vendor's service performance
+
+                Examples:
+                    - System response times
+                    - Service availability
+                    - Data preservation
+            
+            These requirements should be documented in a Service-level agreement (SLA)
+
+            Memorandum of Understanding (MOU)
+                - A documented form of understanding used in case a misunderstanding was to take place over an agreement
+
+            Business partnership agreement (BPA)
+                - A document stating two organizations' dualities in an agreed-upon partnership
+
+            Interconnection security agreement (ISA)
+                - A formal document stating what assets will be shared in a vendor relationship (networks, documents, etc.)
+
+        Vendor Information Management
+
+            Data ownership provisions:
+                - Customer retains uninhibited data ownership
+                - Vendor's right to use information is limited to activities performed on behalf of the customer
+                - Vendor's right to use information is limited to activities performed with the customer's knowledge
+            
+            Data sharing and protection should also be included
+        
+        Audits and Assessments
+
+            Audits and assessments:
+                - Both evaluate security controls
+                - Report on their effectiveness
+                - Recommend improvements
+
+            Assessments are usually performed internally by the IT staff
+            Audits are usually performed by an external third party on behalf of the customer
+
+                User access review
+                    - Validate rights and permissions
+
+        Cloud Audits
+
+            Cloud service providers show their audits to their customers
+                - These audits are called Service Organizational Control (SOC) reports
+
+            SOC report types:
+                - 1 - Provides assurance required for financial audits
+                - 2 - provides detailed assurance of confidentiality, integrity, and availability controls
+                - 3 - Provides high-level public reporting of confidentiality, integrity, and availability controls
+
+            SOC 1 reports
+                - Describes the controls that the service provider has in place and an opinion on the suitability of those controls
+            SOC 2 reports
+                - Includes the same information as a Type 1 report along with the results of control testing by the auditor
+
+    Security Policies
+
+        Security Policy Framework
+
+            Policies:
+                - Provide the foundation for a security program
+                - Written carefully over a long time
+                - Require compliance from all employees
+                - Approved at the highest level of the organization
+            Standards:
+                - Describe the specific details of security controls
+                - Derive their authority from policies
+                - Follow a less rigorous approval process
+            Guidelines:
+                - Provides advice to the organization
+                - Follow best practices from the industry
+                - Suggest optional practices; not mandatory
+            Procedures:
+                - Outline a step-by-step process for an activity
+                - May require compliance, depending upon the circumstances
+
+        Security Policies
+
+            - Foundational authority for data security efforts
+            - Clear expectations for data security responsibilities
+            - Guidance for requesting access to information
+            - Process for granting policy exceptions
+
+            Data storage:
+                - Appropriate storage locations
+                - Access control requirements
+                - Encryption requirements
+
+            Data transmission policies:
+                - Appropriate data transmissions
+                - Encryption requirements
+                - Acceptable transmission mechanisms
+
+            Data lifecycle policies:
+                - Describe end of life for data
+
+                - Data retention policies:
+                    - Specify the minimum and/or maximum periods that an organization will retain different data elements
+                - Data disposal policies:
+                    - Describe proper techniques for destroying data that is no longer needed by the organization
+
+    Privacy and Compliance
+
+        Legal and Compliance Risks
+
+            Data regulation and management laws are difficult
+
+        Data Privacy
+
+            Personally identifiable information (PII)
+            
+            Protected health information (PHI)
+
+            Generally accepted privacy principles (GAPP)
+                - American institute of certified public accountants (AICPA)
+                - Canadian institute of chartered accountants (CICA)
+                - Information systems audit and control association (ISACA)
+                - Institute of internal auditors (IIA)
+
+                1. Management
+                    - Organizations handling private information should have policies, procedures, and governance structures in place to protect privacy
+                2. Notice
+                    - Data subjects should receive notice that their information is being collected and used, as well as access to the privacy policies and procedures followed by the organization
+                3. Choice and consent
+                    - the organization should inform data subjects of their options regarding the data they own and get consent from those individuals for the collection, storage, use, and sharing of that information
+                4. Collection
+                    - The organization should only collect personal information for purposes disclosed in their privacy notices
+                5. Use, retention, and disposal
+                    - Organizations should only collect and use personal information for disclosed purposes and they should dispose of the data securely as soon as it is no longer needed for the disclosed purpose
+                6. Access
+                    - Organizations should provide data subjects with the ability to review and update their personal information
+                7. Disclosure to third parties
+                    - Organizations should only share information with third parties if that sharing is consistent with the purposes disclosed in the privacy notice and they have the consent of the individual to share that information
+                8. Security
+                    - The organization must secure private information against unauthorized access, either physically or logically
+                9. Quality
+                    - The organization should take reasonable steps to ensure that the private information they maintain is accurate, complete, and relevant
+                10. Monitoring and enforcement
+                    - The organization should have a program in place to monitor compliance with its privacy policies and provide a dispute-resolution mechanism
+
+                # I TYPED ALL THIS OUT AND I DIDN'T ENJOY IT.
+
+        Data Breaches
+
+            Effects of a data breach:
+                - Reputational damage
+                - Identity theft for its customers and users
+                - Fines
+                - Theft of intellectual property
+
+    Privacy Enhancing Technologies
+
+        Data Anonymization
+
+            Deidentification
+                - The process of removing any common identifiable information (SSN, names)
+
+                Anonymization
+                    - Removes the possibility of identification
+
+        Data Obfuscation
+
+            Data Obfuscation
+                - Transforms personally identifying information into a form where it is no longer possible to tie it to a single person
+
+    Security Awareness and Training
+
+        Security Education
+
+            Training
+                - Provides users with the knowledge they need to protect the organization's security
+
+            Awareness
+                - Keeps the lessons learned during security training at the top of mind for employees
+
+            Training should be tailored to the role of the user (Accounting -> PCII training)
+
+        User Habits
+
+            Password security practices should be changed and not be reused across sites
+
+        Separation of Duties
+
+            - No individual should possess two permissions that in combination, allow them to perform a highly sensitive action
+
+            Two person control
+                - Requires the authorization of two separate individuals to carry out a sensitive action; also known as dual control
