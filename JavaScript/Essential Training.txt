@@ -1,0 +1,179 @@
+Essential Training
+
+    Introduction
+
+        JavaSript: The Soil From Which The Modern Web Grows
+
+        How To Use The Exercise Files
+
+    JavaScript: A Brief Introduction
+
+        JavaScript: First Contact
+
+        Navigating the JS Landscape
+
+        Tools For Working With JavaScript
+
+        Linting and Formatting
+
+        Get To Know The Browser Console
+
+        JavaScript Language Basics
+
+        Learning The Language Basics
+
+    Up and Running With JS
+
+        JavaScript In An HTML Document
+
+        JavaScript As An External Files
+
+        JavaScript Modules
+
+    Objects
+
+        Objects: A Practical Introduction
+
+        JavaScript Objects: The Code Version
+
+        Object Containers
+
+        Object Properties
+
+        Accessing Objects
+
+        Practice Build A New Object
+
+        Object Methods
+
+        Practice: Build A New Method
+
+        Classes: Object Blueprints
+
+        Practice: Build A New Object With A Constructor
+
+        Global Objects
+
+        Challenge: Create A New Object Type
+
+        Solution: Create A New Object Type
+
+    Sidebar: String Output
+
+        Mix Text and Variables With Template Literals
+
+        Traditional String Output
+
+    DOM
+
+        DOM: The Document Object Model
+
+        Access Elements With QuerySelector Methods
+
+        Access Elements Using Older Methods
+
+        Practice: Find An Element
+
+        Attributes
+
+        Inline Style
+
+        Practice: Modify Classes, Attributes, and Styles
+
+        Add DOM Elements
+
+        Challenge: Add A New Element
+
+        Solution: Add A New Element
+
+    Sidebar: Variables and Data Types
+
+        Variables: Containers for Everything
+
+        Var
+
+        Scope
+
+        Let
+
+        Const
+
+        Data Types
+
+        Assignment vs. Comparison
+
+        Math Operators
+
+    Arrays
+
+        Arrays Explained
+
+        Arrays In Code
+
+        Array Methods
+    
+        Challenge: Build and Modify An Array
+
+        Solution: Build and Modify An Array
+
+    Functions and Methods
+
+        The Real-World Function
+
+        Functions and Methods
+
+        A Standard Function
+
+        The Arrow Function
+
+        Arrow Functions and "This"
+
+        Practice: Build A Function
+
+        Pass Data To A Function
+
+        Pass Data To A Function With Parameters
+
+        Return Data From A Function
+
+        Practice: Pass Values Between Functions
+
+        Callbacks
+
+        Conditional If...Else Statement
+
+        Logical Operators
+
+        Conditional Switch Statement
+
+        Looping Through Content
+
+        Using The Map() Array Method
+
+        Challenge: Build An Advanced Function
+
+        Solution: Build An Advanced Function
+
+    Events
+
+        DOM Events Explained
+
+        Typical DOM Events
+
+        Event Listeners
+
+        Practice: Experiment With Listeners
+
+        Advanced Event Listeners and "This"
+
+        Pass Arguments Through Event Listeners
+
+        Challenge: Create An Event Listener
+        
+        Solution: Create An Event Listener
+
+    Troubleshooting and Validating JS
+
+        Troubleshooting JavaScript In The Browser
+
+        Making Sense of A React Component
