@@ -1,0 +1,333 @@
+Essential Training
+
+    Introduction
+
+        JavaSript: The Soil From Which The Modern Web Grows
+
+        How To Use The Exercise Files
+
+            All of the practice files are located on GitHub
+
+    JavaScript: A Brief Introduction
+
+        JavaScript: First Contact
+
+            Applying practical skills:
+                - Modern JavaScript and JavaScript tooling
+                - JSX and TypeScript
+                - Frameworks like React
+
+            JSX
+                - A syntax extension of JavaScript created for the React JavaScript framework
+
+        Navigating the JS Landscape
+
+            Vanilla - The original flavor of JavaScript
+
+                ECMAScript - The browser specification of the JavaScript language
+                ES2023 - The features defined in ECMAScript but not necessarily supported by modern browsers
+                    Babel.js is used to convert between ES versions and the current browser ECMAScript version
+                TypeScript - Variation, dialect, or flavors of JavaScript introducing new features (.ts)
+
+                Frameworks - JavaScript code that runs on top of JavaScript. These frameworks are used to make a more streamlined and efficient coding experience
+                    - React, Vue, Angular
+                
+                Build tools - Programs used to automate the process of optimizing human-readable JavaScript for the best browser performance
+                    - NPM, WebPack, Gulp
+
+                Node.js
+                    - JavaScript server runtime used to run JavaScript everywhere. used to run npm, WebPack, Babel, and more on your computer
+
+        Tools For Working With JavaScript
+
+            A modern browser - Ideally all the browsers available for testing
+
+            A code editor - Visual Studio Code is becoming the industry standard
+
+            A live server environment - Extensions to Visual Studio Code or similar
+
+            The browser console - Available in most browsers
+
+        Linting and Formatting
+
+            Extensions:
+                - ESLint - Automatically detects coding errors and can do basic cleanup
+                - Prettier - Automatic formatting of keywords and types
+
+            Install Node.js and npm
+                1. Download and install Node.js from https://nodejs.org
+                2. Install npm by running 'npm install' in a terminal window
+
+            Both of these extensions require Node.js
+
+        Get To Know The Browser Console
+
+            Inspect > Console
+
+        JavaScript Language Basics
+
+            Define all variables and functions before you use them above where they are used
+
+        Learning JavaScript Backwards
+
+            Starting with advanced items like DOMs and then basic items like methods and functions
+
+    Up and Running With JS
+
+        JavaScript In An HTML Document
+
+            In-line - The JavaScript is inside the HTML file
+
+        JavaScript As An External Files
+
+            Script files are referenced in the <script></script> tags usually inside the header
+                <script src="script.js"></script>
+
+            This referencing of JavaScript script files should be done near the end of the HTML document so each element of HTML is rendered then the JavaScript can change it how it needs
+
+        Modern JavaScript Loading
+
+            HTML files load top-down
+                This means that an object in HTML can be referred to by JavaScript before it is loaded.
+            
+            Instead of putting all of the JS at the end of the file, you can use keywords to render some objects in different orders
+
+            Render Blocking:
+                - The HTML is being parsed by the browser, any JS file causes the HTML to stop and wait for the JS to download and execute before HTML continues
+
+                    HTML | JS DOWNLOAD | JS EXECUTE | HTML
+
+            Async:
+                - The HTML is still being parsed while the JavaScript is being downloaded. The HTML still stops while the JS is being executed
+                    <script src="JS/script.js" async></script>
+
+                    HTML -> JS DOWNLOAD | JS EXECUTE | HTML
+                
+            Defer:
+                - HTML is parsed first and the JS is downloaded while the HTML is still parsing. The JS is then executed after the HTML is finished parsing
+                    <script src="JS/script.js" defer></script>
+
+                    HTML -> JS DOWNLOAD -> HTML | JS EXECUTE
+
+            With this information, JavaScript should be referenced in the header and use async/defer to load properly
+
+        JavaScript Modules
+
+            Objects can be exported from JavaScript files to another OR imported into HTML files
+
+            HTML
+                - import [backpack] from ["./script.js"]
+                - <script type="module" src="script.js"></script>
+
+                The default loading type for modules is deferred
+
+            JavaScript
+                - export [module]
+
+    Objects
+
+        Objects: A Practical Introduction
+
+            Objects are items with properties:
+                These properties are what make each object unique:
+                    These unique properties can be changed with the use of methods:
+                        These methods only change one object, not all of them:
+            Objects can contain other objects:
+
+        JavaScript Objects: The Code Version
+
+            Objects can be created using a constant (const [objName] = {};)
+
+                const [objName] = {[data]};
+
+                const lunchbox = {
+                    sandwich: "Ham sandwich",
+                }
+
+            Objects can contain properties that also include sub-objects inside of them
+
+            Objects can use methods to change properties of themselves or objects inside of them
+
+                toggle: function (lidStatus) {
+                    this.lidOpen = lidStatus;
+                }
+
+            [this] refers to the current object
+
+        Object Containers
+
+            Objects are typically constants because we cannot remove or replace the object from the container
+
+                This means that only the properties of an object can be changed, and the object cannot be destroyed
+
+            Objects can have their properties changed:
+                [object].[property] = [value]
+
+        Object Properties
+
+            Properties are separated by commas
+                The property names can only contain, letters, digits, $ and _
+
+        Accessing Objects
+
+            Objects are referenced by calling them in the browser console or through the script.js file using:
+                console.log([object])
+            
+            Text can be added when calling an object using:
+                console.log("HELLO WORLD", [object])
+
+        Accessing Object Properties
+
+            Dot Notation:
+                Specifically calling a property from an object:
+                    console.log([object].[property])
+
+            Bracket Notation:
+                The brackets around the property of the object are used around the quotation marks
+                console. log([object]["property"]);
+
+            This can be used if properties are unusual like if they are a variable or an output of a function
+
+                var chips = chipNum
+
+                console. log(lunchbox[chipNum]);
+
+        Practice Build A New Object
+
+            I made a working HTML page with working JavaScript objects, properties, and an update function
+
+        Object Methods
+
+            
+
+        Practice: Build A New Method
+
+        Classes: Object Blueprints
+
+        Practice: Build A New Object With A Constructor
+
+        Global Objects
+
+        Challenge: Create A New Object Type
+
+        Solution: Create A New Object Type
+
+    Sidebar: String Output
+
+        Mix Text and Variables With Template Literals
+
+        Traditional String Output
+
+    DOM
+
+        DOM: The Document Object Model
+
+        Access Elements With QuerySelector Methods
+
+        Access Elements Using Older Methods
+
+        Practice: Find An Element
+
+        Attributes
+
+        Inline Style
+
+        Practice: Modify Classes, Attributes, and Styles
+
+        Add DOM Elements
+
+        Challenge: Add A New Element
+
+        Solution: Add A New Element
+
+    Sidebar: Variables and Data Types
+
+        Variables: Containers for Everything
+
+        Var
+
+        Scope
+
+        Let
+
+        Const
+
+        Data Types
+
+        Assignment vs. Comparison
+
+        Math Operators
+
+    Arrays
+
+        Arrays Explained
+
+        Arrays In Code
+
+        Array Methods
+    
+        Challenge: Build and Modify An Array
+
+        Solution: Build and Modify An Array
+
+    Functions and Methods
+
+        The Real-World Function
+
+        Functions and Methods
+
+        A Standard Function
+
+        The Arrow Function
+
+        Arrow Functions and "This"
+
+        Practice: Build A Function
+
+        Pass Data To A Function
+
+        Pass Data To A Function With Parameters
+
+        Return Data From A Function
+
+        Practice: Pass Values Between Functions
+
+        Callbacks
+
+        Conditional If...Else Statement
+
+        Logical Operators
+
+        Conditional Switch Statement
+
+        Looping Through Content
+
+        Using The Map() Array Method
+
+        Challenge: Build An Advanced Function
+
+        Solution: Build An Advanced Function
+
+    Events
+
+        DOM Events Explained
+
+        Typical DOM Events
+
+        Event Listeners
+
+        Practice: Experiment With Listeners
+
+        Advanced Event Listeners and "This"
+
+        Pass Arguments Through Event Listeners
+
+        Challenge: Create An Event Listener
+        
+        Solution: Create An Event Listener
+
+    Troubleshooting and Validating JS
+
+        Troubleshooting JavaScript In The Browser
+
+        Making Sense of A React Component
