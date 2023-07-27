@@ -29,14 +29,16 @@ Essential Training
                     Babel.js is used to convert between ES versions and the current browser ECMAScript version
                 TypeScript - Variation, dialect, or flavors of JavaScript introducing new features (.ts)
 
-                Frameworks - JavaScript code that runs on top of JavaScript. These frameworks are used to make a more streamlined and efficient coding experience
+                Frameworks - JavaScript code that runs on top of JavaScript 
+                    These frameworks are used to make a more streamlined and efficient coding experience
                     - React, Vue, Angular
                 
                 Build tools - Programs used to automate the process of optimizing human-readable JavaScript for the best browser performance
                     - NPM, WebPack, Gulp
 
                 Node.js
-                    - JavaScript server runtime used to run JavaScript everywhere. used to run npm, WebPack, Babel, and more on your computer
+                    - JavaScript server runtime used to run JavaScript everywhere
+                        It is used to run npm, WebPack, Babel, and more on your computer
 
         Tools For Working With JavaScript
 
@@ -88,7 +90,7 @@ Essential Training
         Modern JavaScript Loading
 
             HTML files load top-down
-                This means that an object in HTML can be referred to by JavaScript before it is loaded.
+                This means that an object in HTML can be referred to by JavaScript before it is loaded
             
             Instead of putting all of the JS at the end of the file, you can use keywords to render some objects in different orders
 
@@ -141,7 +143,7 @@ Essential Training
                 const [objName] = {[data]};
 
                 const lunchbox = {
-                    sandwich: "Ham sandwich",
+                    sandwich: "Ham",
                 }
 
             Objects can contain properties that also include sub-objects inside of them
@@ -198,17 +200,71 @@ Essential Training
 
         Object Methods
 
-            
+            Method - A function inside of an object
 
         Practice: Build A New Method
 
+            I made a function inside an object called a lunch box
+            The function changes the noteFromMom variable
+
+            I made another function to change the status of a boolean called juice Box which can either be true or false
+
         Classes: Object Blueprints
 
+            Classes are ways to make multiple of the same object easily without needing to copy every property and method for each object
+
+                JavaScript  => [CLASS.js]:
+
+                    class lunchBox {
+                        constructor(
+                            [property],
+                            [property],
+                            [property],
+                            [property],
+                            [method]
+                        ) {
+                            this.[property] = [individual property];
+                            this.[property] = [individual property];
+                            this.[property] = [individual property];
+                            this.[property] = [individual property];
+                        };
+                    }
+
+                    export default [CLASS]
+
+            To use the object template from a class:
+
+                JavaScript => [SCRIPT.js]
+
+                import [CLASS] from [CLASS.js]
+
+                const [OBJECT NAME] = new [CLASS](
+                    [property],
+                    [property],
+                    [property],
+                    [property],
+                    [property]
+                )
+
+        Object Constructors
+
+            Always use a class instead of a constructor
+        
         Practice: Build A New Object With A Constructor
+
+            I made a constructor template to make new objects called suitCase
 
         Global Objects
 
+            Global objects are objects that are shared throughout all other objects, methods, and functions
+            They can be referred anywhere
+
         Challenge: Create A New Object Type
+
+            I made a class in a separate file called books.js
+            The class is called 'Book'
+
+            I used the class to make a new object type in my script.js file and call it in the live HTML
 
         Solution: Create A New Object Type
 
@@ -216,27 +272,107 @@ Essential Training
 
         Mix Text and Variables With Template Literals
 
+            Backticks `` can be used to mix JS objects with HMTL elements
+
+            JavaScript expressions are used in HTML using ${} with the content inside
+
+                These JavaScript expressions can be used inside the HTML
+
         Traditional String Output
+
+            Without using template literals browsers use quotations for concatenating JavaScript expressions to HTML elements
+                An example of this is:
+                    "<h1>The title of this content is: " + JSobject.property + "</h1>"
 
     DOM
 
         DOM: The Document Object Model
 
-        Access Elements With QuerySelector Methods
+            DOM is a structured way to organize objects
+
+        Access Elements With querySelector Methods
+
+            inside a JavaScript console:
+                document.querySelector("main")
+                    This returns the main element from the HMTL page as an array item
+                    
+                document.querySelector("main li:last-child")
+                    This returns the last item listed with the <li> tag
+
+            document.querySelectorAll() returns all elements that match the queried element from the HTML
+
+                document.querySelectorAll("main li")
+                    This returns all of the items inside a <li> tag within the HTML
 
         Access Elements Using Older Methods
 
+            Element.getElementByID("")
+            
+            Element.getElementsByClassName("")
+
         Practice: Find An Element
+         
+         I used both the document.querySelector("main li") and document.getElementsByClassName("main ul") commands to retrive information from HTML through JavaScript
+
+        Modifying Element Classes
+
+            This can be done with commands such as:
+                document.querySelector("h1").className = "bolded"
+
+                This will select all <h1> tags and assign them the "bolded" class
+
+            The better alternative to using className is to use classList.add or classList.remove because some HTML elements can have multiple class names
+                Some JavaScript frameworks also use className for other purposes
+
+            className should be used to return a list of classes that an HTML element has
+            classList should be used to modify classes an HMTL element has
 
         Attributes
 
+            document.querySelector("img").hasAttribute("src") - This will return true if the img element has the "src" attribute and false if it doesn't
+            document.querySelector("img").getAttribute("src") - This will return the information stored with the "src" attribute
+            document.querySelector("img").setAttribute("src", "This is the new attribute information") - This will update or create an attribute named "src" and fill it with the following information
+            document.querySelector("img").removeAttribute("src") - This will remove the "src" attribute from the "img" element
+
         Inline Style
+
+            document.querySelector(".site-style").style - This will return every style attributes changing an element
+                This can be further used to get specific style elements of an object by using:
+
+            document.querySelector(".site-style").style.color - This will return the CSS color of the element(s) with the site-style class
+
+            document.querySelector(".site-style").style.color = "red" - This example will change the color to red
 
         Practice: Modify Classes, Attributes, and Styles
 
+            I executed the following commands to check if an element has an attribute, set a value to the attribute, then check for the attribute again:
+
+                document.querySelector(".swag").hasAttribute("src")
+                    false
+                
+                document.querySelector(".swag").setAttribute("src", "Now this is a swaggy attribute")
+                    undefined
+
+                document.querySelector(".swag").hasAttribute("src")
+                    true
+
+                document.querySelector(".swag").getAttribute("src")
+                    "Now this is a swaggy attribute"
+
         Add DOM Elements
 
+            Using the document.createElement() command we can add new elements to an HTML page through JavaScript
+                This command creates an element but it is only theoretical until it is added to the HTML
+
+            The new elements can be appended to the HTML using:
+            parentNode.append() - adds the JS element to the end of the HTML element
+            parentNode.insertBefore() - adds the JS element before the HTML element
+
+            parentNode.appendChild() - returns the element to be further changed and moved
+
         Challenge: Add A New Element
+
+            I made a new element in JavaScript and added it to the HTML using class tags
 
         Solution: Add A New Element
 
@@ -244,29 +380,96 @@ Essential Training
 
         Variables: Containers for Everything
 
+            Variables store data
+
         Var
+
+            The default variable
+            Stores data
 
         Scope
 
+            The area where variables and objects can be called
+
         Let
+
+            Defining a variable within a container and the value of the variable not escaping
 
         Const
 
+            A let variable that cannot be changed
+
         Data Types
+
+            JavaScript uses strings, numbers, booleans, floating points, null values, undefined values, arrays, and objects
 
         Assignment vs. Comparison
 
+            Assignment can be done with a single =
+                
+            Comparison can be done with ==, >=, >, <=, < like in other programming langauges
+
+                Absolute equality can be used with === to compare two variables exactly "Five" === "five"
+
         Math Operators
+
+            JavaScript can do 
+                
+                Addition (+)
+
+                    ++ adds one to a variable
+
+                        a++ - Uses the 'a' value then adds 1 to it
+                        ++a - Adds 1 to the value before it is used
+
+                        Adding a number and a string will concatenate the two
+
+                Subtraction (-)
+
+                    -- subtracts one from a variable
+
+                        The same --a and a-- as the addition
+
+                Multiplication (*)
+                Division (/)
+                Modulo (%)
+                Powered Multiplication? (**)
 
     Arrays
 
         Arrays Explained
 
+            Array - A list of items in an order
+
+                Pop - Export the last item of an array
+                Push - Add an item to an array
+                Shift - Moving the indexes of the items of an array
+
         Arrays In Code
 
+            Items in an array can be any data type
+            Items in an array can be added in specific locations in the array
+
         Array Methods
-    
+
+            Join - Printing a list of every item in an array
+                console.log(arrayName.join(" | "))
+                    piggy | doggy | horsey
+
+            Push - Add an item to an array
+                console.log(arrayName.push("donkey"))
+                    "piggy", "doggy", "horsey", "donkey"
+
+            Unshift - Adding items to the beginning of an array
+                console.log(arrayName.unshift("donkey"))
+                    "donkey", "piggy", "doggy", "horsey"
+
+            Shift - Removing an item from the start of an array
+
         Challenge: Build and Modify An Array
+
+            I made an array and added items to it, and made a function check if the length is over 3
+                If the length of each item is over 3, then print the item
 
         Solution: Build and Modify An Array
 
@@ -274,35 +477,140 @@ Essential Training
 
         The Real-World Function
 
+            Sorting is different for computers compared to humans
+
         Functions and Methods
+
+            Functions can be defined as a function or as a variable
+            
+            Functions defined as a variable can only be called and cannot be changed through other functions or code
+                const math = function
+
+            This means that both functions can be called and they both can be given variables
+            
+            If a function is not given a parameter it is expected it will return NaN
+                Default values can be declared when defining the function
+
+            Immediately Invoked Function Expression (IIFE) - A function that is run immediately as the browser reads it
 
         A Standard Function
 
+            Every function will have a parameter field and will have a body defined in {}
+
+            Some functions will return data using a return statement
+
         The Arrow Function
+
+            Replacing the word function is a function definition with an arrow =>
 
         Arrow Functions and "This"
 
+            IIFE functions are hoisted up to the global scope
+
+            This can cause issues when using this.[anything] inside a function
+
+                To prevent this, you can use an arrow function to pass in a variable to the IIFE function
+
         Practice: Build A Function
 
-        Pass Data To A Function
+            I wrote a function to do math with variables
 
         Pass Data To A Function With Parameters
 
+            parameters are assigned to be required when creating the function
+
+                const name = (parameters) => {
+                    
+                }
+
+            The parameters are then passed into the function body and can be used
+
         Return Data From A Function
+
+            Returning data from a function prints the results of the function
+
+                The returned data can then be printed or used in another function
 
         Practice: Pass Values Between Functions
 
+            I made a function that asked for parameters and used them to call another function to return something to the original function
+
+            const passw0rd = (mother, school, date) => {
+                let passwd = date + mother + school;
+                return passwd
+            }
+
+            const userLogin = (nameF, nameL, doB) => {
+                let userName = nameF + nameL + doB
+                let passwd = passw0rd("Lori", "Broadway", "7-27")
+
+                console.log("Your username is: ", userName);
+                console.log("Your password is: ", passwd);
+            }
+
+            userLogin("Jason", "Spears", "091802")
+
         Callbacks
+
+            Using a callback function is a way to specify which functions execute first
+
+            It is also a way to pass function results to another function through function parameters
 
         Conditional If...Else Statement
 
+            if (condition) {
+                function body
+            } else {
+                other function body
+            }
+
+                If a boolean value is false it is equal to undefined or not existing
+
+
+            If...Else statements can even be written as (conditional. statement ? If Statement: Else Statement)
+
         Logical Operators
+
+            The && operator can be used to check if two conditional statements are true
+
+            The || operator can be used to check if one or many of many conditional statements is true
 
         Conditional Switch Statement
 
+            Switch statements are used to check if a value is equal to another value (nested If...Else loop)
+
+                switch (true) {
+                    case age < 30:
+                        console.log("30: ", ${age})
+                        break;
+                    case age < 45:
+                        console.log("45: ", ${age})
+                        break;
+                    
+                    default:
+                        console.log("The age is undefined")
+                }
+
         Looping Through Content
 
+            For...of:
+                for (const item of stuff) {
+                    function body
+                }
+
+            For...each:
+                stuff.ForEach((item) => {
+                    function body
+                })
+
+            For...in:
+                for (const [single Object] in [nested Objects]) {
+                    function body
+                }
+
         Using The Map() Array Method
+
+            Map functions can be used to make changes to each item in an array and then append those items to a new array
 
         Challenge: Build An Advanced Function
 
@@ -312,17 +620,33 @@ Essential Training
 
         DOM Events Explained
 
+            Events can cause other events to start taking place
+
         Typical DOM Events
+
+            button.addEventListener("click", () => {
+                function body
+            })
 
         Event Listeners
 
+            target.addEventListener(target, callback [, options]);
+
         Practice: Experiment With Listeners
+
+            I made a button that prints to the console when it is clicked using a function and prints information about the button
 
         Advanced Event Listeners and "This"
 
+            Upon clicking a button or activating an event listener, calling a function is possible to change aspects of the JS or HTML
+
         Pass Arguments Through Event Listeners
 
+            Arguments can be taken from a form and used through a function called by an event listener
+
         Challenge: Create An Event Listener
+
+            I made a function that is called by an event listener to print a value from another function
         
         Solution: Create An Event Listener
 
@@ -330,4 +654,6 @@ Essential Training
 
         Troubleshooting JavaScript In The Browser
 
-        Making Sense of A React Component
+            Browsers have breakpoints that can be used to go step-by-step through JavaScript code
+
+        Making Sense of a React Component
