@@ -83,6 +83,8 @@ Learning The JavaScript Language
 
         Regular Expressions
 
+            RegEx can be used to filter text if it has certain characters
+
     Operators and Control Structures
 
         Simple Comparisons
@@ -90,6 +92,8 @@ Learning The JavaScript Language
         Arithmetic Operators
 
         Logical Operators
+
+            AND statements are checked before OR statements
 
         Conditionals: If
 
@@ -101,13 +105,25 @@ Learning The JavaScript Language
 
         Type Checking
 
+            'typeof' [variable] returns the variable type
+
     Iterating With Loops
 
         For Loops: Sequential
 
+            for (var = 0; i < 10; i++) {
+                function body
+            }
+
         For Loops: Enumerative
 
+            for (var x in [array/object]) {
+                function body
+            }
+
         Set and Map: Newer Loopable Data Types
+
+            Sets are like arrays but can only store each value only once
 
         While Loops
 
@@ -126,6 +142,10 @@ Learning The JavaScript Language
         Jargon: Scope In JavaScript
 
         Functions In Scope
+
+            global.[value] uses the global value instead of an internal value
+
+            window.[value] is global for HTML elements
 
         Writing Shorter Functions With Arrows
 

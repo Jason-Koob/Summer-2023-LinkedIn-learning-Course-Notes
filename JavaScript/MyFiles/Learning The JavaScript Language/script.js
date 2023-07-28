@@ -28,3 +28,4 @@ const microSIEM = {
 // TESTING
 
 console.log("item_1: srcMAC:", microSIEM.item_1.srcMAC);
+console.log("item_2: time:", microSIEM.item_2.time)
