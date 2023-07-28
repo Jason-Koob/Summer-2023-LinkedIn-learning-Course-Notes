@@ -127,7 +127,7 @@ const passw0rd = (mother, school, date) => {
 
 const userLogin = (nameF, nameL, doB) => {
   let userName = nameF + nameL + doB
-  let passwd = passw0rd("Lori", "Broadway", "7-27")
+  let passwd = passw0rd("Loki", "Broadway", "7-27")
 
   // console.log("Your username is: ", userName);
   // console.log("Your password is: ", passwd);
@@ -141,7 +141,7 @@ const userLogin = (nameF, nameL, doB) => {
 const button = document.querySelector("button")
 
 function buttonFunction () {
-  console.log("Your username is: ",userLogin("Jason", "Spears", "091802"))
+  console.log("Your username is: ",userLogin("Michale", "LeBran", "001802"))
 
 }
 

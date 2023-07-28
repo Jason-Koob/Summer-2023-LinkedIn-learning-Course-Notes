@@ -1,0 +1,146 @@
+Learning The JavaScript Language
+
+    Introduction
+
+        Become Conversant In JavaScript
+
+        What You Should Know
+
+        Exercise Files and Codespaces
+
+    Getting Started
+
+        Syntax: Learning To Read and Write
+
+        Versions Of JavaScript
+
+            The current version is ES5 and ES6
+
+        Places To Tinker
+
+            Node.js via command prompts
+
+            Basic browser functionality
+
+        Your Friend The Text Editor
+
+        Additional Helpful Resources
+
+    Variables and Types
+
+        Declaring and Assigning Variables
+
+        Strings
+
+            Quotation marks can be used in strings with a backslash before them
+                "This is a quote \"Quote\" I am using as an example."
+
+        String Properties and Methods
+
+        Numbers
+
+        Booleans For What Is True
+
+        Variables Mutability
+
+    Objects, Arrays, and More
+
+        Objects
+
+        Using Objects For Data Modeling
+
+        Manipulating Objects
+
+            Values of properties inside an object can be changed
+                object.['property'] = value
+
+            These properties can also be removed with:
+                delete object. property
+
+        Jargon: References
+
+            value1 = value2
+                This causes any changes made to one of these values to be made to the other as well
+
+            Copies can be made safely with this:
+                value2 = { ...value1 };
+
+        Arrays
+
+        Manipulating Arrays
+
+            Adding items to the end of an array can be done using:
+            
+                array[array.length] = "new item"
+                
+                OR 
+
+                array.push("new item")
+
+        Readability: Whitespaces
+
+        Readability: Comments
+
+        Regular Expressions
+
+    Operators and Control Structures
+
+        Simple Comparisons
+
+        Arithmetic Operators
+
+        Logical Operators
+
+        Conditionals: If
+
+        Conditionals: Switch
+
+        Terse If: One-Liners
+
+        Terse If: Ternaries
+
+        Type Checking
+
+    Iterating With Loops
+
+        For Loops: Sequential
+
+        For Loops: Enumerative
+
+        Set and Map: Newer Loopable Data Types
+
+        While Loops
+
+    Functions
+
+        Basic Functions
+
+        Arguments and Parameters In Functions
+
+        More On Functions Arguments
+
+        Objects, References, and Functions
+
+        Functions Are Objects
+
+        Jargon: Scope In JavaScript
+
+        Functions In Scope
+
+        Writing Shorter Functions With Arrows
+
+        Three Little Dots Collect The Rest
+
+        Callback Functions and Looping
+
+    A Few More Advanced Places
+
+        Asynchronous Code: Writing Is The Hardest Part
+
+        Promises, Async, and Await
+
+        Object-Oriented JavaScript: Prototypes and Classes
+
+        jargon: Strong vs Loosely Typed
+
+        Modern JavaScript Tooling
