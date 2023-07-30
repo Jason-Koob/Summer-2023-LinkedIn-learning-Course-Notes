@@ -1,0 +1,77 @@
+Learning ECMAScript 6+
+
+    Introduction
+
+        Using Modern JavaScript Today
+
+        What You Should Know Before Watching This Course
+
+    What Is ECMAScript?
+
+        What Is ECMAScript?
+
+        Staying Up To Date With New Releases
+
+        Understanding Browser Support
+
+    ECMAScript Variables and Data Structures
+
+        Using The Let Keyword
+
+        Working With The Const Variable
+
+        Writing Template Strings
+
+        Searching Strings
+
+        Using Symbols
+
+        Writing Maps
+
+        Working With Sets
+
+    Arrays and Array Methods
+
+        Using The Array Spread Operator
+
+        Destructuring Arrays
+
+        Searching Arrays With The .includes Function
+
+    ECMAScript Objects
+
+        Enhanced Object Literals
+
+        Creating Objects With The Spread Operator
+
+        Destructuring Objects
+
+        Iterating With The For/Of Loop
+
+        Introducing Classes
+
+        Inheritance With JavaScript Classes
+
+        Getting and Setting Class Values
+
+    ECMAScript Functions
+
+        Using The string.repeat Function
+
+        Setting Default Function Parameters
+
+        Writing Arrow Functions
+
+        Understanding This In Arrow Functions
+
+        Working With Generators
+
+    Asynchronous JavaScript
+
+        Building Promises
+
+        Loading Remote Data With Promises
+
+        Returning Promises With Fetch
+
+        Using Async/Await
