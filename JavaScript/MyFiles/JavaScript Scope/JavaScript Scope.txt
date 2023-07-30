@@ -1,0 +1,43 @@
+JavaScript: Scope
+
+    Introduction
+
+        Learn How To Properly Scope Your Variables
+
+    Introduction To Variable Scope
+
+        Setup For This Course
+
+        What Is Scope In JavaScript?
+
+        What Are Closures?
+
+        The Different Types Of Scope
+
+        Hoisting Explained
+
+    Global Variables
+
+        What Are Global Variables?
+
+        Challenge: Define Global Variables
+
+        Solution: Define Global Variables
+
+    Local Variables
+
+        What Are Local Variables?
+
+        Challenge: Define Local Variables
+
+        Solution: Define Local Variables
+
+    Block-Scoped Variables
+
+        What Are Block-Scope Variables?
+
+        Explore Block-Scoped Variables With Code
+
+        Challenge: Define Let/Const Variable
+
+        Solution: Define Let/Const Variable

@@ -18,21 +18,53 @@ Learning ECMAScript 6+
 
         Using The Let Keyword
 
+            The let keyword can be used to iterate through a loop or function before the global value is used
+
         Working With The Const Variable
+
+            The const keyword prevents the changing of a variable
 
         Writing Template Strings
 
+             Using a comma between template literals adds a space
+                Using a plus symbol does not
+
+            Variables can be integrated into text outputs using a ${[value]} format 
+
         Searching Strings
+
+            [variable].[startswith([value])] will return a boolean response if the condition is true/false
+                The same works with [endswith] and [includes]
+
+            The [search] method will return the first index location of where the searched item is located
+
+                Example - const planet = ("Earth);
+
+                            console.log(planet.search("a"));
+                                Returns 1
 
         Using Symbols
 
+            Symbols can be used to prevent naming conflicts
+
         Writing Maps
 
+            Maps are like objects, they can hold other items inside of them
+
+                Objects can store key-value pairs as: [object].[key]
+                Maps store key-value pairs as: [object].get[("key")]
+
+            Details about maps can be printed using [detailsl].[size]
+
         Working With Sets
+
+            Each value must be unique
 
     Arrays and Array Methods
 
         Using The Array Spread Operator
+
+            The spread operator can be used to add items from a nested array to an object above it
 
         Destructuring Arrays
 
@@ -50,7 +82,11 @@ Learning ECMAScript 6+
 
         Introducing Classes
 
+            Classes are like templates for objects
+
         Inheritance With JavaScript Classes
+
+            A new class can be made from one class using the [extends] keyword
 
         Getting and Setting Class Values
 
@@ -64,14 +100,32 @@ Learning ECMAScript 6+
 
         Understanding This In Arrow Functions
 
+            Arrow functions can use [this]. something to keep an object in scope during the function
+
         Working With Generators
+
+            Generators are used with [function*]
+            
+            yield is used to pause the function
 
     Asynchronous JavaScript
 
         Building Promises
 
+            Promises are functions that can wait for other data to be retrieved before continuing
+
         Loading Remote Data With Promises
 
         Returning Promises With Fetch
 
+            fetch = request information from a URL
+
+            [.then] can be used to do some action when the information is retrieved
+
         Using Async/Await
+
+            Async = "Do this action immediately"
+
+            Await = "Do this action when the async is done"
+
+        Incorporating Fetch With Async/Await
