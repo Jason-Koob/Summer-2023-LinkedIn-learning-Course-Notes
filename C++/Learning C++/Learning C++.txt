@@ -1,0 +1,117 @@
+Learning C++
+
+    Introduction
+
+        Get Up and Running With C++
+
+        What You Should Know
+
+        About The Exercise Files
+
+    Getting Started
+
+        Setting Up The Development Environment
+
+        Elements of Object-Oriented Programming
+
+        Creating A Simple Program In C++
+
+            #include <iostream>
+
+            int main(){
+                std::cout << "HELLO WORLD" << std::endl;
+                return(0);
+            }
+
+        Challenge: Console Interaction
+
+            #include <iostream>
+            #include <string>
+
+                int main(){
+                    string str;
+                    std::cout << "What is your name?: " << std::endl;
+                    cin >> str;
+                    std::cout << "I'm cheesed to meet you, " << str << "!" << std::endl;
+                    return(0);
+                }
+
+        Solution: Console Interaction
+
+    Data Types
+
+        Basic Data Types
+
+        Variables
+
+        Expressions, Assignments, and Operators
+
+        Type Inference With Auto
+
+        Preprocessor Directives
+
+        Constants
+
+        Arrays
+
+            array[] = {1, 2, 3, 4,}
+
+        Strings
+
+        Type Casting
+
+        Challenge: Calculate An Average
+
+        Solution: Calculate An Average
+
+    Structures, Classes, and Pointers
+
+        Structures
+
+        Classes
+
+        Header and Implementation Files
+
+        Pointers
+
+        References
+
+        Vectors
+
+        Challenge: Create Some Classes
+
+        Solution: Create Some Classes
+
+    Control Flow
+
+        If Statements
+
+        Switch Statements
+
+        While Loops
+
+        For Loops
+
+        Challenge: Calculate GPA From A Vector
+
+        Solution: Calculate GPA From A Vector
+
+    Functions
+
+        Creating Functions
+
+        Using Functions
+
+        Challenge: Create A Report Card Function
+
+        Solution: Create A Report Card Function
+
+    File I/O
+
+        Opening A Text File For Reading
+
+        Open A Text File For Writing
+
+        Challenge: Upgrade To Work With Files
+
+        Solution: Upgrade To Work With Files

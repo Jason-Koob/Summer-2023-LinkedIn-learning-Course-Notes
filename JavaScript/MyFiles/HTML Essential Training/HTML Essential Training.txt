@@ -1,0 +1,99 @@
+HTML Essential Training
+
+    Introduction
+
+        What Is HTML?
+
+    HTML
+
+        The Role Of HTML
+    
+    Formatting Text
+
+        The Syntax of HTML Elements
+
+        Paragraphs
+
+        Headlines
+
+        Bold and Italics
+
+        Lists
+
+        Quotes
+
+        Dates and Times
+
+        Code, Pre, and Br
+
+        Superscripts, subscripts, and Small Text
+
+    Understanding The Power Of HTML
+
+        Debugging HTML
+
+        HTML Attributes
+
+        ARIA Roles
+
+        Formatting HTML
+
+        Weird Characters
+
+    Linking and Navigation
+
+        Links
+
+        URL Paths
+
+        Navigation
+
+    Images and Graphics
+
+        Images
+
+        Image Formats
+
+        Responsive Images
+
+        Figure and Figcaptions
+
+    Media
+
+        Audio
+
+        Video
+
+        Captions and Subtitles
+
+        Embedding Other mEdia Through iFrames
+
+    More Wwats To Identify Content
+
+        Supporting Languages
+
+        Generic Elements: Div and Span
+
+    Putting It All Together
+
+        The HTML page
+
+        Document Head
+
+        Structuring Content
+
+        Examples of Putting It All Together
+
+    Forms and Interactive Elements
+
+        HTML Form Basics
+
+        More On Forms
+
+        Additional Form Element Types
+
+    Structuring Tabular Data
+
+        When To Use Tables
+
+        Building Table Rows

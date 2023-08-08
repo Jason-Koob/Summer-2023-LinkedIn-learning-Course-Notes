@@ -1,0 +1,109 @@
+Developing For Web Performance
+
+    Web Performance: An Introduction
+
+        What Is Web Performance and Optimization
+
+        How Do We Measure Performance
+
+            First Paint - Time it takes for a user to see a change
+            Largest Contentful Paint
+            First Meaningful Paint
+            Time To Interactive
+
+        Why Does Performance Matter?
+
+    Web Performance Basics
+
+        How Browsers Render Content
+
+        HTTP/2 and Multiplexing
+
+            HTTP2 is only possible with HTTPS
+
+        Bottlenecks
+
+            With HTTP2, sometimes more, smaller files are faster because HTTP2 can download multiple them at once
+
+        Caching
+
+            CDN can cache sites as snapshots and use those snapshots for further requests
+
+        The PRPL Pattern
+
+            Push
+            Render
+            Pre-cache
+            Lazy-load
+
+    Creating A Perforance Budget
+    
+        What Is A Performance Budget?
+
+        Creating A Realistic Performance Budget
+
+        Common Cuplrits and Performance Hogs
+
+    Optimizing Images
+
+        Images Are The Leading Cause Of The Slow Web
+
+        Image Quality Matters
+
+            Lower quality = faster speed
+
+        The Image Scaling Hack
+
+        Image Format Options
+
+        Manual Image Optimization
+
+        Automated Image Optimization
+
+        Responsive Images
+
+        Lazy-Loading Images
+
+    Markup and Content
+
+        Automated Optimization of Javascript and CSS
+
+        Javascript Bundling vs. Modules
+
+        JavaScript Loading: Async and Defer
+
+        Minifying and Uglifying JavaScript
+
+        Critical CSS
+
+        Deferring Noncritical CSS
+
+        Component-Based CSS Loading
+
+    Web Fonts
+
+        Web Fonts Can Be A Major Performance
+
+        Optimizing Third-Party Web Font Delivery
+
+        Optimizing Self-Hosted Web Font Delivery
+
+        Variable Fonts To The Rescue
+
+        Web Fonts On A Performance Budget
+
+    Optimizing Delivery
+
+        Compress Data With Gzip and Brotti
+
+            Gzip - Standard compression
+
+            Brotti - Higher, but slower compression
+
+        Server Push
+
+        Preloading vs. Prefetch
+
+        Browser Caching
+
+        CDNs

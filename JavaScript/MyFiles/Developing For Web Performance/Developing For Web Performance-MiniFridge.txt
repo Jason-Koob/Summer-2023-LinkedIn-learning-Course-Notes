@@ -1,0 +1,92 @@
+Developing For Web Performance
+
+    Web Performance: An Introduction
+
+        What Is Web Performance and Optimization
+
+        How Do We Measure Performance
+
+            First Paint - Time it takes for a user to see a change
+            Largest Contentful Paint
+            First Meaningful Paint
+            Time To Interactive
+
+        Why Does Performance Matter?
+
+    Web Performance Basics
+
+        How Browsers Render Content
+
+        HTTP/2 and Multiplexing
+
+        Bottlenecks
+
+        Caching
+
+        The PRPL Pattern
+
+    Creating A Performance Budget
+    
+        What Is A Performance Budget?
+
+        Creating A Realistic Performance Budget
+
+        Common Culprits and Performance Hogs
+
+    Optimizing Images
+
+        Images Are The Leading Cause Of The Slow Web
+
+        Image Quality Matters
+
+        The Image Scaling Hack
+
+        Image Format Options
+
+        Manual Image Optimization
+
+        Automated Image Optimization
+
+        Responsive Images
+
+        Lazy-Loading Images
+
+    Markup and Content
+
+        Automated Optimization of Javascript and CSS
+
+        Javascript Bundling vs. Modules
+
+        JavaScript Loading: Async and Defer
+
+        Minifying and Uglifying JavaScript
+
+        Critical CSS
+
+        Deferring Noncritical CSS
+
+        Component-Based CSS Loading
+
+    Web Fonts
+
+        Web Fonts Can Be Major Performance
+
+        Optimizing Third-Party Web Font Delivery
+
+        Optimizing Self-Hosted Web Font Delivery
+
+        Variable Fonts To The Rescue
+
+        Web Fonts On A Performance Budget
+
+    Optimizing Delivery
+
+        Compress Data With Gzip and Brotti
+
+        Server Push
+
+        Preloading vs. Prefetch
+
+        Browser Caching
+
+        CDNs

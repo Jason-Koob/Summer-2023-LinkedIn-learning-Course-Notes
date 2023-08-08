@@ -1,0 +1,54 @@
+JavaScript: Modern Browser APIs
+    Introduction
+
+        Building Apps With Modern JavaScript
+
+        What You Should Know
+
+        Set Up The Development Environment
+
+    Improving Performance
+
+        Smoother Animation With requestAnimationFrame()
+
+        Faster Navigation With Prefetch
+
+            rel="prefetch" to load common pages
+
+        Prioritized Loading With Preload
+
+        Server Communication With Beacon API
+
+        Element Visibility With Intersection Observer
+
+    Better Data Management
+
+        Overview Of Data Handling
+
+        Easier Ajax With The Fetch API
+
+        Simplified IndexedDB With LocalForage
+
+        Caching data With The Cache API
+
+        Making Storage Persistent
+
+        Getting Device Memory information
+
+    Advanced User Experiences
+
+        Native overlays With The Dialog API
+
+        Integrating With Native Notifications
+
+        Detecting Network Conditions
+
+        Using Page Visibility
+
+        Going Full Screen With Content
+
+        Using Full-Screen Events and Styling
+
+        Dynamic Images With CSS Paint API
+
+        Parameters With CSS Paint API

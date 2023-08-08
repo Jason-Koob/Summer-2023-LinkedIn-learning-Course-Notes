@@ -1,0 +1,37 @@
+JavaScript: Prototypes
+
+    Introduction
+
+        Understanding Prototypes In JavaScript
+
+        What You Should Know
+
+        Exercise Files and Environment Setup
+
+    Building Blocks Of Prototypes
+
+        Create object Literals
+
+        Create Objects With A Constructor Function
+
+    Using Prototypal Inheritance
+
+        Understand The Prototype Property
+
+            A template for objects sharing common properties
+
+            Any object created from a function or function stemming from the original function inherits the prototype properties
+
+        Modify An Object's Prototype
+
+        Create A Prototype Chain
+
+        Apply Prototypal Inheritance
+
+    Using ES6 Classes
+
+        Understand ES6 Classes
+
+            ES6 classes are similar to prototypes because they inherit keys and values from other classes
+
+        Build Prototypes Using ES6 Classes

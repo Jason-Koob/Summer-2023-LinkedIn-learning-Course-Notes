@@ -1,0 +1,104 @@
+JavaScript: Ajax and Fetch
+
+    Introduction
+
+        Creating and Working With API Requests
+
+        Setting Up Your Environment
+
+    Getting Started
+
+        What Is Ajax?
+
+            Asynchronous JavaScript And XML
+
+            Used to get and display information that was not present when the page was loaded
+
+        Understand Asynchronous Program Flow
+
+        Get An API Key
+
+        Research and Create An Ajax Request URL
+
+        Create An XHR Request
+
+        Test An XHR Request
+
+        Handle XHR Success and Failure
+
+        Challenge: Build An XHR Request
+
+        Solution: Build An XHR Request
+
+    Modifying The DOM
+
+        What Is The DOM?
+
+        Select Elements With Vanilla JavaScript
+
+        Request Data In Response To An Event
+
+        Add An Event Listener
+
+        Work With JSON Data
+
+        Modify Form Values With Vanilla JavaScript
+
+        Modify Element Content With Vanilla JavaScript
+
+        Challenge: Modify The DOM
+
+        Solution: Modify The DOM
+
+    Working With The Fetch API
+
+        Understand The Fetch API
+
+        Create A Fetch Request
+
+            Fetch()
+                .then()
+                .then()
+                .catch()
+
+        Handle Basic Fetch Errors
+
+        Customize A Fetch Request
+
+    Optimizing and Troubleshooting Ajax Requests
+
+        Structure Ajax Requests For Performance
+
+        View Requests and Responses In The Browser
+
+        Work With Authorization Errors 
+
+            401 error
+
+        Work With Malformed Requests
+
+        Work With Errors In Fetch
+
+        Provide Error Failbacks
+
+        Challenge: Fix An Ajax Request
+
+        Solution: Fix An Ajax Request
+
+    Building A Proxy Server To Hide API Keys
+
+        Why Are Proxy Servers Necessary?
+
+        Tools: Git, GitHub, and Heroku
+
+        Set Up An App On Heroku
+
+        Configure Proxy Options
+
+        Deploy and Test A Proxy
+        
+        Configure Proxy Security
+
+        Challenge: Customize Code For An Ajax Proxy
+
+        Solution: Customize Code For An Ajax Proxy

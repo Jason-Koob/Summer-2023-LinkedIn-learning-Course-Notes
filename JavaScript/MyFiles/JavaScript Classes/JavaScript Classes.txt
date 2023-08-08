@@ -1,0 +1,39 @@
+JavaScript: Classes
+
+    Introduction
+
+        JavaScript Classes Explored
+
+        Course Prerequisites
+
+    Defining Classes
+
+        Introduction To Classes
+
+        Defining A Classes
+
+        Differences Between Functions And Classes
+
+        Hoisting Explained With Classes
+
+        Strict Mode With Classes Explained
+
+            Strict functions can only be accessed through the class, not objects using the class template
+
+        What Are Static Methods With Usage
+
+        Prototype Methods Explained And Usage
+
+    Constructors
+
+        Introduction To Constructors
+
+        Constrictor And Super Usage
+
+        Introduction And Usage: Getters And Setters
+
+    Extends And Mix-Ins
+
+        Introduction To Extends And Usage
+
+        Introduction To Mix-Ins And Usage

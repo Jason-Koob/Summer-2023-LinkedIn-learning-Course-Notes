@@ -1,0 +1,29 @@
+JavaScript: Closures
+
+    Introduction
+
+        Understanding Closures In JavaScript
+
+        What You Should Know
+
+        Exercise Files and Environment Setup
+
+    Building Blocks Of Closures
+
+        Local And Global Scope
+
+        Nesting Functions
+
+            Functions inside another function
+
+        Return A Value From An Inner Function
+
+        Create Parallel Closures
+
+    Creating And Using Closures
+
+        Implement The Module Pattern
+
+        Avoid Unintended Closures
+
+        Use JS Features In Place of Closures

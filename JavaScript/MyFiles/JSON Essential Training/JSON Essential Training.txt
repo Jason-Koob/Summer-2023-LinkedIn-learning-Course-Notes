@@ -1,0 +1,113 @@
+JSON Essential Training
+
+    Introduction
+
+        The Essentials Of Using JSON
+
+        What You Should Know
+
+        Set Up Your Environment
+
+        Work With The GitHub Repo
+
+    Understanding JSON
+
+        What Is JSON?
+
+        Understanding Objects In Programming
+
+        Structure JSON By Following The Rules
+
+        Build A Basic JSON Structure
+
+        Build A Nested JSON Structure
+
+        Challenge: Debug A JSON Structure and Create Your Own
+
+            {
+                "item1": 1,
+                "item2": "WORD",
+                "array": [
+                    "item1",
+                    "item2",
+                    "item3"
+                ]
+            }
+
+        Solution: Debug A JSON Structure and Create Your Own
+
+    Processing JSON Data
+
+        Process JSON With Language Tools and Libraries
+
+            JSON.parse(string)
+
+        Convert JSON To An Object Or Array
+
+        Convery An Object Or Array Into JSON
+
+            JSON.stringify(structure)
+
+        Challenge: Process JSON Data
+
+        Solution: Process JSON Data
+
+    Using JSON Data
+
+        How To Send and Recieve JSON Data
+
+        Create An HTTP Request
+
+        Work With An HTTP Request
+
+        Convert Between JSON and Other Data Formats
+
+        Challenge: Examine JSON Data Used By Other Websites
+
+        Solution: Examine JSON Data Used By Other Websites
+
+    Applying Techniques For Working With JSON
+
+        Prevent Data Reuse
+
+        Return Readable JSON
+
+        Test For An Empty Object
+
+    Working With JSON Schema
+
+        What Is JSON Schema
+
+            Validates JSON data
+
+        Create A Basic Schema With JSON Schema
+
+        Validate JSON Data Against A Schema
+
+        Specify Required Properties With JSON Schema
+
+        Work With Schema Generators
+
+        Challenge: Work With JSON Schema
+
+        Solution: Work With JSON Schema
+
+    Structuring Data With JSON-LD
+
+        What Is JSON-LD
+
+            JSON Linking Data
+
+        Implement Predefined Key Names
+
+        Map A Data Structure With JSON-LD
+
+        Work With JSON-LD Generators
+
+        Add A JSON-LD Snippet To A Web Page
+
+        Challenge: Structure Data With JSON-LD
+
+            Information about a value is stored as an object
+
+        Solution: Structure Data With JSON-LD

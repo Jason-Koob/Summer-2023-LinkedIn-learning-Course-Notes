@@ -105,7 +105,7 @@ Learning The JavaScript Language
 
         Type Checking
 
-            'typeof' [variable] returns the variable type
+            'type of' [variable] returns the variable type
 
     Iterating With Loops
 

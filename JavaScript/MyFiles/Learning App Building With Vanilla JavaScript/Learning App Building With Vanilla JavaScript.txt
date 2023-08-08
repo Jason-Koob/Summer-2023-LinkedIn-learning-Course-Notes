@@ -1,0 +1,77 @@
+Learning App Building With Vanilla JavaScript
+
+    Introduction
+
+        What You Should Know
+
+        Exercise Files
+
+    Overview Of Vanilla JS
+
+        Libraries, Frameworks, and Vanilla JavaScript
+
+            Libraries are called in your code
+
+            Frameworks call your code
+
+        Identify When To  Replace Frameworks With Libraries
+
+    Project Overview
+
+        Application Architecture 
+
+    Environment Setup
+
+        Environment Setup
+
+        Getting Your API Key
+
+    Replace Ajax
+
+        Fetch API
+
+        Create An Ajax Request With Fetch
+
+            Replace Ajax with Fetch elements
+
+    Select and Modify DOM Elements
+
+        Element Selection With Vanilla JavaScript
+
+        Select and Modify Elements With QuerySelector
+
+        Select and Modify Elements With QuerySelectorAll
+
+    Replace Event Listeners
+
+        JavaScript Events
+
+        Add Event Listeners With Vanilla JavaScript
+
+        Work With The Event Object
+
+    Implement Data Binding
+
+        Data Binding
+
+        Create Elements With Vanilla JavaScript
+
+        Add and  Modify Properties with Vanilla JavaScript
+
+        Append Elements with Vanilla JavaScript
+
+        Template Literals To Build DOM Content
+
+    Replace Simple Animations
+
+        Animation With Vanilla JavaScript
+
+        Show and Hide Vanilla JavaScript
+
+        Transition Element Appearance using CSS
+
+    Ensure Backwards Compatibility
+
+        Backward Compatibility For Vanilla JavaScript
+
+        Transpile Vanilla JavaScript

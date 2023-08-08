@@ -1,20 +1,18 @@
 JavaScript: Scope
 
-    Introduction
-
-        Learn How To Properly Scope Your Variables
-
     Introduction To Variable Scope
 
-        Setup For This Course
-
         What Is Scope In JavaScript?
+
+            The scope is where a variable can be used
 
         What Are Closures?
 
         The Different Types Of Scope
 
         Hoisting Explained
+
+            Variables not given a value are compiled to be at the top of the page, causing them to load first
 
     Global Variables
 
