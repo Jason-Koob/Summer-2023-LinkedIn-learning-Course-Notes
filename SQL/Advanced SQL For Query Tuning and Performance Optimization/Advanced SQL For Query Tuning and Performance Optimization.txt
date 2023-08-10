@@ -1,0 +1,97 @@
+Advanced SQL For Query Tuning and Performance Optimization
+
+    Introduction
+
+        Reduce Query Response Time With Query Tuning
+
+        What You Should Know
+
+    How SQL Executes A Query
+
+        From Declarative SQL To A Procedural Execution Plan
+
+        Scanning Tables and Indexes
+
+        Joining Tables
+
+        Partitioning Data
+
+    PostgreSQL Tools For Tuning
+
+        Installing PostgreSQL
+
+        Overview Of pgAdmin
+
+        Explain and Analyze
+
+        Example Plan: Selecting With A WHERE Clause
+
+        Indexes
+
+    Types Of Indexes
+
+        Indexing
+
+        B-tree Index Example Plan
+
+        Bitmap Indexes
+
+        Bitmap Index Example Plan
+
+        Hash Indexes
+
+        Hash Index Example Plan
+
+        PostgreSQL-Specific Indexes
+
+    Tuning Joins
+
+        What Affects Joins Performance?
+
+        Nested Loops
+
+        Nested Loop Example Plan
+
+        Hash Joins
+
+        Hash Join Example Plan
+
+        Merge Joins
+
+        merge Join Examples
+
+        Subqueries vs. Joins
+
+    Partitioning Data
+
+        Horizontal vs. Vertical Partitioning
+
+        Partition By Range
+
+        Partition By Range Example
+
+        Partition By List
+
+        Partition By List Example
+
+        Partition By Hash
+
+        Partition By Hash Example
+
+    Materialized Views
+
+        Materialized Views
+
+        Creating Materialized Views
+
+        Refreshing Materialized Views
+
+    Other Optimization Techniques
+
+        Collect Statistics About Data In Tables
+
+        Hints To The Query Optimizer
+
+        Parallel Query Execution
+
+        Miscellaneous Tips

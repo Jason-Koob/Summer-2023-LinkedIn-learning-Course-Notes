@@ -1,0 +1,123 @@
+C++ templates and The STL
+
+    Introduction
+
+        Dive Into C++ Templates and The STL
+
+        How To Use The Exercise Files
+
+    Templates
+
+        What Is A Template?
+
+            Templates are like classes 
+
+        Template Syntax
+
+            Templates can perform similar actions like holding functions inside of them
+
+        Template Specialization
+
+            The uto declaration can be used to have one object or variable be of the same type as another which is referenced in the declaration
+
+        Impact On Header Files
+
+        Type Inference
+
+        Argument Deduction
+
+            The compiler can deduce which variable type is being used and fix itself to use the correct if not already
+
+    STL Containers
+
+        Vector
+
+            Arrays are just fancy arrays
+
+        List
+
+        Pair and Tuple
+
+        Array
+
+        Deque
+
+        Queue
+        
+            First in, last out array
+            Adapts the underlying container
+
+        Stack
+
+            Last in, first out queue
+
+        Set
+
+            Arrays but don't allow duplicates
+            Multisets do allow duplicate variables
+
+        Maps
+            
+            A grouping of key:value pairs
+
+    STL Iterators
+
+        Accessing Iterators
+
+            pointers to values
+
+        Input Iterators
+
+        Output Iterators
+
+        Forward Iterators
+    
+        Bidirectional Iterators
+
+            Iterator that can go forwards and backwards with ++ and -- operators in loops
+
+        Random Access Iterators
+
+    Transformations
+
+        The Transform Function
+
+        Lambda Transformations
+
+        Transforming Strings
+
+        Binary Transformations
+
+        Transforming Types
+
+    STL Functors
+
+        About Functors
+            
+            Functional types of functions 
+
+        Arithmetic Functors
+
+        Relational Functors
+
+        Logical Functors
+
+    STL Algorithm
+
+        About STL Algorithms
+
+        Testing Conditions
+
+        Searching and Counting
+
+        Replacing and Removing
+
+        Modifying Algorithms
+
+        Partitions
+
+        Sorting
+
+        Merging Sequences
+
+        Binary Searches

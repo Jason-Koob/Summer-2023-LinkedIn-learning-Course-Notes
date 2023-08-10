@@ -1,0 +1,63 @@
+Introducing Functional Programming to C++
+
+    Introduction
+
+        Unleash The Power Of Functional Programming In C++
+
+        What You Should Know
+
+    Overview
+
+        Benefits Of Functional Programming 
+
+        Unit Testing Functional Programming
+
+            The catch is used to run and test C++ file issues during compiling and executions
+    
+    Functional Programming In Modern C++
+
+        Enabling C++ 17
+
+        Transform Instead Of Map
+
+        Copy_if Instead Of Filter
+
+        Accumulate Instead Of Reduce
+
+        Bind
+
+        Functions
+
+        Lambda Functions: Curry
+
+        Lambda Functions: Closure
+
+        Challenge: Factional Continuous Add
+
+        Solution: Factional Continuous Add
+
+    Template Metaprogramming
+
+        C++ Templates
+
+        Factorial
+
+        The Standard Template Library
+
+        Functional Programming Libraries
+
+        Boost. Hana
+
+        Challenge: Fibonacci Generator
+
+        Solution: Fibonacci Generator
+
+    Functional Reactive Programming
+
+        Intro To Reactive Extensions
+
+        RxCpp Library
+
+        Challenge: Word Frequency Counter
+
+        Solution: Word Frequency Counter

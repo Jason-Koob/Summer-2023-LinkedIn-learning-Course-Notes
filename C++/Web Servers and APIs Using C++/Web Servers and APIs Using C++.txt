@@ -1,0 +1,87 @@
+Web Servers and APIs Using C++
+
+    Introduction
+
+        Why Use C++ To Make A Website?
+
+        What You Should Know
+
+    Installing Our Tools
+
+        Installing Docker
+
+        Installing Atom
+
+        Creating A Docker File
+
+        Running A Docker File
+
+        Adding A Volume
+
+        Building Crow
+
+        Serving The Example
+
+        Challenge: Modify The Example Page
+
+        Solution: Modify The Example Page
+
+    Deploy To Heroku
+
+        Creating A Heroku Account
+
+        Installing The Heroku CLI
+
+        Deploying Our Container To Heroku
+
+        Saving Our Container To Docker Hub
+
+    Building Websites
+
+        Creating HTML Pages
+
+        Serving HTML Pages
+
+        Serving Static Content
+
+        Challenge: Create A New Webpage
+
+        Solution: Create A New Webpage
+
+    Data Access
+
+        Creating An mLab Account
+
+        Uploading JSON Data
+
+        Adding The MongoDB C++ Drivers
+
+        Querying Mongo Data
+
+        Adding Dynamic Data To A Page
+
+        Challenge: Create A Webpage With Data
+
+        Solution: Create A Webpage With Data
+
+    RESTful APIs
+
+        Creating An Endpoint
+
+        Parsing The Path
+
+        Reading The Query String
+
+        Converting To JSON Data
+
+        Challenge: Create An Endpoint
+
+        Solution: Create An Endpoint
+
+    WebSockets And Crow
+
+        Reviewing The JavaScript Client Code
+
+        Creating The C++ Server Code
+
+        Running WebSocket On Heroku

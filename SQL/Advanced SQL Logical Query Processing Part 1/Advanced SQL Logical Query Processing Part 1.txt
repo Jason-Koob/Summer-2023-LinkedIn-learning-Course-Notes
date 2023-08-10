@@ -1,0 +1,63 @@
+Advanced SQL: Logical Query Processing, Part 1
+
+    Introduction
+
+        Course Introduction
+        
+        Course Agenda
+
+        Tooling
+
+        Introducing The Demo Database
+
+        Using The Code Files
+
+            FROM - Declares Source Data
+
+            WHERE - Row Filtering
+
+            GROUP BY - Grouping
+
+            HAVING - GROUP Filter
+
+            SELECT - Return Expression
+
+            ORDER BY - Presentation Order
+
+            OFFSET FETCH - Paging
+
+    Constructing Query Source Data Sets
+
+        Single Data Source Queries
+
+        Dual Source Query Processing
+
+        Joining Multiple Sources Data Sets
+
+            When Joining multiple tables, parenthesis are created first
+
+        Challenge: Hybrid Multi-table Join
+
+        Solution: Hybrid Multi-table Join
+    
+    Row Filters
+
+        Grouping
+
+        Dealing With NULLs and Elimination Duplicates
+
+            DISTINCT can eliminate duplicate values
+
+        Group Filters
+
+        Challenge: Filtering and Grouped Query
+
+        Solution: Grouped Query With Distinct
+
+    Ordering and Paging
+
+        Presentation Ordering In Multiplier Architecture
+
+        Ordering Result Sets
+
+        Paging Results Sets

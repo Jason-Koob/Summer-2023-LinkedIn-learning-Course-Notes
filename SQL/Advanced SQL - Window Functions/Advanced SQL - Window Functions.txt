@@ -1,0 +1,69 @@
+Advanced SQL - Window Functions
+
+    Introduction
+
+        Course Introduction
+
+        Course Agenda
+
+    Tools, Files, and Query Processing Review
+
+        Tools and Demo Database
+
+        Using The Demo and Exercise Files
+
+        Logical Query Processing Review
+    
+    Window Functions and The OVER Clause
+
+        How Window Functions Fit In Query Processing
+
+        Overview and Filter Clause
+
+        PARTITION BY and ORDER BY
+
+    Framing, Exclusions, and Shortcuts
+
+        Framing Rows and Ranges
+
+        Practical Framing Examples
+
+        Defaults, Shortcuts, Exclusions, and Null Handling
+
+    Aggregate Window Functions
+
+        Aggregate Grouped Functions
+
+        Aggregate Window Functions
+
+        Combining Grouped and Window Aggregate Functions
+
+        Challenge: Aggregate Window Functions
+
+        Solution: Aggregate Window Functions
+
+    Rank and Distribute Window Functions
+
+        The Concept Of Rank
+
+        ROW_NUMBER and NTILE
+
+        RANK and DENSE_RANK
+
+        Distribution Window Functions
+
+        Challenge: Rank Window Functions
+
+        Solution: Rank Window Functions
+
+    Offset Window Functions
+
+        Offset Window Functions
+
+        Row Offset Window Functions
+
+        Frame Offset Window Functions
+
+        Challenge: Offset Window Functions
+
+        Solution: Offset Window Functions

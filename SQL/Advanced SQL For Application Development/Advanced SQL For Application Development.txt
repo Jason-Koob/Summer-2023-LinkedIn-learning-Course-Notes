@@ -1,0 +1,103 @@
+Advanced SQL For Application Development
+
+    Introduction
+
+        Getting Started With SQL For Application Development
+
+    Advanced Querying With Select
+
+        Designing An E-CommerceApplication Database
+
+        Creating Tables With Loading Data
+
+        Using Environment Variables For Connection Parameters
+
+        Connecting To A Database
+
+        Parameterizing SELECT Statements
+
+        Avoid N+1 Queries
+
+        Challenge: Write A Parameterized Query In Python
+
+        Solution: Write A Parameterized Query In Python
+
+    Indexing Tables
+
+        Overview Of Indexing Types
+
+        Using The B-Tree Indexing and Range Scans
+
+        Using Hash Indexes and Equality Operations
+
+        Covering Indexes
+
+        Avoiding Index Locks
+
+        Challenge: Define A B-Tree and A Hash Index
+
+        Solution: Define A B-Tree and A Hash Index
+
+    Object-Relational Mapping (ORM)
+
+        Overview Of Object-Relational Mapping
+
+        Introduction To SQlAlchemy
+
+        Installing SQlAlchemy
+
+        Query With SQlAlchemy
+
+        Limitations Of ORM and Cautionary Advice
+
+        Challenge: Create An ORM Model
+
+        Solution: Create An ORM Model
+
+    Designing For Scalability
+
+        Overview Of Partitioning
+
+        Range Partitioning
+
+        List Partitioning
+
+        Hash Partitioning
+
+        Querying Partitioned Tables
+
+        Using Read-Only Replicas
+
+        Challenge: Define A Partitioned Table
+
+        Solution: Define A Partitioned Table
+
+    Designing For Reliability
+
+        Database Errors
+
+        Error Trapping
+
+        Database Not Responding, Timeouts, and Exponential Backoff
+
+        Connection Pooling and Bulk Heads
+
+        Monitoring and Logging Best Practices
+
+        Challenge: When Your Python Application Fails
+
+        Solution: When Your Python Application Fails
+
+    Designing For Maintainability
+
+        Understanding Schema Changes
+
+        Ad Hoc Scripts For Schema Changes
+        
+        Automated Schema Migration With Flyway
+
+        Automated Schema Migration With Liquibase
+
+        Challenge
+
+        Solution

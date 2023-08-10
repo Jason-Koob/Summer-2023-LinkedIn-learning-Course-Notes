@@ -1,0 +1,45 @@
+Advanced SQL: Logical Query Processing, Part 2
+
+    Introduction
+
+        Course Introduction
+
+        Agenda
+
+        Setting Expectations
+
+    Subqueries and Set Operations
+
+        Subqueries
+
+        Set Operators
+
+        Challenge
+
+        Solution
+
+    Advanced Joins
+
+        Self and Inequality Joins
+
+        Lateral Joins
+
+        Challenge
+
+        Solution
+
+    More On Grouping
+
+        Ordered Set Functions
+
+        Grouping Sets
+
+        Challenge
+
+        Solution
+
+    Recursions and Cursors
+
+        Recursions
+
+        The Cursors Curse

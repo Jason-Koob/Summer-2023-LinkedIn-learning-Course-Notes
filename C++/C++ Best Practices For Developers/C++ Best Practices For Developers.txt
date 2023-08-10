@@ -1,0 +1,75 @@
+C++ Best Practices For Developers
+
+    Introduction
+
+        Write Better C++ Code
+
+        What You Should Know
+
+    What Is Modern C++?
+
+        New C++ Features
+
+        Old Code Compatibility
+
+        File Naming Conventions
+
+    Tools That Improve Your Code
+
+        Turning On Modern C++
+
+        Let The Compiler Help
+
+        Static Analyzers
+
+        CppCheck
+
+        Challenge: Finding Issues With CppCheck
+
+        Solution: Finding Issues With CppCheck
+
+    Using The New Features Correctly
+
+        Auto Type Deduction and Initialization
+
+        Range-Based For Loops
+
+        Strongly Typed Enums
+
+        Using Lambdas
+
+        The Magic OF Variadic Template Functions
+
+        Challenge: Writing An Integer Sum Method
+
+        Solution: Writing An Integer Sum Method
+
+    Don't Reinvent The Wheel
+
+        How C++ and The STL Name Things
+
+        Maps, Filter, and Reduce
+
+        Be Careful With String_View
+
+        Size_T and Auto
+
+        The Filesystem Library
+
+        Challenge: Writing Strings to a File
+
+        Solution: Writing Strings to a File
+
+    Managing Objects
+
+        Which Pointer When?
+
+        The Rule Of Zero and Three
+
+        Const Is Your Friend
+
+        Resource Acquisition Is Initialization (RAII)
+
+        Challenge: RAII
+
+        Solution: RAII

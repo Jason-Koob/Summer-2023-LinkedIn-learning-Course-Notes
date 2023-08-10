@@ -1,0 +1,87 @@
+Advanced SQL For Data Scientists
+
+    Introduction
+
+        Advanced SQL Techniques For Data Science
+
+        What You Should Know
+
+    Data Modeling: Tables
+
+        Rules Of Normalization
+
+        Denormalization
+
+        Partitioning Data
+
+        Materialized Views
+
+        Read replicas
+
+        Challenge: Design A Data Model For Analytics
+
+        Solution: Design A Data Model For Analytics
+
+    Data Modeling: Indexes
+
+        B-Tree Indexes
+
+        Bitmap Indexes
+
+        Hash Indexes
+
+        GiST and SP-GiST Indexes
+
+        GIN and BRIN Indexes
+
+        Challenge: Choosing An Optimal Indexing Strategy
+
+        Solution: Choosing An Optimal Indexing Strategy
+
+    Query Optimization
+
+        EXPLAIN and ANALYZE Commands
+
+        Generating Data With Generate_sequence
+
+        Generating Time Series Data
+
+        Analyzing A Query With WHERE Clauses and Indexes
+
+        Analyzing A Query With A Join
+
+        Challenge: Optimize A Query Using An Explain Command
+
+        Solution: Optimize A Query Using An Explain Command
+
+    User-Defined Functions
+
+        Extending SQL With User-Defined Functions
+
+        SQL Query Functions
+
+        Function Overloading
+
+        Function Volatility
+
+        PL/Python Functions
+
+        Challenge: Write A User-Defined Function
+
+        Solution: Write A User-Defined Function
+
+    Special-Purpose Functionality
+
+        Federated Queries
+
+        Bloom Filters
+
+        Hstore For Key-Values Pairs
+
+        JSON For Semi-Structured Data
+
+        Hierarchical Data and Itrees
+
+        Challenge: Design A Table To Support Unstructured Data
+
+        Solution: Design A Table To Support Unstructured Data

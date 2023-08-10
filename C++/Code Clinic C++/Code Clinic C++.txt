@@ -1,0 +1,77 @@
+Code Clinic: C++
+
+    Introduction
+
+        Tackling Problems With C++
+
+        Getting The Most From Code Clinic
+    
+    Problem 1: Weather Statistics
+
+        Intro: Weather Statistics
+
+        Solution Overview: Weather Statistics
+
+        Import Data
+
+        Convert Time Formats
+
+        Compute The Coefficient
+
+    Problem 2: Where Am I?
+
+        Intro: Where Am I?
+
+        Solution Overview: Where Am I?
+
+        The Google Geolocation API
+
+        Find nearby Wi-Fi Access Points
+
+        Format JSON Requests
+
+        HTTP Requests Using Libcurl
+
+    Problem 3: Eight Queens
+
+        Intro: Eight Queens
+
+        Solution Overview: Eight Queens
+
+        Find All Solutions
+
+        Draw The Board
+
+    Problem 4: Musical Instrument
+
+        Intro: Musical Instrument
+
+        Solution Overview: Musical Instrument
+
+        Capture Mouse Inputs With Windows API
+
+        Generate Sounds With Libao
+
+    Problem 5: Facial Recognition
+
+        Intro: Facial Recognition
+
+        Solution Overview: Facial Recognition
+
+        Load Images With OpenCV
+
+        Detect Faces Using Haar Cascades
+
+        Generate JSON Output Files
+
+    Problem 6: Real-Time Information dashboard
+
+        Intro: Real-Time Information dashboard
+
+        Solution Overview: Real-Time Information dashboard
+
+        Web Development With C++
+
+        Import CSV Data
+
+        Build A Webpage
